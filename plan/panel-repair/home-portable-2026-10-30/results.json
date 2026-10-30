@@ -1,0 +1,289 @@
+{
+  "format": {
+    "exit": 0,
+    "command": [
+      "cargo",
+      "fmt",
+      "--all",
+      "--",
+      "--check"
+    ]
+  },
+  "engine-tests": {
+    "exit": 0,
+    "command": [
+      "cargo",
+      "test",
+      "--locked",
+      "-p",
+      "photocraft-engine",
+      "--lib",
+      "--tests",
+      "--",
+      "--test-threads=4"
+    ]
+  },
+  "engine-panic-hunt": {
+    "exit": 0,
+    "command": [
+      "cargo",
+      "test",
+      "--locked",
+      "-p",
+      "photocraft-engine",
+      "--test",
+      "panic_hunt",
+      "--",
+      "--ignored",
+      "--test-threads=4"
+    ]
+  },
+  "ui-engine-clippy": {
+    "exit": 101,
+    "command": [
+      "cargo",
+      "clippy",
+      "--locked",
+      "-p",
+      "photocraft-ui-egui",
+      "-p",
+      "photocraft-engine",
+      "--all-targets",
+      "--",
+      "-D",
+      "warnings"
+    ]
+  },
+  "ui-engine-clippy-no-deps": {
+    "exit": 101,
+    "command": [
+      "cargo",
+      "clippy",
+      "--locked",
+      "--no-deps",
+      "-p",
+      "photocraft-ui-egui",
+      "-p",
+      "photocraft-engine",
+      "--all-targets",
+      "--",
+      "-D",
+      "warnings"
+    ]
+  },
+  "xtask-build": {
+    "exit": 0,
+    "command": [
+      "cargo",
+      "build",
+      "--locked",
+      "-p",
+      "xtask"
+    ]
+  },
+  "layers": {
+    "exit": 0,
+    "command": [
+      "F:\\photocraft\\target\\debug\\xtask.exe",
+      "layers"
+    ]
+  },
+  "ui-clippy-no-deps": {
+    "exit": 101,
+    "command": [
+      "cargo",
+      "clippy",
+      "--locked",
+      "--no-deps",
+      "-p",
+      "photocraft-ui-egui",
+      "--all-targets",
+      "--",
+      "-D",
+      "warnings"
+    ]
+  },
+  "wasm": {
+    "exit": 0,
+    "command": [
+      "F:\\photocraft\\target\\debug\\xtask.exe",
+      "wasm"
+    ]
+  },
+  "parity": {
+    "exit": 0,
+    "command": [
+      "F:\\photocraft\\target\\debug\\xtask.exe",
+      "parity"
+    ]
+  },
+  "scorecard": {
+    "exit": 0,
+    "command": [
+      "F:\\photocraft\\target\\debug\\xtask.exe",
+      "scorecard"
+    ]
+  },
+  "doctests": {
+    "exit": 0,
+    "command": [
+      "cargo",
+      "test",
+      "--locked",
+      "-p",
+      "photocraft-ui-egui",
+      "-p",
+      "photocraft-engine",
+      "--doc"
+    ]
+  },
+  "craft-clippy": {
+    "exit": 0,
+    "command": [
+      "cargo",
+      "clippy",
+      "--locked",
+      "-p",
+      "craft-ui",
+      "--lib",
+      "--",
+      "-D",
+      "warnings"
+    ]
+  },
+  "craft-tests": {
+    "exit": 0,
+    "command": [
+      "cargo",
+      "test",
+      "--manifest-path",
+      "vendor/craft-ui/Cargo.toml",
+      "--config",
+      "vendor/craft-ui/tests-config.toml",
+      "--features",
+      "serde,native-windows,screen-testing",
+      "--lib",
+      "docking::"
+    ]
+  },
+  "full-ui-unit-tests": {
+    "exit": 101,
+    "command": [
+      "F:\\photocraft\\target\\debug\\deps\\photocraft_ui_egui-4cec6c9690f226fa.exe",
+      "--test-threads=4"
+    ]
+  },
+  "related-panel_dependency_contract": {
+    "exit": 0,
+    "log": "related-panel_dependency_contract.log",
+    "summary": [
+      "test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 4574 filtered out; finished in 0.00s"
+    ]
+  },
+  "related-dock-tests": {
+    "exit": 0,
+    "log": "related-dock-tests.log",
+    "summary": [
+      "test result: ok. 26 passed; 0 failed; 0 ignored; 0 measured; 4552 filtered out; finished in 5.94s"
+    ]
+  },
+  "related-workspace": {
+    "exit": 0,
+    "log": "related-workspace.log",
+    "summary": [
+      "test result: ok. 42 passed; 0 failed; 0 ignored; 0 measured; 4536 filtered out; finished in 1.84s"
+    ]
+  },
+  "related-toolbar": {
+    "exit": 0,
+    "log": "related-toolbar.log",
+    "summary": [
+      "test result: ok. 22 passed; 0 failed; 0 ignored; 0 measured; 4556 filtered out; finished in 3.76s"
+    ]
+  },
+  "related-type_flyout_tests": {
+    "exit": 0,
+    "log": "related-type_flyout_tests.log",
+    "summary": [
+      "test result: ok. 12 passed; 0 failed; 0 ignored; 0 measured; 4566 filtered out; finished in 0.07s"
+    ]
+  },
+  "related-panel_visibility": {
+    "exit": 0,
+    "log": "related-panel_visibility.log",
+    "summary": [
+      "test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 4576 filtered out; finished in 0.01s"
+    ]
+  },
+  "related-overflow": {
+    "exit": 0,
+    "log": "related-overflow.log",
+    "summary": [
+      "test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 4570 filtered out; finished in 0.56s"
+    ]
+  },
+  "workspace-integration": {
+    "exit": 0,
+    "log": "workspace-integration.log",
+    "summary": [
+      "test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 138 filtered out; finished in 0.36s"
+    ]
+  },
+  "visual-final-review": {
+    "exit": 0,
+    "log": "visual-final-review.log",
+    "summary": [
+      "test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 4577 filtered out; finished in 85.28s"
+    ]
+  },
+  "visual-seam": {
+    "exit": 0,
+    "log": "visual-seam.log",
+    "summary": [
+      "test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 4577 filtered out; finished in 72.77s"
+    ]
+  },
+  "visual-corner": {
+    "exit": 0,
+    "log": "visual-corner.log",
+    "summary": [
+      "test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 4577 filtered out; finished in 39.55s"
+    ]
+  },
+  "visual-audit": {
+    "exit": 0,
+    "log": "visual-audit.log",
+    "summary": [
+      "test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 4577 filtered out; finished in 118.75s"
+    ]
+  },
+  "visual-port": {
+    "exit": 0,
+    "log": "visual-port.log",
+    "summary": [
+      "test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 4577 filtered out; finished in 10.44s"
+    ]
+  },
+  "visual-replay": {
+    "exit": 0,
+    "log": "visual-replay.log",
+    "summary": [
+      "test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 4577 filtered out; finished in 154.00s"
+    ]
+  },
+  "panel-tests": {
+    "exit": 0,
+    "command": [
+      "cargo",
+      "test",
+      "--locked",
+      "-p",
+      "photocraft-ui-egui",
+      "--lib",
+      "panel_docking",
+      "--",
+      "--nocapture"
+    ],
+    "log": "../home-panel-tests.log"
+  }
+}

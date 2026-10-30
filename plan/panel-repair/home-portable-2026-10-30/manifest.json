@@ -1,0 +1,73 @@
+{
+  "sourceCommit": "1c53e40a853acdde3b367162f24c00cd8e650441",
+  "upstreamCommit": "b1cfff9d30298eea4f446a8f6a5e4285cb43c6e7",
+  "pr": "https://github.com/storytold/photocraft/pull/10322",
+  "state": "Draft; native contributor acceptance pending; full UI has documented failures",
+  "files": [
+    {
+      "path": "ACCEPTANCE_RU.md",
+      "bytes": 5556,
+      "sha256": "06e5904bd960ea1cb7119209942d980482b6242819d845f6343b04f3c104b782"
+    },
+    {
+      "path": "audit-captures.zip",
+      "bytes": 20071811,
+      "sha256": "f9812d316edf3d02e2b2a42c9eb2b365572d5b70f8e55a07d3d34bae50cd154e"
+    },
+    {
+      "path": "corner-captures.zip",
+      "bytes": 8203291,
+      "sha256": "bccbcd19984b76b943658fcb76b696738da13ca5229d36f1aa494d5e68bd7bfe"
+    },
+    {
+      "path": "final-review-captures.zip",
+      "bytes": 15552917,
+      "sha256": "785d1152873bee227751c641d956f3ac834e47ce78f788d208d982758452cb64"
+    },
+    {
+      "path": "full-ui-classification.json",
+      "bytes": 18291,
+      "sha256": "7408de278bd6e24b32bc9784390ada302f9a4c8b7895ff0dc37537a023a6ae47"
+    },
+    {
+      "path": "LATEST_UPSTREAM_RU.md",
+      "bytes": 948,
+      "sha256": "41c04be85227ee12f08624a0ee01a81a4c5c6984ae9cd5f0b441609def2f4b3c"
+    },
+    {
+      "path": "port-captures.zip",
+      "bytes": 1892403,
+      "sha256": "f93ae7c0ceeb8936336f00c1165dba4b0795b0f66ba1df236e5941ffd9514923"
+    },
+    {
+      "path": "PR.md",
+      "bytes": 5298,
+      "sha256": "e9802cdbdb84af3cd0fb6372b7394805b6bbbe77b7367751344720ecdb925224"
+    },
+    {
+      "path": "README_RU.md",
+      "bytes": 5279,
+      "sha256": "b6ace392670e11ed9a37acf300162d00e8fd92e18fd88ba0514c248b64bbf365"
+    },
+    {
+      "path": "replay.zip",
+      "bytes": 26908504,
+      "sha256": "d7cb7afca06dce746e62d79b0d8fe8609cac053d3de5a3fe7c8f4427c42c10cc"
+    },
+    {
+      "path": "reports-and-demonstrations.zip",
+      "bytes": 8651093,
+      "sha256": "287d30301baccb3150fdc808419957e4079ff03f373784f324a70d8ab04625b4"
+    },
+    {
+      "path": "results.json",
+      "bytes": 6405,
+      "sha256": "4f7cc6dd47d5f10c9d4717a47a8577447b08cd323abf3e84f55ac81cdcd69f3f"
+    },
+    {
+      "path": "seam-captures.zip",
+      "bytes": 12478862,
+      "sha256": "094a67c977f6f449e9f92d65a038277c62bcd2c575be6d3d1bc3fe3209b366c4"
+    }
+  ]
+}
