@@ -1,0 +1,113 @@
+{
+  "sourceCommit": "cd571efe41c556347b1851ac208e3388acc3002e",
+  "sourceBranch": "codex/panel-layout-upstream",
+  "handoffBranch": "codex/panel-layout-handoff-2026-10-30",
+  "pr": "https://github.com/storytold/photocraft/pull/10322",
+  "files": [
+    {
+      "path": "ACCEPTANCE_RU.md",
+      "bytes": 11473,
+      "sha256": "6b2afb593ed25ef1f92d8de9d20c8298b2bdc8dfb4f000a1a4b81737b834804f"
+    },
+    {
+      "path": "active-performance.json",
+      "bytes": 3815,
+      "sha256": "b5aaef67436872ddc92dceef9e25b8c6c6191bad0e9bce1fb3793d1ab202a5ae"
+    },
+    {
+      "path": "audit-captures.zip",
+      "bytes": 20130421,
+      "sha256": "9f0fa61cbb1d302d43eeb1d1d3b80c6e48aea68fca70230863ac208b17358fd0"
+    },
+    {
+      "path": "baseline-comparison.json",
+      "bytes": 13265,
+      "sha256": "3108b39e3aba328fdfeee586710c32eded6c4d813cb994e92d753632c329cf15"
+    },
+    {
+      "path": "capture-and-report-scripts.zip",
+      "bytes": 15257,
+      "sha256": "e36d6047579c06906f488c61df542b26c2bf028c3bb14ffb29f9346e11bda68a"
+    },
+    {
+      "path": "capture-counts.json",
+      "bytes": 157,
+      "sha256": "4eaf1e78dfd66a1b417615bc175c5f6b4ea8ebccddaf6f594d6d45a47e5f8fb3"
+    },
+    {
+      "path": "capture-manifest.json",
+      "bytes": 214981,
+      "sha256": "5c2656bcf9ad5c9409916de6b2858af64382eb33edae2bf210f4b2a049107d9d"
+    },
+    {
+      "path": "cleanup-observed.json",
+      "bytes": 229,
+      "sha256": "257bf00e7521998111e48ae33a06a971a5a0aed676f7b622ca464fe99f332937"
+    },
+    {
+      "path": "corner-captures.zip",
+      "bytes": 8218417,
+      "sha256": "d65a3724437749fc466175e44e5d66562e90af5ed9bbf190d617fc91b2494246"
+    },
+    {
+      "path": "final-review-captures.zip",
+      "bytes": 15616261,
+      "sha256": "8aaf80bf8555b792afa308f47dd850c5e9562335691116310a0c9182026fb1ad"
+    },
+    {
+      "path": "full-ui-classification.json",
+      "bytes": 17565,
+      "sha256": "80c1a1ae78e38905d5a3fc67aaa821edf391b919adf822c266c209f000534781"
+    },
+    {
+      "path": "original-audit-and-ui-inputs.zip",
+      "bytes": 1218862,
+      "sha256": "0dd31bc99a3a25bcc5644e3265c57ae65ec59e818607dc0b9f9b1f3ab2827c39"
+    },
+    {
+      "path": "photocraft-panel-repair-2026-10-30-final.zip",
+      "bytes": 24339390,
+      "sha256": "3f83287f3391043c07cf1f643c2c264d7c3116d8122285f0c5517d32b1a32a24"
+    },
+    {
+      "path": "port-captures.zip",
+      "bytes": 1895694,
+      "sha256": "b487f55e2e93fcbca2b2e485b2660ce3ee50e7cec98b2f4ddfbdac6ef763c4a1"
+    },
+    {
+      "path": "PR.md",
+      "bytes": 4140,
+      "sha256": "19d15ac7af2657347a9a3fd4b2ded46c6fa05e2f3144a8457750eea0512fcf28"
+    },
+    {
+      "path": "pull-request.json",
+      "bytes": 124,
+      "sha256": "aef5da5d8850a577a2e14fb0cdee25152fb48bd5c9451d28ecd8f09ffe0e33ce"
+    },
+    {
+      "path": "README_RU.md",
+      "bytes": 7569,
+      "sha256": "8cbd646618137308c98706af9b61e9773d7bb859205d1c003b94930bfcff14a3"
+    },
+    {
+      "path": "replay.zip",
+      "bytes": 26919621,
+      "sha256": "5fae231f61e54bf1d784190f67d48bdf4fca432b79c1edc733eba313ed183c3d"
+    },
+    {
+      "path": "results.json",
+      "bytes": 766,
+      "sha256": "1a8d09c24ec6e89a92c916d68baaa8428e2dcf3a761984ab8226e61c321f426c"
+    },
+    {
+      "path": "seam-captures.zip",
+      "bytes": 12516402,
+      "sha256": "96d09bb8e8f504913b8b5bc4e3a966e2bce989e2bd2657b49c1fe0448f57e174"
+    },
+    {
+      "path": "source-fingerprint.json",
+      "bytes": 19376,
+      "sha256": "7d4a585bd89caf298c685b8fc40081cf2eef7c65b1eb172afa265bb5ca1b60c7"
+    }
+  ]
+}

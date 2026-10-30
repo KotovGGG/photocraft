@@ -1,0 +1,497 @@
+{
+  "base": "382b047c30483024159aaa63831947bc99a5e28b",
+  "head": "cd571efe41c556347b1851ac208e3388acc3002e",
+  "files": [
+    {
+      "path": "Cargo.lock",
+      "sha256": "6688840f07dc52e6cb9bb8e55925f8821b62f42b83520bf74f129ffaa0fe1b67"
+    },
+    {
+      "path": "Cargo.toml",
+      "sha256": "87c3be27b5f45516b43abff59336c65b55009d2abceb00a1ea2be6fb1d4835d9"
+    },
+    {
+      "path": "crates/engine/src/prefs/validate.rs",
+      "sha256": "8ffa3569f645ccbf1810b59994a603890dca8bba188933c293a0dc5362f42566"
+    },
+    {
+      "path": "crates/engine/src/shell_commands.rs",
+      "sha256": "cd33543954a6cb8e862dd2efa0ae520887cf3a45acf0529f18ba81e1e86461f8"
+    },
+    {
+      "path": "crates/ui-egui/Cargo.toml",
+      "sha256": "efb93aba538d4448bd2b2343bd937658dc68189f79dfe1c2b5032da28df9af2e"
+    },
+    {
+      "path": "crates/ui-egui/build.rs",
+      "sha256": "9141c71fad462d80a7b80f5abf3f38405ca6d1e9f5eeab3b760d125d158410cd"
+    },
+    {
+      "path": "crates/ui-egui/build/panel_contract.rs",
+      "sha256": "e8f17ef6f9c9eeda342662d8d37457a285a0aa61737dd2a4342c68809220cf93"
+    },
+    {
+      "path": "crates/ui-egui/build/panel_contract_tests.rs",
+      "sha256": "6660e1e12e806369f26f3aef3b51d87bd4c158a8c0f3f7e92147a639f8e65bf7"
+    },
+    {
+      "path": "crates/ui-egui/src/app/commands.rs",
+      "sha256": "95ea8fe877301b7a0ce067c5b09f13684dd229c9039665d45bca206356aa61be"
+    },
+    {
+      "path": "crates/ui-egui/src/app/frame.rs",
+      "sha256": "8d02060561ae22e15903edffb287f7c051afe33d8f8f28067901996adf947ecf"
+    },
+    {
+      "path": "crates/ui-egui/src/canvas/tabs_tests.rs",
+      "sha256": "a47e826b3e13c4a1262dbb6f0d95b0ab4dcae6aa2f729e5aec2325266cc6fde8"
+    },
+    {
+      "path": "crates/ui-egui/src/dock.rs",
+      "sha256": "c48d015342f76417bd4d337d348ca2afa0056107b222f080ae5349ede7377c97"
+    },
+    {
+      "path": "crates/ui-egui/src/dock/tests.rs",
+      "sha256": "183af268d6fba29f881c7eb17e504605ea71b5bcb47b23ced95fd164da82d2f5"
+    },
+    {
+      "path": "crates/ui-egui/src/icons.rs",
+      "sha256": "b5b86a9187c27a406d5ceac7684cba1aaa8fa8103248bfb897c9ab16cdb048db"
+    },
+    {
+      "path": "crates/ui-egui/src/lib.rs",
+      "sha256": "66c190dffa48ebf80ed77e5b23d0deb3cdf9116fd8de525dacc3f47086544c2e"
+    },
+    {
+      "path": "crates/ui-egui/src/menus/state.rs",
+      "sha256": "ff2655b818d1796a72a7b8dc15cd151846dca7bfb5423b6b6b0440fff39c9df5"
+    },
+    {
+      "path": "crates/ui-egui/src/menus/workspace_ui.rs",
+      "sha256": "99bbd771a02f5f284f0d7aac75a59043a006a110c982dd7408582327f8f656ca"
+    },
+    {
+      "path": "crates/ui-egui/src/panels.rs",
+      "sha256": "c33537e0cfa88adf1b5a53554fa853156dd4a33b44e62913bbcaaa1b66f2c155"
+    },
+    {
+      "path": "crates/ui-egui/src/panels/dock.rs",
+      "sha256": "f1fad375b84da1f7d5ed421d4d0f66b3e97698d5ee0aa611bfc10fbb8b1ec54a"
+    },
+    {
+      "path": "crates/ui-egui/src/panels/panel_docking.rs",
+      "sha256": "61fc156d23134def4b17989d4eaa995fce5d677ee5004cc46c4e3ba8ba41b49b"
+    },
+    {
+      "path": "crates/ui-egui/src/panels/panel_docking/compat.rs",
+      "sha256": "3c20693e95d7bcec1b8f73fc9d430a1c8ddc887dc7374fb08f02d67b9f04ab36"
+    },
+    {
+      "path": "crates/ui-egui/src/panels/panel_docking/contract.rs",
+      "sha256": "951d1bf5c8ce26a5c00521b5a6611554df554a876b334662a67fc0ba4fda5bf9"
+    },
+    {
+      "path": "crates/ui-egui/src/panels/panel_docking/final_transition_tests.rs",
+      "sha256": "09338d129d164b47e77e6e7f309259c0862d5d327a55b7e68a526d757dce36ac"
+    },
+    {
+      "path": "crates/ui-egui/src/panels/panel_docking/followup_tests.rs",
+      "sha256": "1eb628b0326fe06bbe01f7b4a26e8e12a458d7ad2b27472eaab9fe528048714e"
+    },
+    {
+      "path": "crates/ui-egui/src/panels/panel_docking/gesture_followup_tests.rs",
+      "sha256": "56d57673e5096ca023541da77c270639cb685ef5b30c7573d205033eb806c5d3"
+    },
+    {
+      "path": "crates/ui-egui/src/panels/panel_docking/native_tests.rs",
+      "sha256": "7c5293e129f994f8346a72905c537dcf3e7497ea354d2c35dc1aa62491323add"
+    },
+    {
+      "path": "crates/ui-egui/src/panels/panel_docking/peek_transition_tests.rs",
+      "sha256": "4b2265c4f6e23669d0367e0b16389f8853de56eda3fd446cbc0eb805af457c13"
+    },
+    {
+      "path": "crates/ui-egui/src/panels/panel_docking/presentation.rs",
+      "sha256": "c2cdfd21430bd1492aeaa7bc591125da1ef84c121478748707b6ab75cd9f690b"
+    },
+    {
+      "path": "crates/ui-egui/src/panels/panel_docking/presentation_demo.rs",
+      "sha256": "397d99bd93a3ea9adf6bfd42481767b24d6ebcf7e7b6acc0ce713351be50523e"
+    },
+    {
+      "path": "crates/ui-egui/src/panels/panel_docking/repair_tests.rs",
+      "sha256": "97b71d664fffcb2a935a6f609fe1a9035c4dd50f052af2cc8acbc172793a3154"
+    },
+    {
+      "path": "crates/ui-egui/src/panels/panel_docking/seam_followup_tests.rs",
+      "sha256": "1c8e3fe0a361d9f98d36ac6b2f7babc6fab36bca576814e94ec670ce40afa797"
+    },
+    {
+      "path": "crates/ui-egui/src/panels/panel_docking/tests.rs",
+      "sha256": "9485477ef2b83a61c2996c9dcf7c38d1320bec64d5c1f3e66e27b0f839c92fa5"
+    },
+    {
+      "path": "crates/ui-egui/src/panels/panel_visibility.rs",
+      "sha256": "0f02bdf02219ba960de0579a426a505e991cc0a339ee1a608f04d5803c2ce36d"
+    },
+    {
+      "path": "crates/ui-egui/src/panels/toolbar.rs",
+      "sha256": "b00dbcc1d9f9443ef129151a2b2ca17dcc36d33f482d9e0a9b8a2a26d7650414"
+    },
+    {
+      "path": "crates/ui-egui/src/panels/toolbar_docking.rs",
+      "sha256": "a9950576dd8d1ae4f854df96fff271bf53fc511fdeecd2708ce1400f4a7642a3"
+    },
+    {
+      "path": "crates/ui-egui/src/state.rs",
+      "sha256": "544f97738cb79388b1f166713381daccfa280ba4c4714e0f4b30841320a0aa86"
+    },
+    {
+      "path": "crates/ui-egui/tests/fixtures/panel-repair-workspace.json",
+      "sha256": "b46c650ec7235e809dd5fc3bbaa834c5b47fce659e5cb9d809c15c7c5bce95ac"
+    },
+    {
+      "path": "scorecard/ui.toml",
+      "sha256": "0379f6ccb8d371bf7117bafceefcc41a3a10db6195bef4431d06e5bcf434601e"
+    },
+    {
+      "path": "vendor/craft-ui/Cargo.toml",
+      "sha256": "1814170d1aa8d9188d43be5113f4ee6ef38fb351742f7711ba69613f4544ab4a"
+    },
+    {
+      "path": "vendor/craft-ui/src/buttons/mod.rs",
+      "sha256": "cd826bcf13e3aa8b6fc25e84aafa1b5a01caa62784589c264b6b9dae3967ef7e"
+    },
+    {
+      "path": "vendor/craft-ui/src/buttons/tests.rs",
+      "sha256": "4407d99340493d3b216e3a8b0c72a303e88ddd8e17c9934ac1bf18fc2a7dd201"
+    },
+    {
+      "path": "vendor/craft-ui/src/capture.rs",
+      "sha256": "1b9b0113af956d8a090be090dd7852b1da2f1b7eb0aa1172f76dd94140047b22"
+    },
+    {
+      "path": "vendor/craft-ui/src/capture/tests.rs",
+      "sha256": "2b397bfdfc44fe6755e66cfedb94cdd853029f16ba9c7eeac47a0a0f8c7d8c9d"
+    },
+    {
+      "path": "vendor/craft-ui/src/combo.rs",
+      "sha256": "a610630c155c676da0ec3a026f0c095b8749a08b0b676d945af606d4fb706dd1"
+    },
+    {
+      "path": "vendor/craft-ui/src/combo/tests.rs",
+      "sha256": "dc69ea083b9911dd4dac3dd564f71fad974d113230b4ec9c4f57783fd5b828eb"
+    },
+    {
+      "path": "vendor/craft-ui/src/direction/mod.rs",
+      "sha256": "46bbe340cbde4cc4131bec6f834246d972b24e16c6c756d3eacc33e92ee6e5b5"
+    },
+    {
+      "path": "vendor/craft-ui/src/direction/tests.rs",
+      "sha256": "0d39ac6c8753a3235ff436a918e971a8913f28a44de6ad12ad67ee58c3ae6aae"
+    },
+    {
+      "path": "vendor/craft-ui/src/docking/chrome.rs",
+      "sha256": "cb385084c84864441e63fc3a54549a5323890a91c0a3e1ef9e71f82a7883b28c"
+    },
+    {
+      "path": "vendor/craft-ui/src/docking/command.rs",
+      "sha256": "060a642cbf93b896c01676e4ecbb326f1a70ca6a6ab4d0d6f06fd696c34df5f5"
+    },
+    {
+      "path": "vendor/craft-ui/src/docking/command_tests.rs",
+      "sha256": "71f63f36eccac69c4933f1a62163250c5e66fb10e491f347a38b9a2b088e6d28"
+    },
+    {
+      "path": "vendor/craft-ui/src/docking/desktop.rs",
+      "sha256": "dc07cf9890c87c38941bb4f9d1ad58ba2d660e4b786561b6bb1703a86a23e1d8"
+    },
+    {
+      "path": "vendor/craft-ui/src/docking/dock_model.rs",
+      "sha256": "ef4193605a6517c9d04a8fe308957985afa68a4dffc947ad94aa6afa8a44b4c6"
+    },
+    {
+      "path": "vendor/craft-ui/src/docking/dock_tests.rs",
+      "sha256": "b9d2e562c1fec706764d6679cd9373358e78e228adb82adaf69b8cd10397616d"
+    },
+    {
+      "path": "vendor/craft-ui/src/docking/drop_tests.rs",
+      "sha256": "2e1a39f19a5c51072a479416b7615ef652edc8bc24314b058c237d1724788340"
+    },
+    {
+      "path": "vendor/craft-ui/src/docking/floating_tests.rs",
+      "sha256": "05d83bdb6b8facbca9e5d2fb2efb7fadc80d1cee7826136f9ad52e6eac82425a"
+    },
+    {
+      "path": "vendor/craft-ui/src/docking/group_tests.rs",
+      "sha256": "187c1b2da5e71be5f506b773b72ff2283f8c6d0acf27c09512aba6aacc984107"
+    },
+    {
+      "path": "vendor/craft-ui/src/docking/hits.rs",
+      "sha256": "30638da0ab8d3a09fa226f2864015f330f8873b59b125d45003230be427ba706"
+    },
+    {
+      "path": "vendor/craft-ui/src/docking/iconic_tests.rs",
+      "sha256": "c329acdeaed024e48fbfae118a709035d0fcc4bc713c209b3ea5f6933c4408cf"
+    },
+    {
+      "path": "vendor/craft-ui/src/docking/ime_tests.rs",
+      "sha256": "0ed0df682c107f9e98730a9430f822a00ed107e9f384e9c1271c64e2a3e70338"
+    },
+    {
+      "path": "vendor/craft-ui/src/docking/labels.rs",
+      "sha256": "b12d35edffa0e9fa61b567cd6021fbc6346c0bdeb6f0853394ef9aabd2b590bc"
+    },
+    {
+      "path": "vendor/craft-ui/src/docking/mod.rs",
+      "sha256": "ba8cd2b79589f872084035701073a3f9088b41df31931a5d41328f2a27c28b5b"
+    },
+    {
+      "path": "vendor/craft-ui/src/docking/model.rs",
+      "sha256": "56090123dac5272c508f8d6187d482ce0b4c03c1e276276c41262cb249e5ee02"
+    },
+    {
+      "path": "vendor/craft-ui/src/docking/model_tests.rs",
+      "sha256": "46ec59da033779e3baf48afcae31bf91060167036ae119a6e4d2c662b64a189c"
+    },
+    {
+      "path": "vendor/craft-ui/src/docking/native_tests.rs",
+      "sha256": "9b83cb41680aba03a707d5e76b4a13781b55ff7dee17db2f6948f35723d7a374"
+    },
+    {
+      "path": "vendor/craft-ui/src/docking/placement.rs",
+      "sha256": "e51dfe45d339201b2dc841d21763784733a49ec84e8ff3b022efcc3be02a2900"
+    },
+    {
+      "path": "vendor/craft-ui/src/docking/render/body_drag.rs",
+      "sha256": "83d61cbc9c5f1446f39c10ef00c71d1679fac70246f61a153cbf7deb2f8de009"
+    },
+    {
+      "path": "vendor/craft-ui/src/docking/render/cross.rs",
+      "sha256": "9d9a7294f01b8c73b0dcf4b02a2c4cc06b442baf6467fae7f44028c41ee8451b"
+    },
+    {
+      "path": "vendor/craft-ui/src/docking/render/dock.rs",
+      "sha256": "16587e7f649322bf62aed07fc832480645eaa2368a39952e1cedeb50201998f7"
+    },
+    {
+      "path": "vendor/craft-ui/src/docking/render/floating.rs",
+      "sha256": "f79a8c762797b74ec50e7a3a132006e03671179560b917eb98724f8f05d956f2"
+    },
+    {
+      "path": "vendor/craft-ui/src/docking/render/frame.rs",
+      "sha256": "1afe284b336e1f55c5be6e8d9da007c70185c5a195597ffc5ea432e508f27740"
+    },
+    {
+      "path": "vendor/craft-ui/src/docking/render/group.rs",
+      "sha256": "993b356dae56e66a0d98317cd15c9c4a12453efb92acfcaf3588e4e7f1827aa6"
+    },
+    {
+      "path": "vendor/craft-ui/src/docking/render/iconic.rs",
+      "sha256": "ade6875dc94651a858cb1ed604295b0e329b11ad4aa4c2ac1507005b20ff6be5"
+    },
+    {
+      "path": "vendor/craft-ui/src/docking/render/mod.rs",
+      "sha256": "bd4e5fd90f137d550c043fbe39c4c78d42215deb8dfb9dc1f32beed289e9cab2"
+    },
+    {
+      "path": "vendor/craft-ui/src/docking/render/native.rs",
+      "sha256": "8c34f3c2bace6e340b012d23191af3a195ad7fe313630ef9d663d5a71a17123f"
+    },
+    {
+      "path": "vendor/craft-ui/src/docking/render/preview.rs",
+      "sha256": "737f835f0028bff72346e1570861e81d2ba4c46b3a12bc721dcb29e7147c4077"
+    },
+    {
+      "path": "vendor/craft-ui/src/docking/render/sizes.rs",
+      "sha256": "5f8adeb3476db6b8b466095be1e89f09e76fde4bd596aae833b04d526420a87d"
+    },
+    {
+      "path": "vendor/craft-ui/src/docking/resize.rs",
+      "sha256": "1233e4eab3a3ddefe2c4f3509f5dfb5c6ef32b1c30759c07e610eeec191faaf6"
+    },
+    {
+      "path": "vendor/craft-ui/src/docking/split_tests.rs",
+      "sha256": "5fff76e3506f1c7541a3b13a77173b61b89767e411bfd01069698ef0078d7585"
+    },
+    {
+      "path": "vendor/craft-ui/src/docking/surface.rs",
+      "sha256": "0386f437866bb502a978278455bd8ab2fca35d198b3b2a626b9767f0849bdfc6"
+    },
+    {
+      "path": "vendor/craft-ui/src/docking/targets.rs",
+      "sha256": "bdf3097362405d87089a490d4edd7310f19dadafa0e468ab69845b10654c3c07"
+    },
+    {
+      "path": "vendor/craft-ui/src/docking/testing.rs",
+      "sha256": "b2d9f893ee4af40b480418df99b82d71177b4bb021820dc31702f85500c8f6eb"
+    },
+    {
+      "path": "vendor/craft-ui/src/docking/tests.rs",
+      "sha256": "2076baca387450cb9e31e39d0a6c5fa21ad8c22bd461ed6b03a0f7661fdd5136"
+    },
+    {
+      "path": "vendor/craft-ui/src/docking/trial_tests.rs",
+      "sha256": "a6f917c1cfbdd2696f200d2f5fc8c4926ba88329cbc2d54b0fb88bd182e32205"
+    },
+    {
+      "path": "vendor/craft-ui/src/docking/workspace.rs",
+      "sha256": "4bf40d03701c7602c4b7a319eac5078506c229f6278ce6bc752dfb29c79f464d"
+    },
+    {
+      "path": "vendor/craft-ui/src/focus.rs",
+      "sha256": "5eed6c4a8a0ad258704f99c7668c41cbda7234a09fcbc487f554d1bd53b55eef"
+    },
+    {
+      "path": "vendor/craft-ui/src/fonts/coverage.rs",
+      "sha256": "9e34e4f7217ecfb8a801d1a448cab4a9d321996c7ccc8ba05fb61deec4e1e7b5"
+    },
+    {
+      "path": "vendor/craft-ui/src/fonts/fit.rs",
+      "sha256": "8e888876a6958a340017644fcf64d66041d9032e74c6925a27620f75c8fd5510"
+    },
+    {
+      "path": "vendor/craft-ui/src/fonts/mod.rs",
+      "sha256": "dab9ec171b999fc439f68cbb30f45b410e5e4f14220cb38cb871f8de3b17039e"
+    },
+    {
+      "path": "vendor/craft-ui/src/fonts/providers.rs",
+      "sha256": "f75e9bba88c00dc709b1bb7b3ce1cb1015a43ed722aa2555e8c51aac0f1f26a4"
+    },
+    {
+      "path": "vendor/craft-ui/src/fonts/served.rs",
+      "sha256": "d860831bce51261c953ddddd7094d9cc209f62e7a03bb812c1bc7361b389746f"
+    },
+    {
+      "path": "vendor/craft-ui/src/fonts/served/loader.rs",
+      "sha256": "297215deef2f6e51a2fcbf446b1dd4aa7e5f944ccfb089c09a5e578983285c0b"
+    },
+    {
+      "path": "vendor/craft-ui/src/fonts/served/web.rs",
+      "sha256": "ab8070c3ea62b3f098e2ad90db6bb4b8ecd32b3d64c4fdaea241b5312ec418fe"
+    },
+    {
+      "path": "vendor/craft-ui/src/fonts/system.rs",
+      "sha256": "f3e2f114ad103b11c0f3e01c8f874c93f5cb7ad4ca58da48eb12a417207d8a75"
+    },
+    {
+      "path": "vendor/craft-ui/src/fonts/system_index.rs",
+      "sha256": "f0fa896159f76a60749d3b0a29b5453439cbd243ad8ecd485c1086bbf583dbad"
+    },
+    {
+      "path": "vendor/craft-ui/src/fonts/tests.rs",
+      "sha256": "c53822812c290e8ebd61b8392fdc8ad7d08c1ea6d52e34a27c42c80836cf0bd8"
+    },
+    {
+      "path": "vendor/craft-ui/src/icons/mod.rs",
+      "sha256": "389872630f1668d48c29a09d15e3100a663d04fabf98b5d8ca02c00712d7f0f0"
+    },
+    {
+      "path": "vendor/craft-ui/src/icons/tests.rs",
+      "sha256": "c2c35b8aa6448826fc140493001d25b4f6e3d586e52c917f89d179621726f609"
+    },
+    {
+      "path": "vendor/craft-ui/src/ime/composer.rs",
+      "sha256": "143d10db0860939b37174b47b1762172980aa4445b3db02a235bcb160559cd76"
+    },
+    {
+      "path": "vendor/craft-ui/src/ime/mod.rs",
+      "sha256": "cd21dca3c159d6fc031ff638ee23e0d35380825b580065edca45c4759535d866"
+    },
+    {
+      "path": "vendor/craft-ui/src/ime/tests.rs",
+      "sha256": "cf271d93018b1033529105aa29bb5f388862a6f179fd70302a3a682fd9b32246"
+    },
+    {
+      "path": "vendor/craft-ui/src/ime/window.rs",
+      "sha256": "c6ecd6df1d128dbe78ca5ad4af6509c6e9319a1ea391b9646cfec7f7bdd6b43d"
+    },
+    {
+      "path": "vendor/craft-ui/src/layout/geometry.rs",
+      "sha256": "e5b35a34d89ca1d9e54364a7e2c1b2d0cd0ffabf7314339da3f9e912be72e4e4"
+    },
+    {
+      "path": "vendor/craft-ui/src/layout/mod.rs",
+      "sha256": "723ae93a6e52a493e7fc6dc5f0815c6230ff6e6eb24db713e896e630d12709f9"
+    },
+    {
+      "path": "vendor/craft-ui/src/layout/resize.rs",
+      "sha256": "9e61530bb0c16263be7876fd088fa9f8aa8729231a424184c54832f080d49e9d"
+    },
+    {
+      "path": "vendor/craft-ui/src/layout/tests.rs",
+      "sha256": "cb2bd41fcbf180cc35f223619a99139a9a855b479eb88318c86253778d8ff4ec"
+    },
+    {
+      "path": "vendor/craft-ui/src/layout/toolbar.rs",
+      "sha256": "5b3f3f81d135f9d2b09c595c2ffe517ae90cd763e8574964b5c11c1e5a180d83"
+    },
+    {
+      "path": "vendor/craft-ui/src/lib.rs",
+      "sha256": "273fd6759d3188523232146b4a4d9e7b7ab5905182cc02624e469f3328fa55b5"
+    },
+    {
+      "path": "vendor/craft-ui/src/localized/mod.rs",
+      "sha256": "ea736eccb85800ef0f33598bdcb0f97e2825cac1fec8a80e1191694614f1db68"
+    },
+    {
+      "path": "vendor/craft-ui/src/localized/tests.rs",
+      "sha256": "945d238a2b2eae2de6f193720f413b995a19c97396df453b38e156b6d7d930f7"
+    },
+    {
+      "path": "vendor/craft-ui/src/panes/mod.rs",
+      "sha256": "1b1b0e9eecce4f62d8e9ff603bc5a462ed4bf4c4e1e857c96c240834ba2c104b"
+    },
+    {
+      "path": "vendor/craft-ui/src/panes/rail.rs",
+      "sha256": "ecb84b5efba6969a4ec0f96a6dc294ee1b13dce222471584b72bcfa71fc2aaa4"
+    },
+    {
+      "path": "vendor/craft-ui/src/panes/rail_tests.rs",
+      "sha256": "cbe3bc529218f116b6df17a561f925f8d83ca1750eea75927f01ff389e5cf858"
+    },
+    {
+      "path": "vendor/craft-ui/src/panes/tests.rs",
+      "sha256": "4581272977a8011d41e9664765b3da767f69c7f47ee6c811c0a8f8ba0c174bd5"
+    },
+    {
+      "path": "vendor/craft-ui/src/printing.rs",
+      "sha256": "1127bb71f897b3da69173472ffae43cbd159deff070fd0e64bdfab4adad7d646"
+    },
+    {
+      "path": "vendor/craft-ui/src/printing/tests.rs",
+      "sha256": "e86b7ab59297493d506f0b9e0044b845e0129999c952d12113d3939bfd35ec4b"
+    },
+    {
+      "path": "vendor/craft-ui/src/tabs/mod.rs",
+      "sha256": "44567cc89b865834864f1b8fa163ca06a4e00f250e3a1e9a8b9d76f4d4613071"
+    },
+    {
+      "path": "vendor/craft-ui/src/tabs/tests.rs",
+      "sha256": "f1559b631d51907083d6f709169d686aa8a1b14f309f06a2670d4f05ebf3a33e"
+    },
+    {
+      "path": "vendor/craft-ui/src/testing/mod.rs",
+      "sha256": "45ab85f469b57f132195e76de14b4547a7e2177028dac3c14476a9d57b74c0a4"
+    },
+    {
+      "path": "vendor/craft-ui/src/testing/tests.rs",
+      "sha256": "d3819572c75308a25db73a158dbef3c82f9bffa7899eed9ca84d4a809138ea93"
+    },
+    {
+      "path": "vendor/craft-ui/src/text.rs",
+      "sha256": "378b7988d8c16a0b248feb863ddd24afc8294f0f4332c3a61a9892ba27f5092b"
+    },
+    {
+      "path": "vendor/craft-ui/src/theme/mod.rs",
+      "sha256": "a024e07fc062b965c99cea5b417da9565db92d3aafa20376184ac15a0ca7551a"
+    },
+    {
+      "path": "vendor/craft-ui/tests-config.toml",
+      "sha256": "89599d0225f77bf9fbdf0048356221b9cc83f56414a64267bc134dce3314c9ee"
+    }
+  ],
+  "binary": "D:\\photocraft\\target\\debug\\deps\\photocraft_ui_egui-5e046baeed34217c.exe",
+  "binarySha256": "5b5316849de316190ec52934996367faadf5ae6f8c79fd52ba07416bd7021ea2",
+  "coreUnchangedDuringGates": true
+}
