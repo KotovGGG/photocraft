@@ -2,7 +2,7 @@
   "sourceCommit": "1c53e40a853acdde3b367162f24c00cd8e650441",
   "upstreamCommit": "b1cfff9d30298eea4f446a8f6a5e4285cb43c6e7",
   "pr": "https://github.com/storytold/photocraft/pull/10322",
-  "state": "Draft; native contributor acceptance pending; full UI has documented failures",
+  "state": "Draft; native acceptance pending; full UI and strict Clippy have documented failures",
   "files": [
     {
       "path": "ACCEPTANCE_RU.md",
@@ -56,8 +56,8 @@
     },
     {
       "path": "reports-and-demonstrations.zip",
-      "bytes": 8651093,
-      "sha256": "287d30301baccb3150fdc808419957e4079ff03f373784f324a70d8ab04625b4"
+      "bytes": 8651097,
+      "sha256": "24bea95361f6ea15a5c7548b2353c32058bb88e0188ff257c92b33495b9378b1"
     },
     {
       "path": "results.json",
