@@ -60,6 +60,16 @@
       "sha256": "80c1a1ae78e38905d5a3fc67aaa821edf391b919adf822c266c209f000534781"
     },
     {
+      "path": "latest-main-merge-tree.txt",
+      "bytes": 2148,
+      "sha256": "a0328611b36af33969ef33a0c76069d9946d6fe65d3e2746f16b7b5bae3d8f87"
+    },
+    {
+      "path": "LATEST_UPSTREAM_RU.md",
+      "bytes": 1763,
+      "sha256": "695ab679165017aa5c6a4f13c463b9100542bf90259ac58330388cf23e9f2847"
+    },
+    {
       "path": "original-audit-and-ui-inputs.zip",
       "bytes": 1218862,
       "sha256": "0dd31bc99a3a25bcc5644e3265c57ae65ec59e818607dc0b9f9b1f3ab2827c39"
@@ -76,8 +86,8 @@
     },
     {
       "path": "PR.md",
-      "bytes": 4140,
-      "sha256": "19d15ac7af2657347a9a3fd4b2ded46c6fa05e2f3144a8457750eea0512fcf28"
+      "bytes": 4635,
+      "sha256": "78714f10beb1dc174ae738c771f6ebb98d69ea553f20c55b8dc6e958abc00b4c"
     },
     {
       "path": "pull-request.json",
@@ -86,8 +96,8 @@
     },
     {
       "path": "README_RU.md",
-      "bytes": 7569,
-      "sha256": "8cbd646618137308c98706af9b61e9773d7bb859205d1c003b94930bfcff14a3"
+      "bytes": 9450,
+      "sha256": "f76b631330b88a54a85f20018b5c2d204d8f77e53c12e5f147425068a3527660"
     },
     {
       "path": "replay.zip",
@@ -109,5 +119,7 @@
       "bytes": 19376,
       "sha256": "7d4a585bd89caf298c685b8fc40081cf2eef7c65b1eb172afa265bb5ca1b60c7"
     }
-  ]
+  ],
+  "currentUpstream": "b1cfff9d3",
+  "state": "Draft PR: new upstream is unmerged; five conflicts identified read-only"
 }

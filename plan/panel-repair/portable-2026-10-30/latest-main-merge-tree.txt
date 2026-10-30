@@ -1,0 +1,38 @@
+0c279b36d3d5e32bdef86e3fa59e73c081c8041d
+100644 59c2c70beddf19702312ed88ee9a096f9ee19108 1	crates/ui-egui/src/lib.rs
+100644 3c37c7b783f268e47ff2beb636b1fa93c3df5afb 2	crates/ui-egui/src/lib.rs
+100644 11967c496d077db8e0e3497d24f2d7c87a9199a0 3	crates/ui-egui/src/lib.rs
+100644 c6c7a3567dbd4720a10d6a590866627785201cf8 1	crates/ui-egui/src/panels/toolbar.rs
+100644 d31b136054967bbb1f52019ca56bdb3309633788 2	crates/ui-egui/src/panels/toolbar.rs
+100644 6ad68bda02f41c380715226719e01601f24cc39b 3	crates/ui-egui/src/panels/toolbar.rs
+100644 a99b863d31a0a7ba2bddc647a9ab7907c622636d 1	docs/control-protocol.md
+100644 dc0dd244b86423f930baf4b1a7a189e24475e80f 2	docs/control-protocol.md
+100644 473c6fe4ffe886f184eb84d6ee5bd370afc87223 3	docs/control-protocol.md
+100644 a58474a1c06b899ff79c8b4da509257298893b06 1	docs/scorecard.md
+100644 df237334c8a37a1b397bf0b845054f80d20551e1 2	docs/scorecard.md
+100644 73e1bca325648d2dc438e7401a14fd16902f47ad 3	docs/scorecard.md
+100644 863bae16b819ff5239479aa7e79be7300908592f 1	docs/ui-parity.md
+100644 9cec1b1869f7609c525d471a733eae39f0fca0d8 2	docs/ui-parity.md
+100644 fec7f58657bcdb3db731f054b2ce86914adfdf34 3	docs/ui-parity.md
+
+Auto-merging ATTRIBUTION.md
+Auto-merging Cargo.lock
+Auto-merging crates/engine/src/shell_commands.rs
+Auto-merging crates/ui-egui/src/app/commands.rs
+Auto-merging crates/ui-egui/src/app/frame.rs
+Auto-merging crates/ui-egui/src/dock/tests.rs
+Auto-merging crates/ui-egui/src/lib.rs
+CONFLICT (content): Merge conflict in crates/ui-egui/src/lib.rs
+Auto-merging crates/ui-egui/src/menus/state.rs
+Auto-merging crates/ui-egui/src/panels.rs
+Auto-merging crates/ui-egui/src/panels/dock.rs
+Auto-merging crates/ui-egui/src/panels/toolbar.rs
+CONFLICT (content): Merge conflict in crates/ui-egui/src/panels/toolbar.rs
+Auto-merging crates/ui-egui/src/state.rs
+Auto-merging docs/control-protocol.md
+CONFLICT (content): Merge conflict in docs/control-protocol.md
+Auto-merging docs/gaps.md
+Auto-merging docs/scorecard.md
+CONFLICT (content): Merge conflict in docs/scorecard.md
+Auto-merging docs/ui-parity.md
+CONFLICT (content): Merge conflict in docs/ui-parity.md
