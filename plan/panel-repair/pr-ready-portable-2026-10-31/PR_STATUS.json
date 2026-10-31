@@ -1,0 +1,18 @@
+{
+  "url": "https://github.com/storytold/photocraft/pull/10322",
+  "draft": false,
+  "head": "d0e052e48434fa13f4ad60eebd20eb125bacac24",
+  "base": "422ca7beda90d927643bcd074646ebbd37706d75",
+  "mergeable": true,
+  "mergeable_state": "unstable",
+  "checks": [
+    {
+      "id": 124567618525,
+      "name": "CodeRabbit",
+      "status": "completed",
+      "conclusion": "skipped",
+      "url": "https://coderabbit.ai?utm_source=cr_app&utm_medium=github"
+    }
+  ],
+  "statuses": []
+}

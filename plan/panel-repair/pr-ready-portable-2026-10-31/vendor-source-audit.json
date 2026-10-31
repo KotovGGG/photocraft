@@ -1,0 +1,12 @@
+{
+  "source_revision": "c5a1cbfb5f9049f9270955caffb5bee5997aebf7",
+  "unchanged_source_files": 76,
+  "local_patch_files": [
+    "vendor/craft-ui/src/docking/chrome.rs",
+    "vendor/craft-ui/src/docking/render/dock.rs",
+    "vendor/craft-ui/src/docking/render/floating.rs",
+    "vendor/craft-ui/src/docking/render/group.rs",
+    "vendor/craft-ui/src/docking/render/mod.rs",
+    "vendor/craft-ui/src/docking/surface.rs"
+  ]
+}

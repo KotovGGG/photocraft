@@ -1,0 +1,84 @@
+{
+  "active-panel-benchmark": {
+    "exit": 0,
+    "results": [
+      "test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 4611 filtered out; finished in 4.87s"
+    ]
+  },
+  "all-panels": {
+    "exit": 0,
+    "results": [
+      "test result: ok. 164 passed; 0 failed; 2 ignored; 0 measured; 4446 filtered out; finished in 14.50s"
+    ]
+  },
+  "clippy-no-deps": {
+    "exit": 101,
+    "results": []
+  },
+  "clippy": {
+    "exit": 101,
+    "results": []
+  },
+  "desktop-check": {
+    "exit": 0,
+    "results": []
+  },
+  "desktop-matrix": {
+    "exit": 0,
+    "results": [
+      "test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 4611 filtered out; finished in 46.43s"
+    ]
+  },
+  "final-transitions": {
+    "exit": 0,
+    "results": [
+      "test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 4611 filtered out; finished in 82.39s"
+    ]
+  },
+  "fmt": {
+    "exit": 0,
+    "results": []
+  },
+  "full-ui": {
+    "exit": 101,
+    "results": [
+      "test result: FAILED. 4494 passed; 95 failed; 23 ignored; 0 measured; 0 filtered out; finished in 284.95s"
+    ]
+  },
+  "layers": {
+    "exit": 0,
+    "results": []
+  },
+  "native-matrix": {
+    "exit": 0,
+    "results": [
+      "test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 4611 filtered out; finished in 80.32s"
+    ]
+  },
+  "seam-matrix": {
+    "exit": 0,
+    "results": [
+      "test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 4611 filtered out; finished in 71.27s"
+    ]
+  },
+  "shared-clippy": {
+    "exit": 101,
+    "results": []
+  },
+  "shared-full": {
+    "exit": 0,
+    "results": [
+      "test result: ok. 579 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 3.72s"
+    ]
+  },
+  "wasm": {
+    "exit": 0,
+    "results": []
+  },
+  "workspace-integration": {
+    "exit": 0,
+    "results": [
+      "test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 138 filtered out; finished in 0.31s"
+    ]
+  }
+}

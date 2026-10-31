@@ -1,0 +1,22 @@
+{
+  "identical_png": 443,
+  "changed_png": [
+    "pro-1.5-under-documents-preview.png"
+  ],
+  "comparison": "f8c0c4a72 before final upstream merge",
+  "review": {
+    "file": "pro-1.5-under-documents-preview.png",
+    "max_channel_difference": 94,
+    "mean_channel_difference": [
+      0.06339236111111111,
+      0.06348394097222222,
+      0.06391927083333333
+    ],
+    "changed_pixels_per_channel": [
+      21777,
+      21785,
+      21793
+    ],
+    "visually_reviewed": "Preview geometry and content are unchanged; both source PNGs reviewed side by side."
+  }
+}
