@@ -19,5 +19,11 @@
   "capture_native_height_and_document_header_review": 0,
   "capture_desktop_review_matrix": 0,
   "capture_fourth_review_seams": 0,
-  "capture_final_review_transitions": 0
+  "capture_final_review_transitions": 0,
+  "shared-second-all": 0,
+  "shared-second-clippy": 101,
+  "shared-second-fmt": 0,
+  "shared-second-wasm": 0,
+  "shared-second-workspace-clippy": 101,
+  "shared-second-workspace-tests": 101
 }

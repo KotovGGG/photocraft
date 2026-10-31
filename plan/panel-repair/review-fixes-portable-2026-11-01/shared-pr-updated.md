@@ -8,10 +8,10 @@ Changes:
 
 Scope: six implementation files, one focused test module and its registration, and README. No application code, vendored snapshot, fonts, binary assets, dependency/CI changes or additional layout tree.
 
-Ten focused tests cover corner axes, top gutter geometry, exclusive host surfaces and fitted float sizes, stripless collapse, separate frame/internal-divider ownership, real pointer resizing, adapter forwarding, and invalid numeric gaps.
+Eleven focused tests cover corner axes, top gutter geometry, exclusive host surfaces and fitted float sizes, stripless collapse, separate frame/internal-divider ownership, real pointer resizing, adapter forwarding, invalid numeric gaps, and host-owned dock body bands with stock column edges retained.
 
 Validation:
-- `cargo test -p craft-ui --features serde,native-windows,screen-testing`: 589 unit tests, 10 integration tests, and 8 doctests passed (2 doctests ignored).
+- `cargo test -p craft-ui --features serde,native-windows,screen-testing`: 590 unit tests, 10 integration tests, and 8 doctests passed (2 doctests ignored).
 - `cargo fmt --check`: passed.
 - `cargo check --target wasm32-unknown-unknown -p craft-ui`: passed.
 - Strict UI Clippy is not green: two `nonminimal_bool` diagnostics in unchanged `crates/ui/src/docking/render/preview.rs:120`.

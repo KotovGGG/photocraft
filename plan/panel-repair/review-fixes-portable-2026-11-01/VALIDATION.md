@@ -19,6 +19,14 @@ explicitly supplies replacement input for its independent floating parts.
 The shared PR is still unmerged: no accepted upstream SHA or vendor removal is
 claimed.
 
+A follow-up shared-only finding was fixed at `4f263ed`: docked custom groups
+suppress stock top/bottom body bands while retaining column edges. A real pointer
+regression covers both ownership modes and all four sides. PhotoCraft's adapter
+returns exclusive group ownership only when `floating` is true, so that docked
+host-owned path is not used here. The tested consumer snapshot remains the
+`235fffbd` patch until an accepted upstream revision replaces the vendor bridge;
+the new shared-only behavior is not presented as a rerun of PhotoCraft's runtime.
+
 PhotoCraft migration now preserves hidden dock visibility, stops retrying a
 failed launcher migration every frame and marks the status as an error. Obsolete
 bare layouts fall back without retaining a payload that blocks migration;
@@ -32,7 +40,7 @@ Fresh results:
 |---|---|
 | Panel-filter regressions | 167 passed, 2 explicit benchmarks ignored |
 | Workspace integration | 9 passed |
-| Shared UI (`serde,native-windows,screen-testing`) | 589 unit, 10 integration, 8 doctests passed; 2 doctests ignored |
+| Shared UI at `4f263ed` (`serde,native-windows,screen-testing`) | 590 unit, 10 integration, 8 doctests passed; 2 doctests ignored |
 | Desktop all-targets compile check, fmt, layers, wasm | passed; 31 layered crates, 24 wasm crates plus codecs/heif |
 | Four WGPU capture tests | passed; 444 fresh PNGs, three Pro themes at 100/125/150/200% |
 | Complete UI library, sequential | **4640 passed, 97 failed, 23 ignored** |
