@@ -1,0 +1,15 @@
+{
+  "current_result": "4640 passed, 97 failed, 23 ignored",
+  "historical_failure_count": 95,
+  "current_failure_count": 97,
+  "new_failures": [
+    "dialogs::adjust_editors::ui_tests::gradient_map_stop_picker_closed_without_a_colour_changes_nothing",
+    "dialogs::adjust_editors::ui_tests::photo_filter_colour_picker_previews_live_cancel_restores_and_ok_is_one_step"
+  ],
+  "historical_failures_not_reobserved": [],
+  "clean_main_baseline_rerun": false,
+  "new_failures_absent_from_previous_upstream": {
+    "dialogs::adjust_editors::ui_tests::gradient_map_stop_picker_closed_without_a_colour_changes_nothing": true,
+    "dialogs::adjust_editors::ui_tests::photo_filter_colour_picker_previews_live_cancel_restores_and_ok_is_one_step": true
+  }
+}

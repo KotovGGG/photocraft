@@ -1,0 +1,26 @@
+{
+  "surface.rs": {
+    "equal_after_formatting": true,
+    "sha256": "3c0be258517ca7997c0157ea5236d6dbcbf5cb1e9bb091f5189b13af09aadaa1"
+  },
+  "chrome.rs": {
+    "equal_after_formatting": true,
+    "sha256": "ffcc1b60bd4247fb46bce7d82976b4019081740e7edcf9bb023bbd5184e02350"
+  },
+  "render/dock.rs": {
+    "equal_after_formatting": true,
+    "sha256": "2ed4df509374556f1bf73c668c39160412655ab3dacde5b48b290c9b58a2365c"
+  },
+  "render/floating.rs": {
+    "equal_after_formatting": true,
+    "sha256": "007afaa1f16cbcadf8db8e649dd1236ff003541a256d53f1e67ad6e555bc312f"
+  },
+  "render/group.rs": {
+    "equal_after_formatting": true,
+    "sha256": "a503e7d9c24991b2d3096f57b69d8ec2b157ad7fd1d1fd6648deb6a0521f22e2"
+  },
+  "render/mod.rs": {
+    "equal_after_formatting": true,
+    "sha256": "b1196670aca98656e8ac227afd3af5152b7b8f95d544c949851d3073c5aae130"
+  }
+}

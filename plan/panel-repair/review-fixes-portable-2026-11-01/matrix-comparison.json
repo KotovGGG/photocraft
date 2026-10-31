@@ -1,0 +1,3136 @@
+{
+  "summary": {
+    "png_count": 444,
+    "byte_identical": 0,
+    "central_roi_identical": 444,
+    "roi_explanation": "Exclude top bars, left tool rail and bottom status bar; physical-scale-adjusted 43,70..1280,765. This is a comparison aid, not a complete visual assertion.",
+    "full-height-after.png": {
+      "crop": [
+        810,
+        223,
+        1268,
+        727
+      ],
+      "pixel_identical": true
+    },
+    "top-collapse-after.png": {
+      "crop": [
+        50,
+        83,
+        1240,
+        180
+      ],
+      "pixel_identical": false
+    }
+  },
+  "images": [
+    {
+      "file": "pro-1-bottom-corner-preview.png",
+      "sha256": "6c243e850b0b40d6a4d04a9bd4bf0a385addcc269b87c3f790e4b9083fc0cb10",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1-bottom-corner-resized.png",
+      "sha256": "b9e209c5fd149e3e0949cf5c7d93f0549b50731f255a76ab3e21012dedf1ba06",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1-closed-row-drag.png",
+      "sha256": "40fdf01a97c38b45ca3c6106bde9a66f9f7dc5d545d144ce27cd5ea66d3b675b",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1-closed-rows-and-side.png",
+      "sha256": "84dcc5a805d8bbbb227c3ceae9182ff67f49d9d09b99b61a13ffcf3abafc4d4d",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1-detached-compact.png",
+      "sha256": "031c7d35ea52ce5516175c4a7c69a6cee3677ddadd4d303bb96a756532633310",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1-expanded-parts.png",
+      "sha256": "31ff04000a1d34ce4aa2c8cb6627ea108234920d3badec5b5455fb7e67f3eff2",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1-full-before-join.png",
+      "sha256": "ee1837a7666e4b0bb84338885886534ed761b0212431cff8d7b36056496d88a7",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1-full-detached.png",
+      "sha256": "3f3bb57c117a7a46d200eccd23c22c6def015f556f8a395831dd80c9318baab5",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1-full-joined-to-mini.png",
+      "sha256": "29767242781464143cd8cc3cddf889a0b79c8a9b52c1b4b68a21b35bd0cd702f",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1-horizontal-expanded.png",
+      "sha256": "bba92eb1061f365669d9d72fe787a284a2e2401fe219b4d8535822078f04ff41",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1-Left-collapsed-again.png",
+      "sha256": "7582a4d983a72606e08380d408c1affcc8125299ae6dd0d0da103658f77fea32",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1-Left-floating.png",
+      "sha256": "e10dd95a971530dff4480cfbce53f33a3e01047248f56acc0a960c560fbed4c5",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1-Left-joined-miniatures.png",
+      "sha256": "2e4e6e88e94e67de122f523a8ec769a3b1c8bb6488826b3e45d40aac22e26040",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1-Left-left.png",
+      "sha256": "32530f167b5561ced2107bf7e8bbee934f12cfb5a8091e9dd984fa765f7a51d0",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1-Left-mixed-expanded.png",
+      "sha256": "8f044954167998c6a41ca1ff344e053c31212e6df375c9c0de0f35c0cda961ec",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1-Left-rightInner.png",
+      "sha256": "9d7e584699fd2768c62aab73e8f4f52b2d3b24e82d3a5a3e14e8f2c24fdc2251",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1-Left-rightOuter.png",
+      "sha256": "13315a937dbb4d263d34bc8f0af20c6e031ee57f5cb1787cc4f45291e99a5283",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1-middle-resize-preview.png",
+      "sha256": "6f77a1d61bb4cf35e290f356f922cd6a51c86498bed22cf1b020f2b041826e8d",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1-middle-resized.png",
+      "sha256": "6f77a1d61bb4cf35e290f356f922cd6a51c86498bed22cf1b020f2b041826e8d",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1-Right-collapsed-again.png",
+      "sha256": "46198df221a2dbe8ce462bbbd4c9da581c5985bf1a78e25bf336e5f5188464c0",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1-Right-joined-miniatures.png",
+      "sha256": "fe7b8b17e4947d252268bf11df6e57389e606880bdd9e85d49b9cfe9a0642f86",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1-Right-mixed-expanded.png",
+      "sha256": "dd8f059a57d0b15da6cf20a71a9af8f7a52fca855cc5b4e2cf69052635cd4532",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1-top-added-tab.png",
+      "sha256": "b34f280b66db1915a50d4dac0c328c5f7d3a755baa3453f80b5fdb4ed5b8d1fd",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1-top-between-inserted.png",
+      "sha256": "ffcc9e874025e436c9777a17c076a683472f1b052bdce661dadb1994bfa47dc4",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1-top-between-preview.png",
+      "sha256": "cd7a0ec0b200324b4f188693fee35f0ea27e0d4eda76288917de49fd76815ce1",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1-top-collapsed.png",
+      "sha256": "db823273aab91dd38117558657a8a3ca0a531be2250cac218644d0465eb1f3cd",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1-top-expanded.png",
+      "sha256": "1c9df04a5b4408ab1c3b797f262e444e508e0d964e5d07c4dcfb538934f1b7ea",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1-top-recollapsed.png",
+      "sha256": "0895e6ce4596a0b2b8fb1cb4befafc45a2bb8a8d4cfe4fa496c4d3e4b017e0ad",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1-top-tabs-collapsed.png",
+      "sha256": "e44b2fed81fd13cd3ac6e0945004ae93013712557f0f0e7533fc970976df26ab",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1-top-tabs-expanded.png",
+      "sha256": "5e1883599493f3bd319823853d89cf67e32972ce545479ebce2e837a3df2e3e1",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1-under-documents-collapsed.png",
+      "sha256": "2e2a9dc37c1ebea586a89106a060202e7b0f66be028a1d3e1f6b2dbc23d414a7",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1-under-documents-docked.png",
+      "sha256": "006213676c8989e4cdb9acbd9e9763b66d4be7882339fc12248311af7c406701",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1-under-documents-preview.png",
+      "sha256": "feb60aa9778dc36f3c336394d81e3380e59b7e5f2ff6c62026a8deabeb282c57",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1-vertical-collapsed-again.png",
+      "sha256": "f90096a1359b1f3eb06b70b330c2a78ac5eaf0b372cac398cac404caf332ab1f",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1-vertical-compact.png",
+      "sha256": "b2ebe6a87e017e5fc6db3af15ada0b70658ef5ac3b250f57f7eac1c718ac2f01",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1-vertical-expanded.png",
+      "sha256": "5eee86032291e1727d348b4b368d0e0ca7a4a243566eab39d2eb4be5b61bb041",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1-vertical-restored.png",
+      "sha256": "e5ce9c72d81560374931e07839ec915231b46d2b1276ea5a20332f0dd6308b6b",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.25-bottom-corner-preview.png",
+      "sha256": "fa55cf1fca74e56d1be89f7385ed07063b421dd88f57307521851cfc10d44d3a",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.25-bottom-corner-resized.png",
+      "sha256": "0ca699748902b1c427015ac152223507246e0e1593e74cdcfd280820bf729b9f",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.25-closed-row-drag.png",
+      "sha256": "ed13a39fee105003ae55413fa441aedeb99991dbd88447acea24ffb35376f0eb",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.25-closed-rows-and-side.png",
+      "sha256": "ec47c5a9b2d3a29559252bef130f877d17f891091feeff07032220d199f2db1c",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.25-detached-compact.png",
+      "sha256": "c251fd2d529d6adf6066edb1e29638ad40e6823224bcecffbf7e8d932b2e600f",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.25-expanded-parts.png",
+      "sha256": "555d81363dfbb24f71ec7a1c99a8115b91675daf057d46be23cb526faa7bea91",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.25-full-before-join.png",
+      "sha256": "2fdbcedead538ff0c5379cda06aec3bc70dfe0185e7677916b8814263168a601",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.25-full-detached.png",
+      "sha256": "df18b0ac297cc3fabfb522eb37866b1d37c6ddedd7c9423ae950c5a93f4dfed2",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.25-full-joined-to-mini.png",
+      "sha256": "371efb7090eb0edf252d53bb1667fb2656bf6259dfa76e85b7858c4f2368f4f8",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.25-horizontal-expanded.png",
+      "sha256": "cefe03cac49a820fede221e1a3dfdffaeb9f9b88c2517d0cd954488c69f03373",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.25-Left-collapsed-again.png",
+      "sha256": "f0b0c6404242673d141a5d2b049d306665b57d2058d990d0c70d15f1d5940152",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.25-Left-floating.png",
+      "sha256": "51143e55decc69194ee088aaae2fd79dacc8ee88c03d8bd77675da5d1932f04d",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.25-Left-joined-miniatures.png",
+      "sha256": "13e8b30f7cc2b27b0d39e487d207abff6eeb83314e99ce5dcf63b5adc7317124",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.25-Left-left.png",
+      "sha256": "900c0a9455f1b46707932cbde20ad32ea7395473f6941dc0178371e7106c305b",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.25-Left-mixed-expanded.png",
+      "sha256": "94ff00828aaa01290673a3096ee3b82edfd5c0e308300d205b0ee6f6a8c9e88c",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.25-Left-rightInner.png",
+      "sha256": "2569aaaa203485b1af2c95376d772e22f115607aa3cac6be4ad490358945e989",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.25-Left-rightOuter.png",
+      "sha256": "2b718a105cf3ca371556e6dc968dda72d2ff2a6d99af52cfc760f5a63833f497",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.25-middle-resize-preview.png",
+      "sha256": "823451923d8b9d281d127e12bcbeacaab1bada0a2840eb80f02e61200d75fce5",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.25-middle-resized.png",
+      "sha256": "823451923d8b9d281d127e12bcbeacaab1bada0a2840eb80f02e61200d75fce5",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.25-Right-collapsed-again.png",
+      "sha256": "2a414995544baa3ce8b85b7e70d38c94912aa3bf655d6386ca80391ed3e28826",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.25-Right-joined-miniatures.png",
+      "sha256": "c35399d201fa61b75d2d7dc099c067ed1baa7a9934ec1993bca8533de9d25bae",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.25-Right-mixed-expanded.png",
+      "sha256": "f4abb5ec89da0af5b25d5faaac479fb1887ccec27206f406ce13c21f92abc355",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.25-top-added-tab.png",
+      "sha256": "430f4c4fb8e738c498d15ec87e830b7e478e3bdf466cd3cf1759985177533755",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.25-top-between-inserted.png",
+      "sha256": "d1c7b9d40682fec584883678a67e74f94f22ddc955ed086b70ff2751b2e9111f",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.25-top-between-preview.png",
+      "sha256": "7e1c8558d3acf31599e6806ef1dc90880c9343c31b993ccf0b27d1a1ca880384",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.25-top-collapsed.png",
+      "sha256": "ee9ad7cb7e4fa45ef74566903dff81d5f33cc5cc95785d65fdf90a98d714c452",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.25-top-expanded.png",
+      "sha256": "ad15ba71456f6f6b146d92db7d257c62d1ba88926d5ff00b43205a50cfe1f2e8",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.25-top-recollapsed.png",
+      "sha256": "1e0388b87c398d512bd0d4bfc1c6e2508aa0081d8cd6bae452dfe1023a1bc8be",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.25-top-tabs-collapsed.png",
+      "sha256": "433052e35b4e6bcb4459ee74d71fe29a545aa3f91598725351e76425eff320b3",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.25-top-tabs-expanded.png",
+      "sha256": "8f5159e82701fbc482ff6dd999fce0b83f349742629853a0f59b0d920683c6d2",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.25-under-documents-collapsed.png",
+      "sha256": "07fbc5040109595e917297125ebcfdeb130a626893d2bbc214af6d289b805e9c",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.25-under-documents-docked.png",
+      "sha256": "ba6c7a4594c24263eec462baec5a35863174472c7325daedfa50a59aa4d90291",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.25-under-documents-preview.png",
+      "sha256": "9c688914b6e4468226bb3df40e87e56f65bb2bf4aaa289fcc42875dc0371415d",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.25-vertical-collapsed-again.png",
+      "sha256": "0e4aeca3da23e3662c9fe4eb8a4e8c931f408d2d4375f77473f6882230678e6c",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.25-vertical-compact.png",
+      "sha256": "e89b91d0236d55aa34be7204579fadbb8b8fe7db48bb16f6680d969360c5266b",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.25-vertical-expanded.png",
+      "sha256": "f0cebdd3a54d5b1f4e6c506b77b97f1eb5113501df428e416d2c03a7c4cb54ce",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.25-vertical-restored.png",
+      "sha256": "21792581ac46033472bac87a0077ac799cc4b91667e053af724f9632577fea77",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.5-bottom-corner-preview.png",
+      "sha256": "0744b00c650b72b7cf9d150d37cade4a2aca43f2207443f38cef629b4d81f175",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.5-bottom-corner-resized.png",
+      "sha256": "3a74c951291b9c4c151384ee0b0de1107ac630e9180ba7011ca96d656f13a390",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.5-closed-row-drag.png",
+      "sha256": "1037d809efe68f0aea3583da2c7e916c50779e32a50ca2202b203992e27614f8",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.5-closed-rows-and-side.png",
+      "sha256": "d4f8a9712de666077fa2d112f17c4c925f21eea9f421e08fc4dd4f645be6fc36",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.5-detached-compact.png",
+      "sha256": "3f3b02a5dc44d436ac9fe68e66a04a26073d09fcad7291a8730aba8e85376523",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.5-expanded-parts.png",
+      "sha256": "23a3a81d5d5dd36a7bd67a1c1d5d1dfd9eb3a9ddc457912b3c09677075797908",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.5-full-before-join.png",
+      "sha256": "ddfdf2d48271d9a0eaa584e9be952c205cb4223654e3fbc7e2f7782e4f404ea8",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.5-full-detached.png",
+      "sha256": "aa4b99b658cef07e126c393c3447c939ed2a403718d87ab709ff5387435d3332",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.5-full-joined-to-mini.png",
+      "sha256": "4c7624fa3e231267660c095adb906fd9faa034730c2f3ecb0b410b50900bca60",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.5-horizontal-expanded.png",
+      "sha256": "7eaef45495f94accdf9c6b570b9ea537c06a503dbe95e02ad247f040d8065ee2",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.5-Left-collapsed-again.png",
+      "sha256": "4436677bdf32c62ce3c2d6769b626082f32f7c4b5c3573c5e5d7b6d6d385d748",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.5-Left-floating.png",
+      "sha256": "7f6158843ed905fbedf3a5abdb319ae90a459cdb61bf16218c3b6b1e096aae01",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.5-Left-joined-miniatures.png",
+      "sha256": "f4ba38f003bcb7bb0961d8370a7b8376af56677547e6432c536b97c2bc2d326a",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.5-Left-left.png",
+      "sha256": "100e1e9b6cc34d0b7f48f513714192d104431eebe40ea3f833b396a7d3cdf3e5",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.5-Left-mixed-expanded.png",
+      "sha256": "f3494a97bffca2547e648a8f8dbf990a341bce5af544d370e5e54df7c5fb02ef",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.5-Left-rightInner.png",
+      "sha256": "5529eec08ab52102bb3f21d4284efbfa1f0a65b3db76ca613eed7d96bb48d58a",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.5-Left-rightOuter.png",
+      "sha256": "a55ff69d5bcdf9056b55fedd3a2bc198a145442795e75a04faaa5297c089bda8",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.5-middle-resize-preview.png",
+      "sha256": "4d32c3487518df2a24640db26b7f9ca5336f64c2037f62baf7e83bc80fff68b1",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.5-middle-resized.png",
+      "sha256": "4d32c3487518df2a24640db26b7f9ca5336f64c2037f62baf7e83bc80fff68b1",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.5-Right-collapsed-again.png",
+      "sha256": "7c0f3f8b6a7800b5ed86d278f600835d646ac4d4b27c385e67a179c7ce146831",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.5-Right-joined-miniatures.png",
+      "sha256": "c33425cc29fd399b62483714e56ce1364b7db050044e09f8c53352320c384f1c",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.5-Right-mixed-expanded.png",
+      "sha256": "7aa5a97bb4f2565a361e24f551a900705c9cb43374ebd8e29bb4ae81143429ab",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.5-top-added-tab.png",
+      "sha256": "98f3c9e8aa62c2a2466f8936ee722eb1bb166dc87ff0711511b6f13e95d60f13",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.5-top-between-inserted.png",
+      "sha256": "75581c8c0c1dc4e6d1c33f5ad9d1cee005b3ffaba0b345cf19114b94b3143ebf",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.5-top-between-preview.png",
+      "sha256": "ea077573d121ef154b16d8efb3984285821c3bb3b06ae407304447675a02fc47",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.5-top-collapsed.png",
+      "sha256": "541eb795599b4cc329b8401e63e1bdbe7e33f22b880eba7a724301bc288a8310",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.5-top-expanded.png",
+      "sha256": "9d1f88d6fa6c82840ea65adb42e86c2000423a57378eb416eb08c4daac0daa07",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.5-top-recollapsed.png",
+      "sha256": "8217a6029976150433972ba05e6d960815ddef5242c2f6866862efdcfb6248a8",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.5-top-tabs-collapsed.png",
+      "sha256": "1e2a65d980657efab9f87af100b54f3b7ee82a688b52c1cfa62b89dc1b44e1ff",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.5-top-tabs-expanded.png",
+      "sha256": "33dac4d1057f9347611dcc9747a66c7dbe759cebe5ac2f5df5af3d98153065b3",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.5-under-documents-collapsed.png",
+      "sha256": "c720be3bbc2219a30ec023f30335acedc065f80c9ff7180cdd124de7b284bb73",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.5-under-documents-docked.png",
+      "sha256": "7bf9e61c94fdccf8448581a75968e7b6ef68792bae42f35fe30edc14cbf5f98f",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.5-under-documents-preview.png",
+      "sha256": "75f9e8431fb30d5d7bde3e445cd6f05116c440d189c23ac3397b276868ddf2fa",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.5-vertical-collapsed-again.png",
+      "sha256": "0c4f1a32046834f686f4d2a4e4d6fd689e6f215b8d56f3db77e787932291f84b",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.5-vertical-compact.png",
+      "sha256": "8496209430482b82c9b7ec7d196abc08c1945b23deae1772053ee80be23c1e2c",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.5-vertical-expanded.png",
+      "sha256": "4f31358f522792efdd9d2e11f6fce6faf48d82b3b1faf3cb32532b82a18d7c3c",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-1.5-vertical-restored.png",
+      "sha256": "8bc8fc41a1663f23705f3d4e7fb1451700d7bb7598569d36cb9e3725e897fa7b",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-2-bottom-corner-preview.png",
+      "sha256": "a8ec87d2ca6d82fa95411fe05b1fdbfeae74159aa74a453cdf444e459a669afe",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-2-bottom-corner-resized.png",
+      "sha256": "70e211aa33cd36cb6d7342fff39df07f0459e89cf2e8a0d22d36abf0d93424f6",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-2-closed-row-drag.png",
+      "sha256": "aed60e7aeadbac90e2e3c4792b3acfd3372a1d53f007874fd133a0be8236678a",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-2-closed-rows-and-side.png",
+      "sha256": "625bb878123c69e35a0715b568a6000b2dd1ae710c3480ff31e5ce6edf19ab14",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-2-detached-compact.png",
+      "sha256": "393557eaad00d20a5702191544b97421171327460063e3473594327ee2b6e5e1",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-2-expanded-parts.png",
+      "sha256": "24bdc64703995e27737db9896fd4c670cd37af6a5e84cdb690d34c2efd34ba74",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-2-full-before-join.png",
+      "sha256": "cdcfc0dd7113dc3238d300d9c0c8cb0ff226f2ebe1b98ad2ce9054ae58cf5410",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-2-full-detached.png",
+      "sha256": "fab202ea58a535536c4fea0d464f12ff195e04986bf457b763ca94f05cf37161",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-2-full-joined-to-mini.png",
+      "sha256": "bdfc0ceb9ba62b9ef4430f9bbfbef2748732571bdde8b10c5a72a8d547c83874",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-2-horizontal-expanded.png",
+      "sha256": "eb3608ea2c3c4a2c73d2077425fc7bc74758b1010461ccc7b3e932e50ff80c01",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-2-Left-collapsed-again.png",
+      "sha256": "2c4553ce2e74d32c279e4d7316935465bfaffd2165b48d08f0e0d18ebf0cdbac",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-2-Left-floating.png",
+      "sha256": "ded843dfaa0d02ea8ab562852191e59c0dab9bd6250e847bfef2c44724dd599d",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-2-Left-joined-miniatures.png",
+      "sha256": "3a29ce14188d916316641da6ac1f7d3ba7c9dc1da3946b0775b9a94608a6cbbe",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-2-Left-left.png",
+      "sha256": "ba9a344e230da55bcaa06526eb3385387f5065b7bfcd4c4ec1c906e1f3c528ea",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-2-Left-mixed-expanded.png",
+      "sha256": "4d5a142be99e4fa0503422a3b18d23b570302e47dd96764d9fdef8fa8ade806c",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-2-Left-rightInner.png",
+      "sha256": "72fc261ab5c175cf7819dfad3d4869197d2af20fc796f4c901a110b37d989672",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-2-Left-rightOuter.png",
+      "sha256": "4054efb9faa4ba24b5fa2541a0eb71d903bfc1c7e0d73e67968e7143b57edbca",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-2-middle-resize-preview.png",
+      "sha256": "02d1f83ec2ea2e630147dd4e65aa2ee048754926f6edf3349ca26da4350126a0",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-2-middle-resized.png",
+      "sha256": "02d1f83ec2ea2e630147dd4e65aa2ee048754926f6edf3349ca26da4350126a0",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-2-Right-collapsed-again.png",
+      "sha256": "0936d988076883baa8b3fc5105113d26a81926e48295f032ba825f4e273dd40d",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-2-Right-joined-miniatures.png",
+      "sha256": "e383a91dd64d90463cb095fd7920c9c3ad5efe354ee7844fa4be21229c7437c1",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-2-Right-mixed-expanded.png",
+      "sha256": "751ee59829d7a167b5d7b272aaea903e2b59f43f8ada518cf5fc986ce65068f1",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-2-top-added-tab.png",
+      "sha256": "ce246183bdee5687f2b914d93eee83297657a14953ea605b43d6f724e8b7d649",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-2-top-between-inserted.png",
+      "sha256": "e09fb832b7260a93ffd969e13f634f33bc2ecd20224dbef7a65b332a47640a03",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-2-top-between-preview.png",
+      "sha256": "86cf02742258a7a1dba2c54a226eae65b41d47cc3b3e69b32f62a474dd797747",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-2-top-collapsed.png",
+      "sha256": "bb341619c071bb6aaf470ff0a493ef7353021b8ebbcbc58c7ccf19aff051c540",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-2-top-expanded.png",
+      "sha256": "564c5163ec2099076cadb221e9afc10449e27e256e0f0f0553e7b7989eb5cc16",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-2-top-recollapsed.png",
+      "sha256": "882aee1c76270e3bc716e3b647a500dd8c0499038b4c2e468ec845c965fbfda0",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-2-top-tabs-collapsed.png",
+      "sha256": "88697b80a3d45ea406c68cc15d6349202636f70ef0e53d8463cd140f8eef5ffe",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-2-top-tabs-expanded.png",
+      "sha256": "dbfbac8bd6fe291272ce7c8b3510b856386c8cd27f69c427e490a18bc23f42e1",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-2-under-documents-collapsed.png",
+      "sha256": "5a6b2400d049ba128b1cfe79daf662deee14ab25ba85d06a4513632555c4b051",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-2-under-documents-docked.png",
+      "sha256": "9ed2c4f51721f371cb630f52505033e6ee5cfe5982ade91c625c23a95ea92c0b",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-2-under-documents-preview.png",
+      "sha256": "7c4fe72460bc9dcaabd7124bfb9214c98984da318c123b81d9fd4dc3344e2fda",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-2-vertical-collapsed-again.png",
+      "sha256": "f3bc985b3bceacc3a4976ac5d012a2e7d2ba1b0939589eeab11351cbf8fe1578",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-2-vertical-compact.png",
+      "sha256": "88656597f3c56614b20ba131108de243535bfa942694bdccc933fa6ab668c97e",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-2-vertical-expanded.png",
+      "sha256": "814224d2929ad55d558c4ba1f5e9a81ede47ecb172134f410036b5b35dc8b39a",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "pro-2-vertical-restored.png",
+      "sha256": "937fd45ab8a629ecb88e4306c8c193eab47541df634757f14fd1c8733a457311",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1-bottom-corner-preview.png",
+      "sha256": "66f916b9072cc597531a3cfb09f3ad3bb35ec41363fa2f5e6d84ddea114ac71c",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1-bottom-corner-resized.png",
+      "sha256": "d78f0922bb5204ac95b8e8bd2168931e7d9af2512d530ad9bccae24f86b476f8",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1-closed-row-drag.png",
+      "sha256": "cdd0005711fa7c3d395aefab833dadbcb36eba374d830f87d6dd2bc1a079665c",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1-closed-rows-and-side.png",
+      "sha256": "cdc043f4ffda8ca94c1e2f5fcd074f875aeefc5e0388dcb5c9361b1b61b1d8e7",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1-detached-compact.png",
+      "sha256": "41f0204717116a51e1671a50e4d97c93914ae6ccc842d5d3eecaf54ed4a99f67",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1-expanded-parts.png",
+      "sha256": "e7b351108a843c5cdad7fd88c4173375a5f659ca1ea3850ff917168d708564ae",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1-full-before-join.png",
+      "sha256": "0a05cc71b71f6db88317da0518be97b39203ad72c770fde8888c21160e5fe273",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1-full-detached.png",
+      "sha256": "4dd4fd5fa33b403e7c749f1ea1819d6ecde9411fe0512313918fbf670242d4ee",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1-full-joined-to-mini.png",
+      "sha256": "f463b0ecd3fc5912b33f5564dac3b0f90c991b20e1dbbe1704e7bae1bcda1072",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1-horizontal-expanded.png",
+      "sha256": "5568d950ea4042d066531d9f87395fc2fcb718870b816b42ad3703fdbbec4bcd",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1-Left-collapsed-again.png",
+      "sha256": "1bf94ae9d4d800606640474a375a5caddbfd588b498893faa66b6e72c317412f",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1-Left-floating.png",
+      "sha256": "c1949513cadfaa659ab97a091edce2214878daa4961b599bd44bb0024f0fc43b",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1-Left-joined-miniatures.png",
+      "sha256": "8aa7cfd28c03062894582005534b29a300b73da56ef5fcb10e1b79cb61f27ebe",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1-Left-left.png",
+      "sha256": "6277481190233b3fe5bec9c65cbd684096d548b0e9c626bf812827a504e60ddd",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1-Left-mixed-expanded.png",
+      "sha256": "90cd4dcd157fd3b78175b6b4edc82cc0a26c36aa2bbb5e0afe634cf96f0eba14",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1-Left-rightInner.png",
+      "sha256": "4bd28167c88fe32000a7e5a9630c45f74f6483d594854f182aee995bc8f3e81f",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1-Left-rightOuter.png",
+      "sha256": "9147a9f4e46b586ce4c9ff307d57ba96321db4eef623edfaf122af658f6af0a6",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1-middle-resize-preview.png",
+      "sha256": "d8ba45027f799da7aa3e9049129e7057d9bf4a819074284c65df94fdf1132d5b",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1-middle-resized.png",
+      "sha256": "d8ba45027f799da7aa3e9049129e7057d9bf4a819074284c65df94fdf1132d5b",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1-Right-collapsed-again.png",
+      "sha256": "5515857cf176706d6e065e6982eaec25b9c2bf63f7529e8471a38d94da9122c7",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1-Right-joined-miniatures.png",
+      "sha256": "1431166d45ae3c7a799d59eca1143f30b2aecd7e592efe10d2f97624b5504324",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1-Right-mixed-expanded.png",
+      "sha256": "7dff7beec39585e8db0d8da959e55f04837c43813f3cfc231c0a089372ed86ae",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1-top-added-tab.png",
+      "sha256": "ee1be2ff478e189256575d116c7eb3b0973205668c7fa2976374cfd6d45ebc81",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1-top-between-inserted.png",
+      "sha256": "1991738eb6ec1b6c23a42e7509fff7e75b6f03737c45419faeaafcdc16644f19",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1-top-between-preview.png",
+      "sha256": "4df433c1de791c2bcb9c26a1871b6e0106193a71a083ba67df56f1b223dc0638",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1-top-collapsed.png",
+      "sha256": "807613edd359eb7f9e021aabb695884c201ecb326b9ef253003c7823af84ab64",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1-top-expanded.png",
+      "sha256": "1fe7aa4abebd4ff3902f729d999d654e66b055eb63a2edd5b3ea5021022c43e5",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1-top-recollapsed.png",
+      "sha256": "b3cc2cf5548764bc2dde4fed0bc20bec1bfde69d7829b8b79ef44837ba4283e9",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1-top-tabs-collapsed.png",
+      "sha256": "510dafb4366e9cf4ed1025782613f6861ade92adb905db6a9d21a73bf788535f",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1-top-tabs-expanded.png",
+      "sha256": "8855ae5d8233ba10d53afc46e2e4e0e72ca0d513cc61bbf21d5a279239545ba2",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1-under-documents-collapsed.png",
+      "sha256": "6747c291a8384e1efcbd021680bd9fefa08343058249d9f2da1c0af984a8796e",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1-under-documents-docked.png",
+      "sha256": "05d67320b732a7c0ae9e900dd6dd515fff3390f11a90bb03d3ab8c3542bcfbfa",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1-under-documents-preview.png",
+      "sha256": "d7ddd6329e21e91ac65318393bb81735286a3f38cbae3dea8bf9006cd9ae7f64",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1-vertical-collapsed-again.png",
+      "sha256": "5541ab5ecef17507d04c3ebb6d6775c1f4535fb649a54ba98509a0e19e9dcb6b",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1-vertical-compact.png",
+      "sha256": "074c3516c539b7e153b5e248d5234e07afca7a3f49288d4a4fd84cc5fa5d08fb",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1-vertical-expanded.png",
+      "sha256": "af0029213ee17acd1f32f2e94ea566e2505070810821af6f9ea5b86b4588d517",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1-vertical-restored.png",
+      "sha256": "886bfb2c98e6218deb84dfdf46d79beb8a1790f1ef4dde884d7ed4fb7cf28927",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.25-bottom-corner-preview.png",
+      "sha256": "c0c5b33a1b5f55b92c5d6bab653838f40114b838f0a9ae308890a8c72bc4b283",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.25-bottom-corner-resized.png",
+      "sha256": "56eaf5d4331b3e7079568dbbcd5e112934e9f035dbd6d063929a4fa0ad098bc3",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.25-closed-row-drag.png",
+      "sha256": "b631c9f578d70c327c5da6e3b134f251ae1286fcc5b5e7c10073986ca44afe37",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.25-closed-rows-and-side.png",
+      "sha256": "5c47998d024e20f2d10617a2e8f2132f93512c35de94b76aa461a22d86ceb00f",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.25-detached-compact.png",
+      "sha256": "238c2ce8c7d8c30914e66e712b10d84a51d70a44cd090a7a135a712c14a39186",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.25-expanded-parts.png",
+      "sha256": "5cc9a5cf9448b6c2726587234cb4b064b5608bc1ee5859b8b49f1a8c2fbb2571",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.25-full-before-join.png",
+      "sha256": "9085a803f8a0b89bc04618d8e8112ff9b8a7811094f5315dd443ca0dd4dedead",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.25-full-detached.png",
+      "sha256": "e91fd49c494c9bd5a0a92bf8cfe97ad0f286f465a0526e57d0e8785086187f76",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.25-full-joined-to-mini.png",
+      "sha256": "7edeabb7e71ede2fc701e76d0b5411650b20032adddb7e7ec9205473a0734ae1",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.25-horizontal-expanded.png",
+      "sha256": "74e938954801db921a9d7d27f006ca5617a496909d244dfff7fd3c202dfda08b",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.25-Left-collapsed-again.png",
+      "sha256": "cd798faec4da8347f275706ab1a1abc0345b1d56c770da6e859458fd822c5ae3",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.25-Left-floating.png",
+      "sha256": "dfb9b340d4d84a278ececc9a0dfa2e569b354481327e911cb91624fb9bfb653d",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.25-Left-joined-miniatures.png",
+      "sha256": "a38b60bf2270b2f86baec7cb441139bb91e28bbfbb5811e73941eeecfd7bf272",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.25-Left-left.png",
+      "sha256": "acf68f9f9ec236911a89a6cde52b01eb4f2b5c583f7db2ccdda39f0aa92faf97",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.25-Left-mixed-expanded.png",
+      "sha256": "773dfe82d4b8faa26599804fca24d200d3edf8e4d910491b8e4c6fd1e7e6bb05",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.25-Left-rightInner.png",
+      "sha256": "85b398d5f922a25fc916dedb0c469017ef70bdd0091a9379daa3e0d4b031e79e",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.25-Left-rightOuter.png",
+      "sha256": "239db0401b6690c94d44b9dea29658037f9eb688c957442fef9ce8016657c1a4",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.25-middle-resize-preview.png",
+      "sha256": "32ddd8454dec8f33484fb36d6e1772c329c5106d7f06749f0146c41a059a4706",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.25-middle-resized.png",
+      "sha256": "32ddd8454dec8f33484fb36d6e1772c329c5106d7f06749f0146c41a059a4706",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.25-Right-collapsed-again.png",
+      "sha256": "40731f533556b3bd1be9b939f0bf2597811b90639b26e3de6e9d8a68377f51a7",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.25-Right-joined-miniatures.png",
+      "sha256": "7489fcdea383d3b903117efca66af8c04f5b870de7e43286ae3c042be484d860",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.25-Right-mixed-expanded.png",
+      "sha256": "bb6ba42603c871741066b3f1cff7cd17bd216503705b42da275b5d5af964a311",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.25-top-added-tab.png",
+      "sha256": "519f19449deda87d92cc5eabb7569540104daa38fd9887ceab042c55cdc4a3f6",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.25-top-between-inserted.png",
+      "sha256": "bf4edd5387eb541c1181b6a33c949aa11f8af5ebcffedd774622360517e44089",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.25-top-between-preview.png",
+      "sha256": "3eb05d799c1ea69f4f19a62a394b7cdaff1ffb9047b3f5a95fcfc1fbbb1d013b",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.25-top-collapsed.png",
+      "sha256": "e1bf3ced86dc59b08c2887665b67a6b03d8a7401255ab52046a1477d84076452",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.25-top-expanded.png",
+      "sha256": "8523c63517ee02e8193148c415addb1f6eb381429ae0fee33701499b87605ecf",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.25-top-recollapsed.png",
+      "sha256": "6b05eddb355d405f1c03f969d343f5abf68cabe0a029775a074e29eb0aeb24f1",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.25-top-tabs-collapsed.png",
+      "sha256": "25b0ac4fb0857179fe6d059184252689a45b5b9b3a097c0d5f5a2451aa8b01ba",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.25-top-tabs-expanded.png",
+      "sha256": "27a817fdd7db322be68d3aca11dcfa9f0cf88ebf282f32f153170f7d900ef97a",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.25-under-documents-collapsed.png",
+      "sha256": "db36dcfb8eaf3f38b260b155467aea5e6a526e8880ff69b863125b967370fa8f",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.25-under-documents-docked.png",
+      "sha256": "54945aad4006149a52d1e553bc910b9c4c915a0f5270db27f28a709adb5a7a81",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.25-under-documents-preview.png",
+      "sha256": "81407769a6160e107a51047972a8100c5098deb4ddd8bc3f2387c62da1aa0fdc",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.25-vertical-collapsed-again.png",
+      "sha256": "529f7ba1a4400f75790190ef0a72087c85d83245bac0c50a86d9a0ddfae15df1",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.25-vertical-compact.png",
+      "sha256": "45326547afc2ed1dde9bfada233644feb3a38901bfc7d9268265760206097891",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.25-vertical-expanded.png",
+      "sha256": "8483034c1d1488166851b4edd5a69575f75f95a7754a82e2d5f9137342aaf551",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.25-vertical-restored.png",
+      "sha256": "ba50751f0fd7767aa5cc11a1e727811178cdf7258c90e5a8a7671f795264e7ec",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.5-bottom-corner-preview.png",
+      "sha256": "574fa7cad6b00036026a7ffaa8a3987d4234150aa091af534dfcdb8a98ba301f",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.5-bottom-corner-resized.png",
+      "sha256": "483cb9e5d77479daf8f0ea33875251d56c13b2dd42a99139bf2329baa90ba61e",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.5-closed-row-drag.png",
+      "sha256": "d8e5c21240cb938226c5a5ef85da6db8715e2c58c503c4e91f157646695b1a5b",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.5-closed-rows-and-side.png",
+      "sha256": "1929e15e7104dc3f1ded00469b568863092528571d2b620ff5d98d4559b3ab17",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.5-detached-compact.png",
+      "sha256": "8c0a373b1eea01b4bd0d4ff2769736216cb984944cff4bd41ec5285e090537bd",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.5-expanded-parts.png",
+      "sha256": "a5c97e89a37d8e2274f58efcbbdb0616fea195bba535db0ef02fcf2af3b636b9",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.5-full-before-join.png",
+      "sha256": "f86bad121d40992c4cb8dfacee88d39417c7ca00121d2f1f0c16728441df0809",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.5-full-detached.png",
+      "sha256": "202140a7c3d35d16e29a5d56b5e567b132fe1a9a9062d8775afe2524a7375f11",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.5-full-joined-to-mini.png",
+      "sha256": "d92fc8acd3479e6515fa686b1435e525b4b5e034eec5eb7833a29d341c8786fc",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.5-horizontal-expanded.png",
+      "sha256": "2c53aa109796007b206fecdd2cc325df54d68b28eb8a3b02e77394903e1d21a8",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.5-Left-collapsed-again.png",
+      "sha256": "49b10170e8dcc7ca697424a1a5b39442d732dc1635499ce1e168a0f76378fafb",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.5-Left-floating.png",
+      "sha256": "82fa9c53222f8c1eb045fa5dcfa6e9112a59543371d49ed50eb9713e26c94bb3",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.5-Left-joined-miniatures.png",
+      "sha256": "f514b6d34d39834a3883cd0d1383dd186da26f481ca501c36924c9feda0e65a3",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.5-Left-left.png",
+      "sha256": "53cc7c5eda47c568858c6e9f0078b30a15a8bf42020fa80779035e4a5b85bb40",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.5-Left-mixed-expanded.png",
+      "sha256": "a27c6c706290b1435580c2b39b437d94329dc525b6b85b1e2f13aa96dcb95b27",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.5-Left-rightInner.png",
+      "sha256": "e484a3014af224d144b9e59b3f428167717dd23dddab5087e1583e1b87f2836c",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.5-Left-rightOuter.png",
+      "sha256": "2adf55f6242a3247cf01511fe9f6db8d2f55fe3081560937b5085e497684644e",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.5-middle-resize-preview.png",
+      "sha256": "6b10fd231ebeda9885d55d5e549873246c840ede8ca07d6ee0e6ff09811f68de",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.5-middle-resized.png",
+      "sha256": "6b10fd231ebeda9885d55d5e549873246c840ede8ca07d6ee0e6ff09811f68de",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.5-Right-collapsed-again.png",
+      "sha256": "480e128c60af074c164c782f9be934cff57195ba8e4e3ec2ccd40bfbd91a40d3",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.5-Right-joined-miniatures.png",
+      "sha256": "ad51e0fc38fb4c5bad6daead325f297fee6a8796d2fa34e155956a1dd6bc65d6",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.5-Right-mixed-expanded.png",
+      "sha256": "b3a265696ae5553fbaff1400aa133c0db4cd3269e6589d727fa0fd9f99611e54",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.5-top-added-tab.png",
+      "sha256": "6af031b40c623c89e09b4bd5fc822c1177412b73c8b1e616ad1bf928a1d9b358",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.5-top-between-inserted.png",
+      "sha256": "2551ff3839dcf16cf9760a34650d88dc7804acf79d36eaa742c222efb534c8c5",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.5-top-between-preview.png",
+      "sha256": "56e170d87cffb538c4cf90e9ee6458ee39e6273322188d7fc8105932d15e1af4",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.5-top-collapsed.png",
+      "sha256": "440cdb32d0b2624da228a3fd90772a3e2b79c59692309589eaf60f0dfee57bdd",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.5-top-expanded.png",
+      "sha256": "5524cce4444412f9f6accd4447d6d235dedfde28480549b05686aed7ba67f046",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.5-top-recollapsed.png",
+      "sha256": "078303f99639097905dfc7f8a8f5e2a491a4cd9fc11ae13131c50bb3eaba6225",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.5-top-tabs-collapsed.png",
+      "sha256": "abd91e6c899b49e52b6ce24433823043bd385fc888b6d30fd8c89465b70ed335",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.5-top-tabs-expanded.png",
+      "sha256": "3f5e87490d2afa2a2ecc8dcaec22839b8c213d53d1866bd7aa292d9c9530f0db",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.5-under-documents-collapsed.png",
+      "sha256": "f6158935895c81b6071ba4e7f68c0bb46441be0f2c05888a22f5f1a113979432",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.5-under-documents-docked.png",
+      "sha256": "903a35d769797dfa698ee0f27da350f463a4df82c83d7b75ba49335ac6fcada0",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.5-under-documents-preview.png",
+      "sha256": "84d38e5e111a07a81b10b6fe519175a83480ed97d573be98a00c2035a25e219c",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.5-vertical-collapsed-again.png",
+      "sha256": "011caac38b8e376f07cc455c4989bab7cf3804c07554f7ef67fa94bf5712bdf2",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.5-vertical-compact.png",
+      "sha256": "d274802ba361f6408ab00c107dd5b75ceebd2bf99cc81ba19e5acef7cceeeb50",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.5-vertical-expanded.png",
+      "sha256": "3765cb0000cc33c476c7108b5e8facf9af1036ccbc3c4e2294cd6e5a7907cef9",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-1.5-vertical-restored.png",
+      "sha256": "c91d077d6f66467fccae99c3deaf5f1ea0a09acd29011691cf0b0a061cf5466d",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-2-bottom-corner-preview.png",
+      "sha256": "2032223df72f7260806340365baa267feb608db74963b0a73a1fc77c0fa03abc",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-2-bottom-corner-resized.png",
+      "sha256": "41f748800954290f36ab36295ed85b9eeea26d76bee2227616e87e2b0d446007",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-2-closed-row-drag.png",
+      "sha256": "17dde30fe02eab49fb39947fe29ce1eca1a583753e9a4ae0d23d8dce90ce3bae",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-2-closed-rows-and-side.png",
+      "sha256": "58318fa341e3a94e8cbd9a299740b9f372439d6ded46be5cc45eca1ad2411894",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-2-detached-compact.png",
+      "sha256": "7612f9c2a4e2bf3233d35d230af6abe99af828a6c826b2aee85f8d30db374eb0",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-2-expanded-parts.png",
+      "sha256": "83c9aa34bef421aee4c1b73255253624504155c1416937df5d7ccf5c00be0418",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-2-full-before-join.png",
+      "sha256": "1323161505ce13dd9a41459da6bd35fee36bb9c2d76183586663e53c4a30e1c0",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-2-full-detached.png",
+      "sha256": "6cb1f69483b1718e324a1f2769b65981abf8bccdfed9f7d0e860f4a1eae2f376",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-2-full-joined-to-mini.png",
+      "sha256": "14c2f0cecd79cbc24ad05aac9ff27695281531ea614c2e5625184eeeecd53979",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-2-horizontal-expanded.png",
+      "sha256": "08137defb8787691578a624dfaca4a26e584cad9e2431e57d8b7fe65df43d3a7",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-2-Left-collapsed-again.png",
+      "sha256": "e6f3d604e1d8448f2435b0bce221598a79c93da042c8b10ea5151f73aa042024",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-2-Left-floating.png",
+      "sha256": "de3ecb704d96c63ddb5133f67ae54cef26752bc6402089f6a418185d79271140",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-2-Left-joined-miniatures.png",
+      "sha256": "cd2ee9cb694e981af36697dc82705bd9d2d6dabb00256a17216db1922f5e3a91",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-2-Left-left.png",
+      "sha256": "a7dc8ad2eb6671b77568b6952b56b2b11e38050538b4480f29803df0ab7a3a2d",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-2-Left-mixed-expanded.png",
+      "sha256": "66ce4cc307dca41a9aa6bb7ed30e53ffa586808c272fc4ba4720307fbb5db0aa",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-2-Left-rightInner.png",
+      "sha256": "9fa733a097828daebc403fd6faaba04fcee793983367699af86b862b6ebc8dd7",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-2-Left-rightOuter.png",
+      "sha256": "971baab7dc77e7f010dec3cf04a214c64065e1a593c0580bc1996f16401005cf",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-2-middle-resize-preview.png",
+      "sha256": "6061525bdcdef68f53aca5de3edfb33178b6c3fb9b50ee236b221f372b4ea4e3",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-2-middle-resized.png",
+      "sha256": "6061525bdcdef68f53aca5de3edfb33178b6c3fb9b50ee236b221f372b4ea4e3",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-2-Right-collapsed-again.png",
+      "sha256": "6ba491eee2d1634133293d11c7d73debcb0fd8c5828ff0d54903db17b6a0ada3",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-2-Right-joined-miniatures.png",
+      "sha256": "37b0395cd33a201412cb0332c1c0723e8331e366579c5db079e2dc9c2218633d",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-2-Right-mixed-expanded.png",
+      "sha256": "423d7c645937cefd0d49098fd6af2f43bc65f28f02805b73d8fe3c6beecf69b0",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-2-top-added-tab.png",
+      "sha256": "56f1e7866d5a46ea350bc9f7bb739cb456a0941fb515cf9e4ee490a7f91ee253",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-2-top-between-inserted.png",
+      "sha256": "2261301f750f9b893d63b4362ede12fc143d1a1293b71d5811327ec45f2124de",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-2-top-between-preview.png",
+      "sha256": "e2db9424eaa51e56640e68285393e142583b5c9506b22f2c179ec210993cc73a",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-2-top-collapsed.png",
+      "sha256": "2cf1490851b90158ec2d8250091fc93890e562f678c6107a55ea0a7b506ca044",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-2-top-expanded.png",
+      "sha256": "8a88764897e4b967489cc6c7fb7e97cea06b0581624eaedee4ba7c22f916a150",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-2-top-recollapsed.png",
+      "sha256": "9702279dde611d88867b47b81ff7717e9d1114b052c1abfac63643240a40176e",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-2-top-tabs-collapsed.png",
+      "sha256": "1828cbf17c737300fd9facc8aa6b26be607f17f09475a570f0d1ad3ee84e6be7",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-2-top-tabs-expanded.png",
+      "sha256": "7e9f19e89a222ff068ade88cd487d4ede9a3ce91409d0881f41af2326d6dda0c",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-2-under-documents-collapsed.png",
+      "sha256": "349c239af51e3735704be39be9bd424780c3b25496f330069f6d2924e7970be9",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-2-under-documents-docked.png",
+      "sha256": "09672eefe8e3e147a0e680d6267b7a7d3811ff197f7dc5e3d750a95fbc5814d9",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-2-under-documents-preview.png",
+      "sha256": "d42ebbe0c097018c196c06554dc791b983df38f8db8b8deb40df5f276b8b039c",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-2-vertical-collapsed-again.png",
+      "sha256": "aa4e665c94dcc955c5994af1cbe82ae712ed7b3274a39e52838d99d309126c51",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-2-vertical-compact.png",
+      "sha256": "53d573410e882ff1f192a74d927ca4cd6f8b5993ec41966c8913e01c49651363",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-2-vertical-expanded.png",
+      "sha256": "8525462b655089cf283c491b492cff3739f67aa43253012a17eedb4e5744fbae",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proLight-2-vertical-restored.png",
+      "sha256": "aa24ebae593534107362909a243a49850fccded710f43a540131c90496a15395",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1-bottom-corner-preview.png",
+      "sha256": "420867551b39eae48d6e8c8cac0d37c8c1b0900f45b632797d329d17f75026f2",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1-bottom-corner-resized.png",
+      "sha256": "8c0341b146fe25a15e96e5b7d65b85a04e562b8b31409d2663703d0992579fe5",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1-closed-row-drag.png",
+      "sha256": "634c43fddd57757a6a73e9ebe6794619eccce53cd57e58e62d2785ec70bc5f4a",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1-closed-rows-and-side.png",
+      "sha256": "1d463f295c1d563159d6cc5c015d5dc0f33a3dbc851452ca24ae91bb15736fea",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1-detached-compact.png",
+      "sha256": "871e910a719f17d4a38d9e928892604e12c6130a0abd7089b4e545bbe8e6b544",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1-expanded-parts.png",
+      "sha256": "79fbd74036bfcfea16636977d561cd2cf74ed055ce73ff6b95271057c8126412",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1-full-before-join.png",
+      "sha256": "fa2bb42ad19904ec644bd0f5b18b86939d79f8aefb272de9241ee55825cf3eb4",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1-full-detached.png",
+      "sha256": "e1855fcb89651791be6fb1eb28b938ef984083fa511bf1e7899f8ea42dd93486",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1-full-joined-to-mini.png",
+      "sha256": "2a8c164a34960f32b1a126ce8d880174c743bad85cb1b1b13edbbd831d0f9ba5",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1-horizontal-expanded.png",
+      "sha256": "f114616e87603a32c744a7723dde94d10ef83b567716ef2660329d8778ee43a6",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1-Left-collapsed-again.png",
+      "sha256": "03706ca5bcc4f5fd8bb67d245214f93101fd2f468b1abc31f2bd162f9e5e681e",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1-Left-floating.png",
+      "sha256": "5e201156e5eb583feddc514813f71e38e57af7b943bdd99ab3ed66d7ab0b0cca",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1-Left-joined-miniatures.png",
+      "sha256": "602a3965a8ffaa9c0ba90b9ef4342a8fbaebfc5d60ced45acf115279f90988c1",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1-Left-left.png",
+      "sha256": "b8671a2fd2381c56274cd58218d73491d2c042273df970f2bba5be40f3abdb20",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1-Left-mixed-expanded.png",
+      "sha256": "757257a76212933c9395cb3288621d72d58460defe7378b8e62495ba25589c69",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1-Left-rightInner.png",
+      "sha256": "30765721018db6005f35f2dfe85fecc0f1dd361890b34b420b008602cdfc42a2",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1-Left-rightOuter.png",
+      "sha256": "596cf7150d19971f6752c519f6bc9d21b7542ed09d569e00547d5909909189a7",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1-middle-resize-preview.png",
+      "sha256": "e7bd41ba0436ba95335961a21359f474e263d373a051e5e08810df4120942737",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1-middle-resized.png",
+      "sha256": "e7bd41ba0436ba95335961a21359f474e263d373a051e5e08810df4120942737",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1-Right-collapsed-again.png",
+      "sha256": "b76b6c197240d22efab297a77b6f0a8fa8bc9e17db6be31b87511689e2a3a173",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1-Right-joined-miniatures.png",
+      "sha256": "b5fabe2792e8c1640513b77303c6e9d04d7166d5784b3866e52ec5f09af12bc1",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1-Right-mixed-expanded.png",
+      "sha256": "c8d4c7841c55fd2aefe5433c99195cb7f6881798a1fff54d62b97f4a7b9ba184",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1-top-added-tab.png",
+      "sha256": "84d5880184aa3f7c7e89a00f32b018690e7b8ce46f496ff272c1393d0b437a05",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1-top-between-inserted.png",
+      "sha256": "0b946419c23539055bf3a4ef824811398cae27cf4dde99197dcbb3d1d081addf",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1-top-between-preview.png",
+      "sha256": "5d4baf97c912b9d99d0e45aa678b2c0da5eb07f66b1dc5f729c2a925d67c6c64",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1-top-collapsed.png",
+      "sha256": "fb99f37d15e7a336ca00def133b1da200eba7791ddb62119d48e1d6528583dcd",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1-top-expanded.png",
+      "sha256": "d5ab6af76db56d74bbf6672f6a24c72cef0892e69137f3260146082ad77a661e",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1-top-recollapsed.png",
+      "sha256": "4ad055d5fc5b1caf58f66de5ad40196b452d112e4a0b965e848fd0a70478433b",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1-top-tabs-collapsed.png",
+      "sha256": "704f6348e168868b0137cbbaba140c12ad25f430fc422305494ef2c9b8cba14d",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1-top-tabs-expanded.png",
+      "sha256": "945520401934540257b1af6d1eaa289484eefc3a2f835aff2dc3090d929ad2d9",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1-under-documents-collapsed.png",
+      "sha256": "c24519dffbd7687e73dcb1eba7798d11c249b5ef214a4480acd0838eb4a92219",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1-under-documents-docked.png",
+      "sha256": "995abfcb0489df888b02637eed6efddf27db2962bbfbb282ebe5f0391ea3cf52",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1-under-documents-preview.png",
+      "sha256": "74d9ae18be10c26819877cb2e7df1b00da5c9343634b17d4ade722b58bf17aac",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1-vertical-collapsed-again.png",
+      "sha256": "f97d300eb80796aa3cb7a32d40dbcf911f00a915aff66a8876ec26d231dffe55",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1-vertical-compact.png",
+      "sha256": "1767543c9a244a17d037c12fdd6e85deaa5105154a2e9f9bd6c467bd4734f7da",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1-vertical-expanded.png",
+      "sha256": "96763a33c62c9012333f02fffae3268ac24ef7581af38d65b1cfc5f6ca2e4ad9",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1-vertical-restored.png",
+      "sha256": "2074cc601ac07a5a717bb7d96f1f80f7943f8db73f4e3e853303b1f15d94b3ef",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.25-bottom-corner-preview.png",
+      "sha256": "5ce70821bbfc5da8eacfbee4d1da4a865a1f86f5aff92c003b8366234afcb549",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.25-bottom-corner-resized.png",
+      "sha256": "04cce2ed6c30c9259af2a6420a3daeec7a3c4638a681b59fdcbc4968a9a44c36",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.25-closed-row-drag.png",
+      "sha256": "4b9de9e1ad3243f042a04504e0ff164f2e603eb63d4a196c0827daa746fbd85f",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.25-closed-rows-and-side.png",
+      "sha256": "47e0e5e3c5c1e25d7f5908eea46c84f4f8a80d7a72124925d3fbb4b8b150d2ca",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.25-detached-compact.png",
+      "sha256": "7c08032130a562904367f8232e2f8511fff6a9cf13e54472eee534c41de92fea",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.25-expanded-parts.png",
+      "sha256": "c4a62a1587a0a4b5391d52b4767676adea9f839a4a2f8431386ee19ad0de03ec",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.25-full-before-join.png",
+      "sha256": "1434ba0fbb8eecfe6b100aa6c9163f249d3498d756c3ffae34642f3bdbc7f9b9",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.25-full-detached.png",
+      "sha256": "65e094d9bed16ee0be3d60e3b3fc272bccbaa2380e04b0f9889781101f25e2cc",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.25-full-joined-to-mini.png",
+      "sha256": "be35198e70debcae4dabefa2adafdcccf3d32f704dffb4229b9764f402b13c4d",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.25-horizontal-expanded.png",
+      "sha256": "079c3d396ed06067d2fd48a8b8e5a18b1c2129415145a25182ae8d6ba00854e5",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.25-Left-collapsed-again.png",
+      "sha256": "5ee4a79a6aea8ba98380a75d1041ade455cd654a85aa24e59b34799becb34039",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.25-Left-floating.png",
+      "sha256": "98c6ee8e8621c91c80053022ec390874f85c5dea9b13df776cb634c344778586",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.25-Left-joined-miniatures.png",
+      "sha256": "c9d4c32c8405436b9757ef8edae948f45967aa141c6bdcd8c1bcdce4a593dec2",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.25-Left-left.png",
+      "sha256": "1fc8944882321e154360edded276519a0caa39ce0931657e3d280b18ae1f08b6",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.25-Left-mixed-expanded.png",
+      "sha256": "fc7c8047dd86e1ff15acdf82bfcbbd9293f80f632c2b2e59ad86c2778eb410f6",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.25-Left-rightInner.png",
+      "sha256": "f9505c80ec9985fcc8821b739bc9608777e603700d35844139d87d2557858607",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.25-Left-rightOuter.png",
+      "sha256": "f75885fce49d09f7a6682c5dd47c5a51c465aabf1b3612f4286dd5bb3f2a0363",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.25-middle-resize-preview.png",
+      "sha256": "aad887c10ab70990af5f81eb5a269d1a676608e26b1202f3023dd85ac7480c81",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.25-middle-resized.png",
+      "sha256": "aad887c10ab70990af5f81eb5a269d1a676608e26b1202f3023dd85ac7480c81",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.25-Right-collapsed-again.png",
+      "sha256": "f5eb35dd43971ef285adafb7fa72571b5f80d47a3dfaf874748ed5fa40bab85d",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.25-Right-joined-miniatures.png",
+      "sha256": "361f102c2150f36a0bf9a7686f0bb2fe9da323b2f22f9d0ebaab239036aa6bc9",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.25-Right-mixed-expanded.png",
+      "sha256": "b4419e71f9f96c51fff29703a02858190f091ee642b128999de9797451a84030",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.25-top-added-tab.png",
+      "sha256": "42aecf12272fe58c7ea622319002f6ce860123e7822226270bebdede36402c14",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.25-top-between-inserted.png",
+      "sha256": "aa6ce83e9c335f7705b726c3af3b18f5ced28ab720806172d8823af141589003",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.25-top-between-preview.png",
+      "sha256": "3fe9b8fd97b26edb232c9ea0beec5ffac2ab66f82fc89158e9fc67f212a4abd2",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.25-top-collapsed.png",
+      "sha256": "348da84559ac693486ac5516ff48aa07dfa7ccf791e5322657b9e42d9433511f",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.25-top-expanded.png",
+      "sha256": "6092ee908dac16f57f5540807117a06a2f1ac1f7b412bd9278c7049f4f7c8f96",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.25-top-recollapsed.png",
+      "sha256": "aad94997f53795a626c20a555b57b9edd4a8f46d20ea51c7ca3606d87f0a5255",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.25-top-tabs-collapsed.png",
+      "sha256": "84612ac7136f9ef52836b4ea61b24e39711134a33920bcc6b08e3548e1225680",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.25-top-tabs-expanded.png",
+      "sha256": "4cc37aee66d9dbceff01872c8eb5a115c93e8b95cae508a58537cfe63094ae97",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.25-under-documents-collapsed.png",
+      "sha256": "9d14c62395c455da212156df76a86cf9213038589a49a35c94116bdcc652b1eb",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.25-under-documents-docked.png",
+      "sha256": "99c849c9dbf1c3d210075abb5be38e9d70e8bc3c59ea63330a6b9485d07d62c6",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.25-under-documents-preview.png",
+      "sha256": "fe9f3ccf9fad4259d7d00556f18c9ad200401be51a8f8943904732a51dbb1133",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.25-vertical-collapsed-again.png",
+      "sha256": "76f47d69fcb6cf2cfee015a3ba11130df0ed827ade470f2b201b0d57c04a768f",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.25-vertical-compact.png",
+      "sha256": "1852fdb61e79d5d229c9ea02025ba0429e1ea738508158e998133fe687443f37",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.25-vertical-expanded.png",
+      "sha256": "ae8b9555fee9c9963616b37e4a53cb1f95ed6137f17cdbd0aa4d5e15c94a2045",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.25-vertical-restored.png",
+      "sha256": "da2601078733ae6cb3ec5f36389771b7134c81c71377f27aca24a0683d2c6e77",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.5-bottom-corner-preview.png",
+      "sha256": "cb27edb0a0adfd4c0312dc26fb12d41e325df02494925e13f7057426bb87dfe4",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.5-bottom-corner-resized.png",
+      "sha256": "f6e6c5f1db4c5fe1d2d189cb5f822ddf188d097aa09724c5b7899c2a087722b8",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.5-closed-row-drag.png",
+      "sha256": "93fc52eadbda379927de07b647b549b6d30ebe896a0cd42869b02e81038dd027",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.5-closed-rows-and-side.png",
+      "sha256": "2f371684e28524116d4a54268f02059fcccf5f0e1b59540ff1ab6fa47f6a3998",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.5-detached-compact.png",
+      "sha256": "68f59da499f1b2a3a1e662ec2f9c11bfe42bb6d2fb8d0dbb3ffff172c516f698",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.5-expanded-parts.png",
+      "sha256": "5b2650fd4a9f55ddd4d75383cb8dde59f99b781e61ae49dac6e1d5015a6e2d56",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.5-full-before-join.png",
+      "sha256": "cef34064543f8f89bf3b83dcfdc6695e303d1a1ddb0e249796357c0022dafc14",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.5-full-detached.png",
+      "sha256": "3748d436cbf80e494f871bff69a952cf0987f8dc618dd61328f127e0cd319d79",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.5-full-joined-to-mini.png",
+      "sha256": "77ee92e8b5732466f4fd9ac20b0cb44dd3f11e1a63b0f8641f19a8219a25669a",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.5-horizontal-expanded.png",
+      "sha256": "d75bc620a94857fa3c629e80ff67726166f8027335db1057a040eded4543ce97",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.5-Left-collapsed-again.png",
+      "sha256": "59995f76b9489cfc9cbc3a081eae54e76cf84aa5c6de4d617196008aa1c196eb",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.5-Left-floating.png",
+      "sha256": "69f1a3516285d52fbb1c072ca0cd1f2e53106bbb65513654b11f601b0a79876e",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.5-Left-joined-miniatures.png",
+      "sha256": "3a12d4f8eae6fe33a64a25ec6b46a1841c9c416a7a27f541cd02c88a1e120898",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.5-Left-left.png",
+      "sha256": "d54577d34e870ab360ecd58afca02e310598b742d0475aeca0876bdde0267bd9",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.5-Left-mixed-expanded.png",
+      "sha256": "c692ad6f063affd60469844827de5b6769930d2b73f951dceb2d2e596299c4c5",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.5-Left-rightInner.png",
+      "sha256": "212a6bdb19300a1ac5462348bb256181076f48018906823ddda382b519623b43",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.5-Left-rightOuter.png",
+      "sha256": "20822f48048ca9826b6340da222534a85b2404573eca171490c0554fddc034a0",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.5-middle-resize-preview.png",
+      "sha256": "8cf1309203fde601def784974c41b03a3182fdcf08edb1b2eddae7ff988a1bc1",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.5-middle-resized.png",
+      "sha256": "8cf1309203fde601def784974c41b03a3182fdcf08edb1b2eddae7ff988a1bc1",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.5-Right-collapsed-again.png",
+      "sha256": "35f128fcc98b5c20df21d6bf224242a42fb9df541ace68ad8d854a34f7c64ab5",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.5-Right-joined-miniatures.png",
+      "sha256": "3b09b92210b4024b3a7638f94026cbe48a6d36afa13b67ecb768627b3d3602bc",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.5-Right-mixed-expanded.png",
+      "sha256": "14fbc4d8001df32403c7950992977742cd5754830b6eb88a443bcdef1d0baded",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.5-top-added-tab.png",
+      "sha256": "dfcdcf94daf129189dae9e45e8dd79a2f71377af4fc8b4c459035ebb636086d9",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.5-top-between-inserted.png",
+      "sha256": "73ce6cfe23e1d7c0e2b739f654f6581e0a5935608147ee702c6f68bec6eafe91",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.5-top-between-preview.png",
+      "sha256": "f09e4229c2acf31aa87e19483c12793423688ac1a71ff14f1bfe73d6dca4b3d8",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.5-top-collapsed.png",
+      "sha256": "8b70ef2018ea84513ce16c5cae737f5e75c61be85e4b8f4d94d3125a45fa6670",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.5-top-expanded.png",
+      "sha256": "7abdb978b107b94ec5ab3caf76b15c9041d4e11fa640727f2ee0543f77610904",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.5-top-recollapsed.png",
+      "sha256": "7eb6cafdf1a5a040506b00dc65fa92bd5011cb4879b33382ece7908a13428363",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.5-top-tabs-collapsed.png",
+      "sha256": "dc29aa248d6fc0dcc3c5d530fb1f511294b14c3fe84ff8463a6888dc5b1e1ff0",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.5-top-tabs-expanded.png",
+      "sha256": "d9630321d588a8d687706c90d1567eb20533dd69b004c7bd2506616934c985e4",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.5-under-documents-collapsed.png",
+      "sha256": "cfd405a20da9bb8a94c4e94d4316f000348cdfa7b55a686989d7c00336f5ddb4",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.5-under-documents-docked.png",
+      "sha256": "e9caf8b1546bc920678970fd3c7bcbb1bdbafcf3a24543997e9c150c48e54366",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.5-under-documents-preview.png",
+      "sha256": "b363b01d98f7f9e774a1d4810d91ef3d335563182717fb807a8a401b1cefb515",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.5-vertical-collapsed-again.png",
+      "sha256": "53189d3ed55e731963b038a0b768aa544db089116e828af3582322bbcb9e92c6",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.5-vertical-compact.png",
+      "sha256": "a06f901f1c83977a20ff6674d2a3a8e9ea54e06b58d889b4d6da91abe91e8593",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.5-vertical-expanded.png",
+      "sha256": "d21499126db3072560564a3e29b9105ed6162afc887a3a4afaeb259a074e4141",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-1.5-vertical-restored.png",
+      "sha256": "0bf4b1b0d147752f43a56966cfffef43415441ef8de0d853f413d39a91289cd5",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-2-bottom-corner-preview.png",
+      "sha256": "d4bb726d08b8fb9297f9c1fb26ddc54a4ea9b51ad2122579ec61bb70a4fd2c4e",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-2-bottom-corner-resized.png",
+      "sha256": "bce8e058fc5a5bb5f9d5a0702f8f6ca3781b74164604ee17b70d9238dc0910a4",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-2-closed-row-drag.png",
+      "sha256": "aaca2b6c3010638f1064e9a03db9fa4fd8c1e4c798393b1456252033357885aa",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-2-closed-rows-and-side.png",
+      "sha256": "aea6e7b490b2525dc6d1053b596f152741f55f518f5307a71eabbdb2ff4f96c4",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-2-detached-compact.png",
+      "sha256": "1697adad14aa9a15c4c3d1a39eb8b1adeb6158b2b4ea3c5a630761bbd59b041f",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-2-expanded-parts.png",
+      "sha256": "395fcfdcc936274e36d19339c11854a52d4dcc7d099956c258b7342190587c2a",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-2-full-before-join.png",
+      "sha256": "279e80179eff7ee6058546feef08394a99881ade356cccdadeef483bc8bc0db0",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-2-full-detached.png",
+      "sha256": "8861354d4c2fd100c43313742b1ead23d21ae906f78ea94f2642179047e07821",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-2-full-joined-to-mini.png",
+      "sha256": "d6bdb32c2edd9b526d0b2497f3ff9ea54fbe69812ba1895588480b763576b121",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-2-horizontal-expanded.png",
+      "sha256": "bdadd9935f3f7d020c16eeed70b8b01f76e5db319f32fc8b8593417ec5ecadf7",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-2-Left-collapsed-again.png",
+      "sha256": "f9b61535926c872624bb988471d51f238e808be298670b3c1eb794c6e15a4fc9",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-2-Left-floating.png",
+      "sha256": "deda7fcf27445b72bef1f078e9769a60e1460ac6f3a743bab403c3bd70fd8912",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-2-Left-joined-miniatures.png",
+      "sha256": "c877f252eb9a75e67fa0b975ed90575301c24575ae5ce3d77c0347420df25e0f",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-2-Left-left.png",
+      "sha256": "8f5ddbb2dbc98cb45876baf0a12e344042d0260f4419d412e4bc34774f6ae1c7",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-2-Left-mixed-expanded.png",
+      "sha256": "8c49b40b0c701e52aa75484818b8b6952e2e215875f3952d6e3b631ea9c01046",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-2-Left-rightInner.png",
+      "sha256": "b78b66c506938fa8b58c6d5ffe4a075a4b14bcb6a004e6d4d3830a7759b4bd3f",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-2-Left-rightOuter.png",
+      "sha256": "a564a62ea64b0c0085d6b49af6038c6c0a4a947ac5abced6d3bc867024a2bd82",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-2-middle-resize-preview.png",
+      "sha256": "7ed3c6df91f8dcfa1699db3b2089b80b13b0879c49be6735440cda1c0b98cba6",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-2-middle-resized.png",
+      "sha256": "7ed3c6df91f8dcfa1699db3b2089b80b13b0879c49be6735440cda1c0b98cba6",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-2-Right-collapsed-again.png",
+      "sha256": "1b06b85e436f64d40c3d0db3312c35df81bc686869ce113b9fbe79d4425f2865",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-2-Right-joined-miniatures.png",
+      "sha256": "12f2ec58852f64326f49ff3f22b0dba4afa9ac0e035732bb09b18330c7868c16",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-2-Right-mixed-expanded.png",
+      "sha256": "4b19c87918e09c0dc7ad249bc44c0405462f011d60bd5e5d5ccb8a5202f7466a",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-2-top-added-tab.png",
+      "sha256": "66b64e4852c3c334444fe31838e38ab4a15504d8fcd2562fbde4c9a15a159904",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-2-top-between-inserted.png",
+      "sha256": "590e7ea1d1a4c8b2ad7b8a63c08739592ae878d2d2307c8c45cf12d910a2df4e",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-2-top-between-preview.png",
+      "sha256": "ee098edc235326e54542bbdcbb3bac2f12469513248105d3c293bf3610eab11c",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-2-top-collapsed.png",
+      "sha256": "1472f039da427f567e3b94070af479ddae9828f05e14c5417f3a621d9d4fddd4",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-2-top-expanded.png",
+      "sha256": "d0b21bb81c8368c8d03121b7774a8e45fff0f17f382002d5524959e123d87c9b",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-2-top-recollapsed.png",
+      "sha256": "5d375ce71cbc22211abfb49ca92be39bedfbd55b01ea1c78fc5dee0941d1e9d8",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-2-top-tabs-collapsed.png",
+      "sha256": "4588b5ff5030cc8dfbeb75ed981b4a9fad80dbb7ebb1bca7b885071e12376845",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-2-top-tabs-expanded.png",
+      "sha256": "1c0e19597534f702a33bf78df0adf8b1eb576b5ffd96b545403ee128ac3cf5e0",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-2-under-documents-collapsed.png",
+      "sha256": "825d694462d69ab54771f20371ce465a9cd8d107d49e858bcd7bf1dd5c7035cb",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-2-under-documents-docked.png",
+      "sha256": "0a9559d59fd2e2dae72302996fb419eeeab3013a4be70657342e6b5c5c9bbec2",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-2-under-documents-preview.png",
+      "sha256": "ea9f7895a62cd75702934da1421fb222abc1c495a92ded1540126bd3c5f5961e",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-2-vertical-collapsed-again.png",
+      "sha256": "fa567dc69a21fe3a7250ebb5c4cb1121d58624531d48ff5aba618fdb343847ca",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-2-vertical-compact.png",
+      "sha256": "1a53ed81fa18d08423f350c3784d7efc13ab911867d7d5d3dc80edc559f2a26e",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-2-vertical-expanded.png",
+      "sha256": "47877280b9a890a3ced2dc4f4e3d605eb8d291cd256f2e7c9400842e819bec94",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    },
+    {
+      "file": "proMedium-2-vertical-restored.png",
+      "sha256": "857c7b817d8de10fd2da4f07c3d53d0aeb21e57c77cda928a950a02599994dbc",
+      "old_present": true,
+      "byte_identical": false,
+      "central_roi_identical": true
+    }
+  ]
+}

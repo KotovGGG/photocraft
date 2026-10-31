@@ -1,0 +1,5 @@
+{
+  "crates/ui-egui/src/canvas/strokes.rs": true,
+  "crates/ui-egui/src/menus/menu_keys.rs": true,
+  "crates/ui-egui/src/menus/menu_nav.rs": true
+}

@@ -1,0 +1,23 @@
+{
+  "shared-tests": 0,
+  "shared-all": 0,
+  "shared-fmt": 0,
+  "shared-clippy": 101,
+  "shared-workspace-clippy": 101,
+  "shared-workspace-tests": 101,
+  "shared-wasm": 0,
+  "app-panels": 0,
+  "app-integration-corrected": 0,
+  "app-desktop-check": 0,
+  "app-fmt": 0,
+  "app-clippy": 101,
+  "app-clippy-no-deps": 101,
+  "app-layers": 0,
+  "app-wasm": 0,
+  "app-full-serial": 101,
+  "scorecard": 0,
+  "capture_native_height_and_document_header_review": 0,
+  "capture_desktop_review_matrix": 0,
+  "capture_fourth_review_seams": 0,
+  "capture_final_review_transitions": 0
+}
