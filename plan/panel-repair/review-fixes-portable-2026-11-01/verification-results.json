@@ -25,5 +25,11 @@
   "shared-second-fmt": 0,
   "shared-second-wasm": 0,
   "shared-second-workspace-clippy": 101,
-  "shared-second-workspace-tests": 101
+  "shared-second-workspace-tests": 101,
+  "shared-third-all": 0,
+  "shared-third-clippy-diagnostic": 0,
+  "shared-third-clippy-strict": 101,
+  "shared-third-fmt": 0,
+  "app-perf-quick": 0,
+  "app-panel-benchmark-isolated": 0
 }

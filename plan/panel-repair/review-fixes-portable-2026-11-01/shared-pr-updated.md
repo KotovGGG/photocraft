@@ -14,6 +14,7 @@ Validation:
 - `cargo test -p craft-ui --features serde,native-windows,screen-testing`: 590 unit tests, 10 integration tests, and 8 doctests passed (2 doctests ignored).
 - `cargo fmt --check`: passed.
 - `cargo check --target wasm32-unknown-unknown -p craft-ui`: passed.
+- Separate diagnostic Clippy allowing only the known `nonminimal_bool` lint class passed on all UI targets, including tests; this is not a strict Clippy pass. No source lint allowances were added.
 - Strict UI Clippy is not green: two `nonminimal_bool` diagnostics in unchanged `crates/ui/src/docking/render/preview.rs:120`.
 - Workspace Clippy stops in unchanged `crates/keymap/src/profiles.rs:474` (`nonminimal_bool`).
 - `cargo test --workspace` does not complete: Rust 1.95.0 MSVC reports an internal compiler error (broken MIR) while compiling unchanged `craft-text` test `linebreak::tests::every_line`, at `crates/text/src/linebreak/tests.rs:95`. No workspace-wide pass is claimed. All three failure-site files have no diff from the current base; no suppressions or unrelated changes are included.
@@ -27,8 +28,8 @@ This is the first, focused extraction from storytold/photocraft#10322 following 
 ## Summary by CodeRabbit
 
 * **New Features**
-  * Docking content can customize or take ownership of iconic columns, tab groups, resize handles, and split separators, and control group-collapse presentation and floating-window width resizing.
-  * Floating frames support configurable horizontal and vertical resizing, plus an optional top resize band. The band is reserved by default when resizing is enabled.
+  * Docking content can customize or take ownership of iconic columns, tab groups, resize handles, and split separators, and control collapsed-group presentation and floating-window width resizing.
+  * Floating frames support configurable horizontal and vertical resizing, plus an optional top resize band that is reserved by default when resizing is enabled.
   * Dock layouts can set a separate gap for docked panels.
 * **Bug Fixes**
   * Resize controls and docking geometry now respect configured axes, gaps, and host-owned content.

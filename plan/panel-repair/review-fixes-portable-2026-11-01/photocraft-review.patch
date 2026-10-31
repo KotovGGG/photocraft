@@ -29288,14 +29288,14 @@ index 6c9a6b65b..5ef09a2e7 100644
  | 2026-10-24 | minor | Layered TIFF writes the TySh text version and descriptor in PSD big-endian order while retaining container order for the block header, transform matrix, warp section and bounds (#9098); the mixed-order read path remains covered by #4758/#4771. |
  | 2026-10-23 | minor | PSD: spot channels are stored and read as Photoshop 27.11's PSDs store them (ink 0 = solid; all 7 of its spot PSDs store the 100/25/75/0 % columns as 0/191/64/255), and resource 1053 numbers the extra channels 3, 4, 5, … after 0 for the merged transparency. A PSD with spot channels whose 1057 is exactly what PhotoCraft 0.1.0–0.16.0 wrote, and with no 1053 or one kept from an opened Photoshop file that doesn't list every channel, is read as those versions stored it (straight past the channels that 1053 lists), so it keeps its ink. Multichannel is unchanged (#7415 split, part 4) |
 diff --git a/docs/gaps.md b/docs/gaps.md
-index 52f688909..dbaa5452b 100644
+index 52f688909..45d5b91f5 100644
 --- a/docs/gaps.md
 +++ b/docs/gaps.md
 @@ -1,6 +1,6 @@
  # Where PhotoCraft falls short of Photoshop
  
 -> **Last reviewed:** 2026-10-10 · **Last updated:** 2026-10-30 · **Change:** minor (full-to-compact transfer sizing and persistent horizontal tab bars; compact join height, sibling-directed arrows and shared physical editor seams; compound-window move extents, normal editor sizes and expanded tear-off; floating chrome/docking follow-ups and guarded shared-UI compatibility; panel renderer/input, fitted resize and one-pixel seam repair; panel workspace adaptation and corrected native-window gap; Smooth and Feather command masks cropped to selection bounds plus blur reach; G1: Halftone Pattern Filter Gallery settings survive PSD/PSB saves (#8940); cropped selection morphology and command mask conversion performance evidence added; G9: 11 of 181 preferences do nothing, as the scorecard prefs audit counts them; G6: Art History Brush landed as partial, TOOL-213-20, #1610, so no toolbar tool is missing; G4: five hard-round built-in presets use 5% spacing to remove stacked-tip outlines and reduce pressure-opacity bands, #8842; G9: Crop tool canvas menu, #6561; G2: Content-Aware Scale seam carving 1.65–3.6× faster with unchanged output, P28 row 3.3 → 1.6 s on a 4-core VM, #5236; G9: UI scale presets done, 105–120% steps, #3222; G14: lossy DNG, raw sidecars, Camera Raw Defaults live, Calibration and Auto, CR3 assessed as not clean-room feasible; G8: PSD type on a path opens on its path and saves back into the file's `Txt2`, #7962; G11: a recorded Save As imports with its format and file (`file.saveAs`, `file.saveACopy` for As a Copy) instead of as a plain Save that wrote over the played file, #7102; folder destinations stop playback until #5430; adjustment clipping stays visible in compact Properties, #5231; G9: Color panel modes, ramp and copy commands, the same in every theme, UI-217-17, #6000; G17: Help › Check for Updates and an opt-out check once per launch, DIST-220-1 partial, #5485; G10: `.asl` style libraries landed, #1051; G8: area type (TYPE-218-10); G1: smart objects keep Photoshop's Cylinder warp, #4112; G8: paragraph direction buttons in the Paragraph panel and options bar, TYPE-218-2 partial; G1: 32-bit Hue/Saturation and Colorize as Photoshop does them, Photoshop-oracle floor 190/258, #5781; G11: compound layer properties export as separate Photoshop Set events, rename last, #8304; G11: Batch and droplets take the result at the action's Save step, so actions ending in Save As and Close work; G11: `.atn` steps that switch to another open document import, play and save back, #7103; G14: the Nikon D4 white level follows the sample depth, so 12-bit D4 NEFs no longer open 2.6 stops dark, #5978; G14: a Nikon NEF's Adobe RGB preview is read as Adobe RGB (maker-note ColorSpace 0x001E), #5987; Apply Layer Comp action mapping, #7101; G10: JPEG Options dialog landed, FILE-215-19 partial (no Matte, progressive Scans or size preview); G10: Cineon write; G10: DPX read and write, #1049, Cineon and Amiga IFF read; Classical Object Finder improvement; learned segmentation remains open; G4: named, stateful section locks and visible keyboard focus in Brush Settings; G4: independent Brush Pose tilt-axis overrides, #3825 partial; G4: Transfer Mixer-only controls, #3825 partial; G9: Preferences › File Handling › Save in Background takes effect, #6207, 24 of 169 preferences do nothing; G7: Content-Aware Move previews every selection the command takes, coarse then exact, TOOL-213-4 done, #6680; G4: Pattern Stamp and Background Eraser draw live, TOOL-213-7; G9: Animated Zoom pref read: holding the Zoom tool zooms continuously, #6210, prefs that do nothing 25 of 166; G2: a cancelled 24 MP Gaussian Blur job stops in at most 44 ms, P25 under its 200 ms budget in local runs, baseline not re-run, #6205; G1: generated large-file fixtures, a 4.38 GB PSB opens on Windows through io, FILE-216-2 done, #5107; G9: fill and adjustment layers copy and paste whole, #2344; G1: smart filter masks show on PSD open, Photoshop-oracle floor 188/258; G10: DPX read and write, #1049, Cineon read; G1: CMYK Hue/Saturation and Color Balance keep the black ink; G1: CMYK Posterize on the stored values, psd-tools oracle floor 242/309; G1: CMYK adjustment layers composite on the document's inks, Photoshop-oracle floor 165/258; G1: CMYK Brightness/Contrast on the inks, CMYK Threshold's luma; G1: modern Brightness/Contrast's brightness curve matches Photoshop, Photoshop-oracle floor 151/258; G1: Lab documents composite on their stored L, a, b, Photoshop-oracle floor 152/258; G1: Levels on whole levels at every step, Photoshop-oracle floor 146/258, psd-tools 238/309; G1: 32-bit Brightness/Contrast legacy, Channel Mixer, Photo Filter and Black & White tint unclipped as in Photoshop, Photoshop-oracle floor 149/258; G1: mask feathers blur with their exact variance, psd-tools oracle floor 240/309; G1: Threshold splits on Photoshop's luminosity, psd-tools oracle floor 241/309; G1: pass-through clipping base with an adjustment renders isolated, psd-tools oracle floor 240/309; G1: 16-bit Posterize as Photoshop bins it, psd-tools oracle floor 241/309; G1: Gradient Map driven by the W3C luminosity, Photoshop-oracle floor 147/258; G7: Field Blur's on-canvas pins, #3373; G4: Hue Jitter amount track, #3825 partial; G4: minimum field interaction, #3825 partial; G1: CMYK Invert, Posterize and Threshold on the inks, 16-bit Lab Invert; Photoshop-oracle floor 145/258; G11: `.atn` import maps 112 events: Select and Mask, Filter Gallery Spatter, Ripple, Crystallize, Pattern Fill layers, mask targeting, Step Backward, nudges in points, Bitmap mode; G5: Free Transform H/V skew fields; G9: toolbar tool shortcut editing; refreshed against main: G2, G5, G7, G9, G10, G13, G14, G17 items that landed; G10: DPX read and write, #1049; G4: checkbox-only Brush Settings rows; G11: Load/Save Actions `.atn` landed, AUTO-219-2 partial; G5: hold-a-key spring-loaded tools landed, #2672; G1: #2465 fixed; stale missing-tool rows corrected: Color Replacement, Red Eye and Add/Delete Anchor Point are live tools, so only Art History Brush is missing; no estimate changed; G10: Amiga IFF write; G10: PSD spot channels in Photoshop's polarity, earlier PhotoCraft PSDs keep their ink, #7415 split; G10: TIFF alpha and spot channels written and read as extra samples, FILE-215-7 done, FILE-215-17's TIFF part, #7415) · **Target:** Adobe Photoshop 2026
-+> **Last reviewed:** 2026-10-10 · **Last updated:** 2026-11-01 · **Change:** minor (full-to-compact transfer sizing and persistent horizontal tab bars; compact join height, sibling-directed arrows and shared physical editor seams; compound-window move extents, normal editor sizes and expanded tear-off; floating chrome/docking follow-ups and guarded shared-UI compatibility; panel renderer/input, fitted resize and one-pixel seam repair; panel workspace adaptation and corrected native-window gap; selected colour sets edit drawing, tone and supported filters; geometry remains open; G11: `.atn` document offsets preserve opening order after tab reordering, #7103; embedded AI/PDF/EPS save-back retains native format with a source-bound SVG display preview; Smooth and Feather command masks cropped to selection bounds plus blur reach; G1: Halftone Pattern Filter Gallery settings survive PSD/PSB saves (#8940); cropped selection morphology and command mask conversion performance evidence added; G9: 11 of 183 preferences do nothing, as the scorecard prefs audit counts them; G6: Art History Brush landed as partial, TOOL-213-20, #1610, so no toolbar tool is missing; G4: five hard-round built-in presets use 5% spacing to remove stacked-tip outlines and reduce pressure-opacity bands, #8842; G9: Crop tool canvas menu, #6561; G2: Content-Aware Scale seam carving 1.65–3.6× faster with unchanged output, P28 row 3.3 → 1.6 s on a 4-core VM, #5236; G9: UI scale presets done, 105–120% steps, #3222; G14: lossy DNG, raw sidecars, Camera Raw Defaults live, Calibration and Auto, CR3 assessed as not clean-room feasible; G8: PSD type on a path opens on its path and saves back into the file's `Txt2`, #7962; G11: a recorded Save As imports with its format and file (`file.saveAs`, `file.saveACopy` for As a Copy) instead of as a plain Save that wrote over the played file, #7102; folder destinations stop playback until #5430; adjustment clipping stays visible in compact Properties, #5231; G9: Color panel modes, ramp and copy commands, the same in every theme, UI-217-17, #6000; G17: Help › Check for Updates and an opt-out check once per launch, DIST-220-1 partial, #5485; G10: `.asl` style libraries landed, #1051; G8: area type (TYPE-218-10); G1: smart objects keep Photoshop's Cylinder warp, #4112; G8: paragraph direction buttons in the Paragraph panel and options bar, TYPE-218-2 partial; G1: 32-bit Hue/Saturation and Colorize as Photoshop does them, Photoshop-oracle floor 190/258, #5781; G11: compound layer properties export as separate Photoshop Set events, rename last, #8304; G11: Batch and droplets take the result at the action's Save step, so actions ending in Save As and Close work; G11: `.atn` steps that switch to another open document import, play and save back, #7103; G14: the Nikon D4 white level follows the sample depth, so 12-bit D4 NEFs no longer open 2.6 stops dark, #5978; G14: a Nikon NEF's Adobe RGB preview is read as Adobe RGB (maker-note ColorSpace 0x001E), #5987; Apply Layer Comp action mapping, #7101; G10: JPEG Options dialog landed, FILE-215-19 partial (no Matte, progressive Scans or size preview); G10: Cineon write; G10: DPX read and write, #1049, Cineon and Amiga IFF read; Classical Object Finder improvement; learned segmentation remains open; G4: named, stateful section locks and visible keyboard focus in Brush Settings; G4: independent Brush Pose tilt-axis overrides, #3825 partial; G4: Transfer Mixer-only controls, #3825 partial; G9: Preferences › File Handling › Save in Background takes effect, #6207, 24 of 169 preferences do nothing; G7: Content-Aware Move previews every selection the command takes, coarse then exact, TOOL-213-4 done, #6680; G4: Pattern Stamp and Background Eraser draw live, TOOL-213-7; G9: Animated Zoom pref read: holding the Zoom tool zooms continuously, #6210, prefs that do nothing 25 of 166; G2: a cancelled 24 MP Gaussian Blur job stops in at most 44 ms, P25 under its 200 ms budget in local runs, baseline not re-run, #6205; G1: generated large-file fixtures, a 4.38 GB PSB opens on Windows through io, FILE-216-2 done, #5107; G9: fill and adjustment layers copy and paste whole, #2344; G1: smart filter masks show on PSD open, Photoshop-oracle floor 188/258; G10: DPX read and write, #1049, Cineon read; G1: CMYK Hue/Saturation and Color Balance keep the black ink; G1: CMYK Posterize on the stored values, psd-tools oracle floor 242/309; G1: CMYK adjustment layers composite on the document's inks, Photoshop-oracle floor 165/258; G1: CMYK Brightness/Contrast on the inks, CMYK Threshold's luma; G1: modern Brightness/Contrast's brightness curve matches Photoshop, Photoshop-oracle floor 151/258; G1: Lab documents composite on their stored L, a, b, Photoshop-oracle floor 152/258; G1: Levels on whole levels at every step, Photoshop-oracle floor 146/258, psd-tools 238/309; G1: 32-bit Brightness/Contrast legacy, Channel Mixer, Photo Filter and Black & White tint unclipped as in Photoshop, Photoshop-oracle floor 149/258; G1: mask feathers blur with their exact variance, psd-tools oracle floor 240/309; G1: Threshold splits on Photoshop's luminosity, psd-tools oracle floor 241/309; G1: pass-through clipping base with an adjustment renders isolated, psd-tools oracle floor 240/309; G1: 16-bit Posterize as Photoshop bins it, psd-tools oracle floor 241/309; G1: Gradient Map driven by the W3C luminosity, Photoshop-oracle floor 147/258; G7: Field Blur's on-canvas pins, #3373; G4: Hue Jitter amount track, #3825 partial; G4: minimum field interaction, #3825 partial; G1: CMYK Invert, Posterize and Threshold on the inks, 16-bit Lab Invert; Photoshop-oracle floor 145/258; G11: `.atn` import maps 112 events: Select and Mask, Filter Gallery Spatter, Ripple, Crystallize, Pattern Fill layers, mask targeting, Step Backward, nudges in points, Bitmap mode; G5: Free Transform H/V skew fields; G9: toolbar tool shortcut editing; refreshed against main: G2, G5, G7, G9, G10, G13, G14, G17 items that landed; G10: DPX read and write, #1049; G4: checkbox-only Brush Settings rows; G11: Load/Save Actions `.atn` landed, AUTO-219-2 partial; G5: hold-a-key spring-loaded tools landed, #2672; G1: #2465 fixed; stale missing-tool rows corrected: Color Replacement, Red Eye and Add/Delete Anchor Point are live tools, so only Art History Brush is missing; no estimate changed; G10: Amiga IFF write; G10: PSD spot channels in Photoshop's polarity, earlier PhotoCraft PSDs keep their ink, #7415 split; G10: TIFF alpha and spot channels written and read as extra samples, FILE-215-7 done, FILE-215-17's TIFF part, #7415) · **Target:** Adobe Photoshop 2026
++> **Last reviewed:** 2026-10-10 · **Last updated:** 2026-11-01 · **Change:** minor (panel review fixes preserve hidden-dock migration and fitted host geometry; full-to-compact transfer sizing and persistent horizontal tab bars; compact join height, sibling-directed arrows and shared physical editor seams; compound-window move extents, normal editor sizes and expanded tear-off; floating chrome/docking follow-ups and guarded shared-UI compatibility; panel renderer/input, fitted resize and one-pixel seam repair; panel workspace adaptation and corrected native-window gap; selected colour sets edit drawing, tone and supported filters; geometry remains open; G11: `.atn` document offsets preserve opening order after tab reordering, #7103; embedded AI/PDF/EPS save-back retains native format with a source-bound SVG display preview; Smooth and Feather command masks cropped to selection bounds plus blur reach; G1: Halftone Pattern Filter Gallery settings survive PSD/PSB saves (#8940); cropped selection morphology and command mask conversion performance evidence added; G9: 11 of 183 preferences do nothing, as the scorecard prefs audit counts them; G6: Art History Brush landed as partial, TOOL-213-20, #1610, so no toolbar tool is missing; G4: five hard-round built-in presets use 5% spacing to remove stacked-tip outlines and reduce pressure-opacity bands, #8842; G9: Crop tool canvas menu, #6561; G2: Content-Aware Scale seam carving 1.65–3.6× faster with unchanged output, P28 row 3.3 → 1.6 s on a 4-core VM, #5236; G9: UI scale presets done, 105–120% steps, #3222; G14: lossy DNG, raw sidecars, Camera Raw Defaults live, Calibration and Auto, CR3 assessed as not clean-room feasible; G8: PSD type on a path opens on its path and saves back into the file's `Txt2`, #7962; G11: a recorded Save As imports with its format and file (`file.saveAs`, `file.saveACopy` for As a Copy) instead of as a plain Save that wrote over the played file, #7102; folder destinations stop playback until #5430; adjustment clipping stays visible in compact Properties, #5231; G9: Color panel modes, ramp and copy commands, the same in every theme, UI-217-17, #6000; G17: Help › Check for Updates and an opt-out check once per launch, DIST-220-1 partial, #5485; G10: `.asl` style libraries landed, #1051; G8: area type (TYPE-218-10); G1: smart objects keep Photoshop's Cylinder warp, #4112; G8: paragraph direction buttons in the Paragraph panel and options bar, TYPE-218-2 partial; G1: 32-bit Hue/Saturation and Colorize as Photoshop does them, Photoshop-oracle floor 190/258, #5781; G11: compound layer properties export as separate Photoshop Set events, rename last, #8304; G11: Batch and droplets take the result at the action's Save step, so actions ending in Save As and Close work; G11: `.atn` steps that switch to another open document import, play and save back, #7103; G14: the Nikon D4 white level follows the sample depth, so 12-bit D4 NEFs no longer open 2.6 stops dark, #5978; G14: a Nikon NEF's Adobe RGB preview is read as Adobe RGB (maker-note ColorSpace 0x001E), #5987; Apply Layer Comp action mapping, #7101; G10: JPEG Options dialog landed, FILE-215-19 partial (no Matte, progressive Scans or size preview); G10: Cineon write; G10: DPX read and write, #1049, Cineon and Amiga IFF read; Classical Object Finder improvement; learned segmentation remains open; G4: named, stateful section locks and visible keyboard focus in Brush Settings; G4: independent Brush Pose tilt-axis overrides, #3825 partial; G4: Transfer Mixer-only controls, #3825 partial; G9: Preferences › File Handling › Save in Background takes effect, #6207, 24 of 169 preferences do nothing; G7: Content-Aware Move previews every selection the command takes, coarse then exact, TOOL-213-4 done, #6680; G4: Pattern Stamp and Background Eraser draw live, TOOL-213-7; G9: Animated Zoom pref read: holding the Zoom tool zooms continuously, #6210, prefs that do nothing 25 of 166; G2: a cancelled 24 MP Gaussian Blur job stops in at most 44 ms, P25 under its 200 ms budget in local runs, baseline not re-run, #6205; G1: generated large-file fixtures, a 4.38 GB PSB opens on Windows through io, FILE-216-2 done, #5107; G9: fill and adjustment layers copy and paste whole, #2344; G1: smart filter masks show on PSD open, Photoshop-oracle floor 188/258; G10: DPX read and write, #1049, Cineon read; G1: CMYK Hue/Saturation and Color Balance keep the black ink; G1: CMYK Posterize on the stored values, psd-tools oracle floor 242/309; G1: CMYK adjustment layers composite on the document's inks, Photoshop-oracle floor 165/258; G1: CMYK Brightness/Contrast on the inks, CMYK Threshold's luma; G1: modern Brightness/Contrast's brightness curve matches Photoshop, Photoshop-oracle floor 151/258; G1: Lab documents composite on their stored L, a, b, Photoshop-oracle floor 152/258; G1: Levels on whole levels at every step, Photoshop-oracle floor 146/258, psd-tools 238/309; G1: 32-bit Brightness/Contrast legacy, Channel Mixer, Photo Filter and Black & White tint unclipped as in Photoshop, Photoshop-oracle floor 149/258; G1: mask feathers blur with their exact variance, psd-tools oracle floor 240/309; G1: Threshold splits on Photoshop's luminosity, psd-tools oracle floor 241/309; G1: pass-through clipping base with an adjustment renders isolated, psd-tools oracle floor 240/309; G1: 16-bit Posterize as Photoshop bins it, psd-tools oracle floor 241/309; G1: Gradient Map driven by the W3C luminosity, Photoshop-oracle floor 147/258; G7: Field Blur's on-canvas pins, #3373; G4: Hue Jitter amount track, #3825 partial; G4: minimum field interaction, #3825 partial; G1: CMYK Invert, Posterize and Threshold on the inks, 16-bit Lab Invert; Photoshop-oracle floor 145/258; G11: `.atn` import maps 112 events: Select and Mask, Filter Gallery Spatter, Ripple, Crystallize, Pattern Fill layers, mask targeting, Step Backward, nudges in points, Bitmap mode; G5: Free Transform H/V skew fields; G9: toolbar tool shortcut editing; refreshed against main: G2, G5, G7, G9, G10, G13, G14, G17 items that landed; G10: DPX read and write, #1049; G4: checkbox-only Brush Settings rows; G11: Load/Save Actions `.atn` landed, AUTO-219-2 partial; G5: hold-a-key spring-loaded tools landed, #2672; G1: #2465 fixed; stale missing-tool rows corrected: Color Replacement, Red Eye and Add/Delete Anchor Point are live tools, so only Art History Brush is missing; no estimate changed; G10: Amiga IFF write; G10: PSD spot channels in Photoshop's polarity, earlier PhotoCraft PSDs keep their ink, #7415 split; G10: TIFF alpha and spot channels written and read as extra samples, FILE-215-7 done, FILE-215-17's TIFF part, #7415) · **Target:** Adobe Photoshop 2026
  
  Every known shortfall against Photoshop 2026 (27.11.0), one entry each, ranked by user impact
  on the way to beta. This is the work list agents pick from: take the highest-ranked entry that
@@ -29361,7 +29361,15 @@ index 52f688909..dbaa5452b 100644
  - **Missing:** JPEG Options' Matte, progressive Scans and size preview (FILE-215-19 partial), Photoshop PDF read and its vector/text/multi-page
    write (FILE-215-10, #2541; a single flattened page now saves via Save As / Save a Copy / CLI,
    2026-10-11, #3401), AVIF read (#463) and default-build AVIF write, JPEG XL, JPEG 2000 (#1047),
-@@ -424,11 +442,15 @@ what an agent can't finish alone.
+@@ -417,6 +435,7 @@ what an agent can't finish alone.
+ 
+ | Date | Change | Summary |
+ |---|---|---|
++| 2026-11-01 | minor | Review follow-up: preserve hidden dock visibility during launcher migration, discard obsolete bare layouts without blocking migration, and report migration errors once. Shared host geometry/collapse and separate frame/internal split ownership reconciled with main 799e12962. Current prefs audit: 11 of 183 do nothing. No parity score or estimate changed; physical native acceptance remains open |
+ | 2026-10-30 | minor | Final panel review: full sources contribute height to short compact receivers and retain their normal detach size. Horizontal groups collapse in place to attached tab bars, accept canonical insertion slots while closed and preserve that mode on restore. No score or estimate changed |
+ | 2026-10-30 | minor | Fourth panel review: compact-only joins and restored chains fit their natural height; mixed chains retain expanded height. Shared-tree siblings determine arrows. Embedded outside strokes include the split gap in their clip; editor and owner share one physical border band. Fractional-DPI raster regressions added; physical native acceptance remains open, scores and estimates unchanged |
+ | 2026-10-30 | minor | Third panel review: repeated left/right moves no longer accumulate width, including detach/rejoin. Compact child editors use their own normal sizes, resize without changing the compound owner, and tear off as expanded windows. Right inner/outer flyouts open strictly left of their own strip. Regression and three-theme/four-DPI visual checks; native physical acceptance remains open, scores and estimates unchanged |
+@@ -424,11 +443,15 @@ what an agent can't finish alone.
  | 2026-10-30 | minor | Panel follow-ups: compact/header pixel geometry, top/bottom restore sizing, receiver collapse state, bidirectional grouping, floating Tools resize and rounded hover silhouette. Centralize host style mapping, guard local framework revisions, preserve unreadable saved layouts and recover view fields independently. Theme/DPI/viewport compatibility regressions added; physical acceptance remains open. No score or estimate changed |
  | 2026-10-29 | minor | Repair exclusive compact renderer/input ownership, fitted resize previews, inner/outer side targets, seam/outline metrics and keyboard focus; dock dividers keep input ahead of the canvas. Add the sanitized problem workspace and pointer/pixel regressions. Native mixed-DPI/capture acceptance remains open; no score or estimate changed |
  | 2026-10-29 | minor | G9: panel port and fresh demonstrations updated to 0.17.0; compact edge-drop regression fixed. No percentage or estimate changed |
@@ -29378,7 +29386,7 @@ index 52f688909..dbaa5452b 100644
  | 2026-10-25 | minor | G9: the count of preferences that do nothing is the scorecard's again, 12 of 178 (it still said 24 of 171, from 2026-10-15); no estimate changed |
  | 2026-10-25 | minor | G6: Art History Brush landed as partial (TOOL-213-20, #1610), so no toolbar tool is missing; no percentage or estimate changed |
  | 2026-10-23 | minor | G4: hard-round built-in presets use 5% spacing (#8842), guarded by large-stroke outline and pressure-opacity pixel regressions at 8/16/32-bit; percentages and estimates unchanged |
-@@ -436,6 +458,7 @@ what an agent can't finish alone.
+@@ -436,6 +459,7 @@ what an agent can't finish alone.
  | 2026-10-23 | minor | G10: TIFF alpha and spot channels written and read as extra samples with Photoshop's channel resources, PSD output unchanged (#7415); FILE-215-7 leaves the list, FILE-215-17 narrows to RGB/CMYK spot preview and PDF Separation |
  | 2026-10-23 | minor | G10: Amiga IFF write landed (24-plane ILBM, Save As `.iff`) and 24-plane ILBMs open |
  | 2026-10-23 | minor | #8940: Filter Gallery Halftone Pattern maps size, contrast and dot/circle/line both ways with the reference application's descriptor keys (`HlSz`, `Cntr`, `ScrT`); PSD/PSB round trips at 8/16/32 bits, malformed descriptors preserved verbatim. Other gallery effects remain partial; no floor or estimate changed. |
@@ -176220,6 +176228,1016 @@ RDDZFVmTj9a{r9e;{|8>(7773W
 literal 0
 HcmV?d00001
 
+diff --git a/docs/images/panel-repair/README.md b/docs/images/panel-repair/README.md
+index 6d535ac51..2ce917acf 100644
+--- a/docs/images/panel-repair/README.md
++++ b/docs/images/panel-repair/README.md
+@@ -5,11 +5,15 @@ PhotoCraft regression harness. Crops show panel UI, without documents or persona
+ photos. The GIFs include only synthetic blank documents. The after images demonstrate the same transitions and are not intended as
+ pixel-identical theme/localization comparisons with the contributor's build.
+ 
+-After PNGs were refreshed on 2026-10-31 from
+-`88da5a9142c9c55bbb9fb93abe8ddc5192f83929`, integrating upstream
+-`422ca7beda90d927643bcd074646ebbd37706d75`. Before captures remain the original
++After PNGs were refreshed on 2026-11-01 from
++`a4077cb15a240549715b16e2075ce6c3ec8e2420`, integrating upstream
++`799e12962806dac2d8b1a319bd386042dcbd61e4`. Before captures remain the original
+ contributor evidence. See [validation scope](../../panel-docking-validation.md).
+ 
++The 13 GIFs retain the 2026-10-31 replay source at `7005992d2` (runtime
++`88da5a914`); they are behavior illustrations, not a rerun of the latest merge.
++Fresh acceptance uses the 444 PNG matrix described in the validation notes.
++
+ The 13 GIFs cover compact grouping/flyouts and tear-off, tab reordering, side
+ attachment, document-row placement, attached-row collapse and insertion,
+ independent horizontal parts, normal editor heights, vertical dividers, outer
+diff --git a/docs/images/panel-repair/full-height-after.png b/docs/images/panel-repair/full-height-after.png
+index 9454f30dfa67c25a7f1ef5451419bc6bac9f7cef..d98f5a950bf671513e11e48310aa42a9a186d4a1 100644
+GIT binary patch
+literal 19427
+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
+
+literal 20862
+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
+G-Twk$l%R3|
+
+diff --git a/docs/images/panel-repair/top-collapse-after.png b/docs/images/panel-repair/top-collapse-after.png
+index bd370368720320d8358d872780d339c8a586ea45..e75b72464cbb13ae1f4790cfb52732461ba500ca 100644
+GIT binary patch
+literal 2357
+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
+bZ`wUt1LXN54~KPskRYCJzOM93w;%l%4)m92
+
+literal 9483
+zcmd_QXE<D4^zbcOh!%<76TSD|f`~rK5YeJ{QKB;lqTFhT&M3i5h~B$|Fm7#x(L2%0
+zMDILD?&tl#?}zu}^X<8=xn|DZv&%Ybt-ba>>v#Uq0jUr@qIraYfkC9E`ce-A0~-ch
+zTjAjX-%cE}h8P$uqiQb|^!;-7=J8YLlyANtsMoxB@&fZCxOweKcXdB!{s*Qo%;!;|
+z7+eldUWPJpaWLWPFg{=Q;C%4AgC8F+EZ-DY;dwM&KPQvDrWK|dQ|R?#<89^X3CQmA
+z^nB*l{xo`{J*ZWBOj>x>%*^cMo4LW6vzuEUrPH4u4;eplf?*$R(~Q`T(TnoG_r7D1
+z5YoP@(>*__456QR8@N}sQ_&i!L?SDaGIWLRWQ2jBGk<O_$18(H>3pUv3(Px%=Wl2I
+zkJckRhb7rf{gxwS1JK@+X5wv^+utmE<EZHqgEo~IA8}VSS)EUI-jc_BI6PVkCyBhf
+zJ?qqx-Pho6_o5Q8cmZCh)#RY9Y&%rXko2@$U{v-NaTv+3>gW3Qand|Q7M-YP94{r_
+zgnP4X*!f5)k`VthyEgIFUgIKUHjYM=3$jdLju*?<;^2pFKkMRcoO^NyYn`oA&s=S(
+zzB!#mocXP1+FO~}Oq3Zd@3*3f8y5nc=NBst`q2aYopfj5_BTF(i@6I{vAkW3cjpNA
+zz4}QX8Bl9w+@6!@y3Dt;i;2<=GPK928hcL=5-ETAE0N|s9nEy(8=If=mRl;?__3hC
+zfP&fJHEwhK*1ZOkH;{v#Zu#4T#6Jg#Au?@8!_v#^*>1#!X5I!`=(B}SC*7#{M0`)a
+zSveHe!Gmql(~!g8pS2?sgLbW}D^-Hh-Ca2HP$B*1CL9H1DN;AbW7b%*<T4%NJHPp}
+zNkY!MWgn@Bc3$<V$c?U^-EPR=QH#yG)c*PTRQqSY(?6_f(LYL~7=tB5p59@tvBe%9
+zO<5;KXo*d;@U-sMKrz8G!$-<KC|#8Z)^t;$wm)42%PX<`xoCeH90Z-Grc9()N<b?z
+zQTBA|4<K~p5mH{BjFeJ=MvKzaU7-oEtF$a4c*?bPuL~r-M;7BSBsv*KB)(lg>)OhT
+zP6SJsU$0Phs{l%(LgfnEgZx(G#k<UW=gHp!N`Zx>olKbU@3x{lmKOri@BZl}JUQSG
+zK8Sr|J_wa=+!hPmZ??bw@@wEu6FQ7WJrtjFR~nkF!>nMfQ*v-C@=-l)Za-U)e(TKF
+z{5v_)R7tPh{N3X%;Km8L%c>NqWCOf*sWh`hIO~K4T+zCA7kT()R#5K=d=)y6mn!Z~
+zb4?!J^e^WiM?>9k`J1gNJNRG+;2+D4oj33N_M0~pNyp#I?NuWf4sztr<~*%49Su&T
+z7LBLVOkAn2NKkjC?B~!QF|TWTX`DZHlgP`Q?gXEAGxi1pVkr?zvfzFgmROAgAw_Az
+zl>_(c4bQI@?-r^TOI96}tN<+}AR>RTTn4!yMYDg?CS)Iuzdp^^cVg1Jpibech++uf
+zaA`l8Sau7!GLZ=;k@@ptOdiWN0@sk0>q`%X36GpMYwF`7t^f-zqj&Y=R=xC@@kS!I
+z0W_a@YQu@8IIj17J9kow;fK#xKMR2#Z+Ben$I?d-iA^z0+^ixJNh;e<jluHBF>QJJ
+z@aPh(n(fkWk(D7gJIlSaZalW#k)-ove^liSFGtfm$gsk&e?JMEm&ui)t#=s%qvrSa
+z_B_bWi__o6tYLhs><DnVKD>+@6vtXiST*J4j&a7_ds<U6wVwh8IriD-w|^dTRV!Qz
+z(xUEn{nhWrIwLn}=4(dR^gw|_sF)^6@FWunVGGu^e>%lJ5ElA_l=;<1AP$Jg++80%
+zb3-tOK>SXp?YqehO?8hJH8TXBU0)zWT(|P|Ws!{m9Q~5YA5vR#kxFSa)JB8r52huV
+zRT2nkU7IW+Ii9iks@%th`06)n{2};;Z~fOGNYd!%Z$u&If11o5d5N#Sao;N+ytV1<
+zyxMQIyt_Fg0isKg3|~ne!V?=ddeUMfY>&bWEpbvPVNR405_`-|>#!Yn)6=J~4L=-b
+ze&GppiPDCwJZ;7<exaPgRj7Uk$Y#Z5Z-l99q`5^c<LBP?cub(*%7#gH(NHs6jF+b#
+zrDwT2Rjt)ZbxO|3+nMPzZJRzd(zco)EtQIvMz;yaQ46!-ess{((H4D5ZBiZ<aBw)l
+zpSS@s?9=}?=&<CA896@<gF8%(Srk>kgb#rrDvE1G6%R8N`DQx0Sq!eODhZI$R*Bf7
+z6)aD@YsZ70x1|>BQj}c3{z9+i5A*Ex4c6Xc5-Q$~7h`&tjPiI0HA%~|U`(yo^yD#-
+z<uE`Vm8TAK3b}5Y6c^i4k!ev!LXdL94Up8JQt=1uLdB&x#WjApB|$EoRqu8}o%w!n
+zUV5f31niW97Hg++zssEDg_b~4*#u7F-5|`Myss1~&oAfj#)WiRjvz@@c@BgEQsZVK
+zulu}8qf{9DS;!Rn<J8G@NY^{gP`lH$tI?!eqtgjj>fGgIiQ-#jrr&G*67&t%3&K-&
+zoGY4PVEb$W&XP(^>Vh1@Y}}^4=dnLO2<}kV)z|kR52NI-3sxnBBT{x*X$Y|?vO**A
+z6-M4QOtaZ-9e5hP!3rfMgWdg#epY|>Q2ty&B|OrF?ly#GKm>9=jQ2huNAo)}__WsJ
+zPQd#UsdN}i3jf=1(hU*b#Mm|M;KR=uTiqSciE@KRqkBWN1(Rjnm%h6LJB}fdx*#<4
+z{pcWJ@yVpQd>XPppZhAkg#2o^Ryzk*t^4dK?+zkE;+OM*;wtkpc2&q@<tONY3Cs)T
+zxMVZoL2ua}_xp3+wauV}&9-1+r${hA5R~6^)PSX51OD2?OGUa6bT+^0!RGLaZCyL$
+zatxH0t!t;(%Sro?&i#c9Wpl*=gTEv&8)XX-5!&mm&SDkgxvcb*?tqwV&q-ROdugFx
+z5Y2fR`5`*wPFjQj{qI334whXVIA#RjNC(<^eK>#!*vk#v-^$49Z+TYN{IwI0?n4Q6
+z8?nNj%=T$b+Whm>MV^^okjRv^e@_w@GjA28TS=Wi)R;Sp7X=Z*4sUkt<#(po##c4b
+z8YdDb(%=&kx$~u|1q-II6PG?ct*Hc|%o*mk{k+>_IB0Je=bcg}tTIWe>3%z0ohh|3
+z{@{G;+j%uVRk8Bs{o5iQdO2Y**##|R$7C^PQZKD$DWLm+Jv$PaO|<>Vpl-t0xhJU0
+zJGwz^k{&j2FztZ&)6=X@VYsmE-BCX(sT`PiOTIy1?#M>+&S99d0&C0E3PVy_xUg)K
+z_7kZALE5dv#qZDAPcqa)i}&q{s)HU4rVH-0r~dAY@h4KHF1BJXZ!l8ebYEUo1QVrd
+z)T(R-hW95C*l6E1aKxre5+L|n&&@JDsyC>rAKPwwSwzwMMBCQYB-={U_}b|HB30Wu
+z7U}aN_R^<XUQ*P~|L5e#CS=U7zk?s@DYa$u<CkQC)kat<OmkGA@IYmw!^p2Q@9uh|
+zTG0Ramx^yQ21_CH;_Ydp^(uN$7#X)iPKqswZab0^&7Xp6j;|cl4oiI-`^rQwK9OP(
+zLk%Vc_S?Fq@6Y4K!@O)<iqAHLNtueC4ftq2Ec`X(!G(EBo0quS2pl#5AN4SeBBGr@
+zA(f|hxuiMAHRu{YTC03da>ij!5uw6YBz=q>$`Yo6jVrmH5;BYfBVfBuv}tiC#OIQ^
+z+${8{OW!S1_xcT93Z1kH5`NsrDxeH!UY6<&20^KB#T%BZYb?qihmk|jLt^vF^ePz1
+z#7qk02@kIlLAJFc1xy)6nMMQtNwD`e#i9a7`_VjQ!|Y?>mqLLIx*Hxh7Io4E71|qC
+z4Bml81FpLL{2cHyay5$_ACb|x@M9>#KX(t$ZsO@$Vof*3<4P^bZ;=6z*>{ccwy8fv
+zr7j?R4Dh#bI-&6AsoD(eR4?8C5hIz^3Gw7roh*xZr}QHH1sRqWcG7t!?HLPpv;;il
+z?rIU?8P0?^*<0ZbDS0Z<TSstiUOV|3*Fa(euSJmR=hY#DQI2_CYk$Vc!dK4{hYhj~
+zB3r?7OO59IVS6X847SKRt!ex75qS%F!wTA-=5r_-0v{8_azUJ4n-zKl!*;xUtAgsC
+zTeB+vlw0zB@nWH(R`U&B3M>rQTk290fD7$}5j>>q7s7#U=2Ul%uKcLC!j4j|H(B0y
+z*cuj2g&NaXm=*Jgx5SMT(7W*A+MwNk6+Y-)3AgdrPXl8LVQb*k6eUSZEev99NWMDm
+z%UKqk5|2|Ye)T=Q^Li~|vY=ZFMoK_C%AtA{r%QI5d!rE^yPITZ?UkTe1jK-=>IZ`k
+zTC8D&DQFSJtXq{+tZCh8-3hngqwFIn)~-?mE0xM>>=Je*V*btd4p!;Ny7$|OPeBsT
+z#G*?EUN9y0a>TnOm@nX=ibR!1pC>^&Ty$bcckS#{bPNT#W(+K1kb{);>pa``a@>8J
+z`Gh(R_*J97EPf~KHrDxZuVoxX2_Y{Ot3It}(bKb?_g(2HT-vF)jMZU2E?bk8>~J*3
+zvJD;l3herAb(vX3ZDXO<ov!ucuVoitt$i#Oow^K?XPcVu7etPvG{e)StQ4^5Q^O@3
+zL&pQON%Fh1YJ{I`Q%pQ6)z^S(M?ToY8hHU{9<;9Od=ZIHZ*xoRKfY(n)2htbiCRtp
+z3w_~WPqj@I%9@dJ8F+yMb=e*ZAOh7eW~g^tEu)$ty6k%9uW`wy<WbX17z&y8I_yME
+zq!O!qCMkir_K*KrMO0%gQs;b;vtOL7A#x@Uy_CPn(P@OY#wE4?JXX4VXvXU@R3E#$
+zT{ppcf|2*^8As1f5pDgaP~}&z#ilf7zm$n9Iii~Ni##7~fy%I<9O*gIIVxK@1?UI4
+z_N_IQ{K_9V>#b`gqDJd_`!_D2ozBNzlXb|})+L!)`@6RnoGunIk-9ClT3H<`8_~lo
+zM1^)ZgbqJ-FMj!1+vI#s81|jU6xBy*N?#7S1wWOZu7CNtM25d*^UL{N8YkW)dA}x?
+zxQ!A^xx2ItrjjO!I`e7S>i3A28T#%%i6UXB7W;-hgNCoUO$%-(JYT=1%0{JQbW;kN
+zt<HJGr7fc4aQ%cTf7#F|GK!d9YVr8xD;?^CXXiPX;4!#%WkAP~pOeMoB_=aj+81ih
+zwnaQ*G;o_eohXk`J9-|zrSbg=gOnvQYEo>bBRuuuph1rJwo9DLM+XMfP5lgp3DWV_
+zVPW`2?^B2pu%H;*N(nd{gjXLvys^ayBX#R=>e+x<cZb2-#GscIG+wrfBaQEkZM7S=
+z{vnGlVz8QF-4KI5!Q>cv)A}hPu*K8pwQ+0J3{9lVVzelC-?0VhWZAAhYJcLwD@GED
+z57NB@2mec0(Eh^gUliAH@fS@5zsWSO;zjY8a`uN+O_Q`8L*t)$Lh45O?@}fl3+9JT
+zPxi|WTCmmrr6^Wv+Ja^G{@~eO+-1@Np26bewnx0^*)w`X(|5Ta=a=&2U4!UzW|Zq)
+zYMC5gJfM?bkjHWTW_f4l_Fd5;7K49k(v-5MG86X&moTWmG-*RmcbL<?!d<TT7H2~v
+z%b@$r>(;%3w1_LvJ!VO-UMOpL-U+MRWid{4YN`@tgtFc}GZxC%Yv0g9#T2-Qa$@S{
+zG;z8oOVN?h(P(;|QiVFO(YWcmYwlP-dX?)OdW=iy^XlL8kc<Y!)!LaHH!kqRr-J0-
+zAIa;JjmZ@h3jD$}7;#jB?Qu2ghzQ-iT|D}htc^S~x=v%JnnN@d5w>k<P28Ua<rlqA
+zrUmB|+h^JiDljXyLcXzwbz!shb+Nc7??d!OI3;=<1e`tGT}lWJja4EqOTUr*A!D&H
+z{vDQJ-v1HP2%`)~xhiRk=9)K@12#QQOC$o*5hN1Bd7epQ@@luU-;w(|S2oIN8rF#S
+zsmNLr@hO3R4_7KXzQT8OhI|_5OVR|zmXqbyD{PpA_BUHM1F!}ZSsym}o7fS1>|)S{
+z@{o$U$W(>unqw7u7o+EM#MjveVpez7{KZ+A0Ka+Bo`D-q8}CeDqz6fw*QB2t+g-*<
+zJ=g~<G;ap>QK;0=;k%OMT)i+TG5TwdWDW;&m>63q`!M&6wkf6FI%p<xZ$OB)kOor|
+z^>nbm542%DQa<yYcD6dG)|L1Ly~^yTH<;ejVPRTZ2{ESVez~3+12U(0&QViNCXt4w
+z*awZ5EO;-w<;ppgY24l>g}fpgph;2xO6S_L1<N2;>``UU>}AWuhrplMz7;VNC^}2$
+z6)t<Nub2vr@M?^!d2W^k!e;&y=WdwrlT}0_6Aguqs=+e{lTcKw0!Gb5l$S2ud^lKr
+zFPC$)%xxOUSTim<?{4@(%4V+3YwH7E7GCkBD4vOsr4UVLjB$div>U|<(hY_&M#m5Q
+z4nZ+8x(QUjV72N&NgFG@C|%9^Z>CQZf*OH``5vUP|3ju%OHXOO#p!_&#T%OzIRV=x
+z9>%!wy&~JWRlJ!Xqm+;dn6b`CP0gy(Qmj<UcQWS;9fTg+Ky*;D89%{w?mL%>8Z9@S
+z%7cKpq$EuxA^NWy6e$LVZYk-;lk=9X`<m<yDaPB^`e^We34b0idIADZy*fxNyjU|v
+z$0t@V_(#2f?aN|L)vbfNKmN=*xS6BFVT-9>4FjLPWXevxO#kjgu|r(k(wX)yD?-5s
+zQ#93C>@_h<ny&D0@pCBnm{lTAA_VVHh$!op9IFtr;me@CVa7do5>MOdE*xiEML#S4
+z^a`4RSsh+shj$=>tTj93E9f^Y5Q2?{*}mkhW#{9}vNcA-H>q@)`n3?BTUm87g`JcH
+zLhGz)9@;j~TF6q!uxEjaU+U-0j>3Uc_<Dbuk+OxLR`rh4?<6k+OrgS8@iBLdM2bRX
+z9F&gRj07o%QZ7nt6!d|?$OONGx0(-^-M0Eh94&u-e#KzKC!!eRzQG1NsFtu>E04*9
+zUACix_$!WtExSHWHCeXSu_?+5ddKC9dH(rVk?Cu)S>?BAyz`MN^&Nq=W)KcFIPYq1
+zqpM}7f_8wK2n18sbE}^6TT|sh{=$cQYF*eoQZ?@UxJBmG(Ogm0@enM*1@{<{Wd0Vj
+zwQAF-d;2fV@|3|h+Obs^CHgF)6v6y1`+OyRf8T~LbE%2-Tcgi^mXM}X1hD(5xW|V+
+z+Qu4YheZgh4+Rh1YTu^`cI9!2sgi6Nk5Yw_De8!g+7CLb8i?rQac;~@!u38%ACBv7
+zSdSK|2~Nd&vCH-I-w|BN2g>p&&c98oF)2D6SmHxx4#in@+QQMIkM=NeKlW|2Nhs$>
+zpR$MJpw_0P;Xah!e0!w*TqmM?Bni*%z%2tVyt73+qHEbmqvr3P?e0TXE!2C-Nz5v}
+z-feHf3J!;-m0P*Z+lL!pOTiuZbtn(z;nF6f@cj5e|DJ=jwiS<D{w@n;H^HZ&-lolg
+z&c?pwG`Vn1@zn%~(XQLJIHoqlU_nisHf5#xH6BGnj3N$<s=h$LmH;o7rHicfvXHq)
+zxyYdQ3zu#~saBAxWA5(5{<kx*IA41UR5UT(kJO4+j7Etu!!m^zWjmi33YR}q2*Q8#
+zMtt;+#DnR)-b@*B?-wh>b4^}TRf_mdOr%{C|0ca$)z{TZ!Dqkf^N_<ccSMgPka9>g
+z(zH=d#_3H7dsUPp4E?0sgzq!*?DvfkNkQKsvAQi>Vbl^9_p4;d^VeokXgUQg^7%-g
+z4|bMhrzF1~?lY(Zrb(IqcL!11v|(Q#GAIc1hmz~;(9UC#FHb!#*3u1cAP@$cr5wgN
+zXp%`Dyi5Vp3j3$zdg=q@uGz&Qp{8Jc>-!cKqW<Fx>Us9?%y$|4-Dbok{LNrKYHu~(
+z*<&(9*rWy`Nh<OvYPGl8asAj5_utXI@0tBM?XO1!zqo1@t}E+kKuLzNwjslrbsbDs
+znVug&<_+aKDJ|`Uwv8NX=^&xJ<)+mH0&7G<{DaFnVhyJdaT?#oc@G5r>L?v{aMOg|
+zgv06?8*}31vK@I&`YyPi?ExFE*jJ?UJewJFlQrL3^hO`#9X2k4DkuNuW#($Fzzt9K
+zfk|EK;rI^3Io0zKDt($Z^YI6DXN?2s2UBkBLaw9><SxyOE{mj1coX6AXHI3>sJ%lS
+z;D~32H)A@TuTOmyP+n#p7#OG}D<B2aRI*T4W}YxF2=ALOlkf-YLlu>jVq&*+Rp`l$
+zNulI4k?}K?rDp2(l?@cSg$dHm{#8qGDQl6>vC8K7S*PTvBd<uj95GC4H=8j1g>oKk
+z>?S<bQB|{%KC5yW@fh$r-qZ;Gvh3)lUyBl$RH!&6`cOk<QQ7W@v(-jZ*Z1+J>Ymd?
+zo0|B!$Kxh{Dvs65PiB`NLWRP7u!#eOJ%1eW<cX;^$Y&1=3n8<;>9)uJzsc#HwqSeF
+z?kJK(tf=csn@Yh=#NF_5yRmTb0&PujM$3Vq<*@CEIVj@Cb4*?A;LLf2E`kT<;d(v#
+z8F3|EqoX4O3xe^8SfTB&6BBVCQi?jrcR`K+^6l_;j*EtALj<FHDR+dWSYIf=5{SWY
+z@~I9E)2$0>GYIfZ(p9u01ygPD2pd52$-Gs$`QX0{N8HMNa_hN(j=E_VR=vu#6jEr=
+zIx0iZdIimM^y0%pzP=zin?M8@B*`lFd#ueCrf*<UWSm^|+}b9=yOfHE-A{Ky8Cmb%
+z0M=(4ml_Bvz%mm_H}f&dxg7H1hwUWob*;?HR2=R&Z|MKR)HA{^0Lfka&iJP<nGm-)
+z=9^9^Cyh_J1WBW+Dtb+^ug!b{W%&b9$M84<Jv?V2U^qumR8+&nUBZ#67WaYDQN4hr
+z<V~h1kU~XXS*r$N3gV`*IH8D$^cne_PzcDLvw3Xed)opziU7N}?k%>mv8J_e1b*3c
+z;OP`c=&`CLv#4>=PFxAKHct_1o;>6EhzRqV>q?b2_Ruig*XwHYagTcDS~<+?eW4!P
+ztPZqJW)TewEeUh@xwpkF7y_O3fz^Xvo4l*{Gkm;W7v5unugZEY<Fz>w8NydGI@jze
+zEp&mBYSQ9Iyp~0fxgg{BQzcI`V?wQe2>$9a@)-x`+K>B##_hgKS4K9+R*u%4Ww)NI
+ztOTm#!Y;ptVm*um(%<}c%A{Yn7dt~tfebyR`R-I?-WCRFTXNPvk=>u3DIMNYl?o@6
+z#CI)N3VI{sXR0e}8m$dGcslEAcT3?i$kL;nQmwm227+3-HYL29tjBDdlky#uXijpc
+z15eS13SaN>5nr3%xPf60qDgcwN78eJ1`LLS;u8;qp?!8Xo@z$Ic7xH>kdz;eV=(GL
+z4oS>85xkN>iH2=Sn6+@#r(q)6X|u#Q@H*8S%e)dQo=yV$X#+R^T<>+saoJk71cKPT
+zV2^V&4E|B!u9>^8eQdUM$^fmBoT{wj^mdccPFtoh9bF(tp7BL#xvrwO><YDeBlZ4w
+zUk1IX>s%8^ft})`iF0|q)cz;}34kTnZTlVWLy3J`#pWWJd(dE+X`6=s?p^Q5K-^X!
+zHYL6~_2xePDWh-NeZtqpLAtzBs-G4rDD^C@d8O)_FUQufea(MD99a@@!n@us&)#-5
+zTN$Zf!oXlx(Wc}Va*(RTED%(Amz@|f{S?u2ma@BdB6y$O+uh9bU(Y;>&zAx6dzJ&d
+zjd2e+tNvVIk;r@+V>d8YSq+s|RnNMc^V@*>uB7XWrJ0u;$RJU)M++hRgKc-H$d0H2
+z4ukE<g@uKd0&DM@u1DM-e-)}A&(5tAWhu}jQNTz7u-lag%C~swZv!01<l*-Yr?yQ?
+zsCoaJ%)&{zkgEOnO08Ky;II287nxFJ{8y#NHv^>l!XXPr|CNb4P3)8EwK9cR(MTq>
+zWPK@g$Cc|Fm+BtCWq=mN6Jmg)CYZBn=hER4(`D>D1S+}0A7J5r1OOa2Py6wx<w(AQ
+ze+Zpga*<x9Y@kn^LUV5li<%w@Pfg$Rg7R|SHXvQOJZ@-CRBJcXf5i+)n3@pE2{dPT
+zZt@7ohJAj(bzk@^Dk`?D<e5_B&wSL)*`nJAU@?_s|GlphA?NMoC`RIYyx4SmxkID_
+zjN={tcN{4jEvV0o<H4DB&^8$NE1&}>8;kp{AS1A$d5|~4`fnx0@b`PUptZ0X!oR(T
+z{+7dQ{&#r@`Cs|}`CpVnz`KXs@FRC+Tg|qoeO{1H)5UtWba3ZV7(o}2_?!;1F&)r_
+z*MxrB-#efah9$@x_6azlzGgLc0*I{pANJg-5hNgweqvdP`R!r4=$+Oho%uj?`#p5E
+zygc3_x`_kyshn(L5%X#?+pQyWa#jO~9z4$51yKy8oX%X$fH}G<TK8!#&(Mso-&jUO
+z2Fs}>ql{-}XQgjCW}Lo7G&D5mP&DJfh5-=a4sblL>y9C@*`JGU0K}A7L!-djL|C|l
+zcspgape7(ttRjJF{IC7PiNvBqYVT9CoS`=0gC3-FS@kP~a{_~`RL4RzDf5c+VLgDX
+zeojvLE(S>lG1N5r<xB$lb2>H#|Dyny50&kMu*-f&aXRB%nSeOI0f;c4mV4>r*gO&%
+z5e~Y*-D=C>9LeRf+TllybMG|><>-CqJeDsu@<>$Zz4ZYXB<cFBEk_*^3}D?Z0GBX=
+z<Zq6vP<k2>0MC`Fc-Mop&+&K#;d{m!3~<b7g_6%8DNY%npT}OLna_0bnEhXVi7Eki
+zdm?4iyBR*Qs0DeHbB5~ymKTpM{8S`-@3~8;`pLJnFwIQ8tR;ODW*RFS27@C2TN(uA
+zL{dFq!PK*nTL$#|$gS<*Rfe>$tKZ5$>|JgCM_mBZSwTu{=7(F^{Q0Cryp{394?*wy
+zF_ynWLQbXE;5{IABtSahtG*P}f6qAftW?Tr<O<~#6s~|@Y&%Zq+ot(g=>U#6E-azU
+z6tjc^pgLtZ7%;ytByJ<R{J8i2lrJ{pP)Ox#<k3Uk9ZBmtb#PQ=+1&;8U7&_(WxtM#
+zD`{K|mbQ~J2yO=yZFV~Z%ukgYe7WVm6#B4tm%SkmSaOi^iZWm|9^?&IfP0WKy`DzX
+z`DA<m6{gyJ{sE`sb5c*>y;n&&_vZr^EcJDF0*>&OpS8sB0X$;|iCZ*sD}7H?n#=UK
+z{+`yS8oq5_-AH|H%z4`eAjVz{14|*;6tzef*HDh6@I8PwyPYRhp(BN(_iB-Hf-^q1
+z7aLLdPuV^KFA%`DPep#0K3hVKd*U1E%_U^EF2&J`^Dz{`a|22zNnZj>J;GLtIt6h1
+zlZI)#?1*{aMOizQYL+KE_MdsZ$F#(IvTKehsCBWwyt$3`Q@_k)VF_NB)oAY}V~!CS
+z$$<HG;j{l-LIJdq%xA%WgYPc##gq7Umn!GxwY1pE9!~-#r`co;K5CM=FR^?yd_eN7
+z<whQuZM+6Xs1D3tgH!x{SHy~!=ND=mDQggIP^F3^y<642(xP1^SPv)}Q715w(QhXy
+zsO<Kwyx~!z+@(X)?_`ax2@^N^VcD}ecK`$Tww`)0^-ZlbM=ZMr0od0;<_(ZTBT1CM
+z^$Wk#02W7jEzAK;_4h8tT&AiL^7Sv<a}`Qnalh;(%hWS8^-#|FEMYg8;fIi!fJz<q
+zF-td4%LhYDnQqQk6BB($0&h+xSC4q2<*a^23jpYo%0lY;Pxq>4z2EO76{`j^g7SNd
+z3jJqMr;h|e3Y;mN91+0)<vkkZzkjm=>me~=P>&#j?rFok&urC3ZeXNQt=-y<2M_~e
+zS8#dD!X58@bL-AyOxj8(BBOuO<sJ)9d5vjV>o~3a{0FxfXxUv0%a~vX)HZx+W3jzi
+zn3&M0%`*NDprL<5K5FG&rz{4OaQGqc3w$^`OCS+%u1)_I)PfT4BlLa!TGxGay}x{K
+zc^{nbFaLkHr~h{w!-f6VAtkn<|Dhc+7m8$0`dg!ySN-#e#vo$`4X}61<-PiEw4koR
+zOyO1E{}F`pfBF+(f&XjLAMt-eoc{}k`@MXJ5xk|h95pZvyyJv{p{5LaS)phV_P+q0
+CW`#ol
+
 diff --git a/docs/multi-channel-editing.md b/docs/multi-channel-editing.md
 new file mode 100644
 index 000000000..4960faa85
@@ -176528,6 +177546,129 @@ index f094bca7e..66a9b6564 100644
  gaps. Keep upstream's default behavior for other consumers of these optional hooks.
  
  The local `vendor/craft-ui` snapshot is explicit and pinned in `PATCH.md`. Do not edit
+diff --git a/docs/panel-docking-demo.md b/docs/panel-docking-demo.md
+index 5d3689b56..a3b2cff91 100644
+--- a/docs/panel-docking-demo.md
++++ b/docs/panel-docking-demo.md
+@@ -34,8 +34,9 @@ cargo test -p photocraft-ui-egui --lib pr_followup_pointer_replay -- --test-thre
+ ```
+ 
+ Source provenance, playback/encoding limitations and licenses are adjacent to the
+-images. Captures use synthetic blank documents only. Runtime code is unchanged
+-from the reviewed integration; the later additions are test-only replay helpers.
++images. Captures use synthetic blank documents only. The GIFs retain their
++2026-10-31 source at `7005992d2`; latest-merge acceptance is recorded separately
++in `panel-docking-validation.md` and uses fresh PNGs.
+ 
+ ## Join and attached-collapse regressions
+ 
+diff --git a/docs/panel-docking-validation.md b/docs/panel-docking-validation.md
+index 2dd072346..43327525c 100644
+--- a/docs/panel-docking-validation.md
++++ b/docs/panel-docking-validation.md
+@@ -1,5 +1,102 @@
+ # Panel docking repair validation
+ 
++## Review follow-up (2026-11-01)
++
++Runtime under test: `a4077cb15a240549715b16e2075ce6c3ec8e2420`, merging main
++`799e12962806dac2d8b1a319bd386042dcbd61e4`. All three documentation conflicts
++were reconciled; the scorecard was regenerated and reports 11 of 183 preferences
++that do nothing. No CI, unrelated feature fixes or contributor-credit changes
++were added relative to that main.
++
++The five shared-library findings are fixed in
++[craft-libs #470](https://github.com/storytold/craft-libs/pull/470), commit
++`235fffbdbe79f42028ec414e304f1a10b0b1b07f`. The same six patched implementation
++files in PhotoCraft match that extraction after formatting normalization. Fitted
++floating geometry is recorded before exclusive host delegation, collapsed
++stripless groups hide their bodies, split handles accept the host style, and
++frame-edge ownership is separate from internal split ownership. PhotoCraft
++explicitly supplies replacement input for its independent floating parts.
++The shared PR is still unmerged: no accepted upstream SHA or vendor removal is
++claimed.
++
++A follow-up shared-only finding was fixed at `4f263ed`: docked custom groups
++suppress stock top/bottom body bands while retaining column edges. A real pointer
++regression covers both ownership modes and all four sides. PhotoCraft's adapter
++returns exclusive group ownership only when `floating` is true, so that docked
++host-owned path is not used here. The tested consumer snapshot remains the
++`235fffbd` patch until an accepted upstream revision replaces the vendor bridge;
++the new shared-only behavior is not presented as a rerun of PhotoCraft's runtime.
++
++PhotoCraft migration now preserves hidden dock visibility, stops retrying a
++failed launcher migration every frame and marks the status as an error. Obsolete
++bare layouts fall back without retaining a payload that blocks migration;
++unreadable modern Workspace payloads remain preserved. Regression coverage
++includes both visibility and bare-layout migration, plus the existing unreadable
++Workspace test.
++
++Fresh results:
++
++| Check | Result |
++|---|---|
++| Panel-filter regressions | 167 passed, 2 explicit benchmarks ignored |
++| Workspace integration | 9 passed |
++| Shared UI at `9a97555` (`serde,native-windows,screen-testing`) | 590 unit, 10 integration, 8 doctests passed; 2 doctests ignored |
++| Desktop all-targets compile check, fmt, layers, wasm | passed; 31 layered crates, 24 wasm crates plus codecs/heif |
++| Four WGPU capture tests | passed; 444 fresh PNGs, three Pro themes at 100/125/150/200% |
++| Complete UI library, sequential | **4640 passed, 97 failed, 23 ignored** |
++
++All historical 95 failure names reoccur. Two additional failures are tests added
++by the merged upstream: `gradient_map_stop_picker_closed_without_a_colour_changes_nothing`
++and `photo_filter_colour_picker_previews_live_cancel_restores_and_ok_is_one_step`
++in `dialogs::adjust_editors::ui_tests`. Both fail to find expected editor controls.
++No independent clean-main rerun establishes them as baseline failures. The full
++suite is **not green**. An earlier default-parallel attempt exited abnormally
++without a complete summary; the sequential run above completed. Its result does
++not explain the earlier process exit.
++
++Strict Clippy is **not green**: the standard command stops at unchanged main
++`io/src/psd_export/document.rs:106` and `io/src/smart_map/import.rs:784`.
++The UI `--no-deps` command reports six diagnostics at unchanged main
++`canvas/strokes.rs:495,500`, `menus/menu_keys.rs:376`, and `menus/menu_nav.rs:347`.
++Shared UI/workspace Clippy still stops at unchanged `render/preview.rs:120` and
++`keymap/src/profiles.rs:474`. Shared workspace tests still hit the Rust 1.95 MSVC
++compiler ICE in unchanged `craft-text` linebreak tests. No suppressions or
++workspace-wide pass are claimed.
++
++All 444 captures have pixel-identical central regions compared with the prior
++submission (scale-adjusted ROI x=43..1280, y=70..765). Full images differ in app
++chrome outside that ROI. This comparison is an aid, not a claim that every pixel
++of the complete UI is unchanged. Representative PNGs were inspected and all
++capture/seam assertions passed. Both after PNG assets were refreshed. The 13 GIFs
++retain their documented 2026-10-31 source at `7005992d2`; they are illustrations,
++not a rerun of the newest code.
++
++`cargo xtask perf --quick` completed with exit 0: all eight benchmark runs
++succeeded. Its report identifies source `adaae9cd4` (documentation/PNG-only after
++the tested runtime above). Quick-mode full-size budgets are not applied and
++regression comparison is skipped: the checked-in baseline is for an Apple M4 Pro
++machine, while this run uses Windows/AMD64 with an RTX 3060. This is not evidence
++of unchanged full-document performance against a comparable baseline.
++
++A separate isolated panel-frame test measured 600 samples per phase: p50 idle
++2.2312 ms, hover 2.2424 ms, drag 2.4570 ms; drag p95 2.9631 ms. These are test-profile
++UI CPU-frame costs, not native FPS or GPU/input latency. The earlier timing ran
++concurrently with capture and is not used as a controlled comparison.
++
++The shared-only test lint was fixed at `9a97555` by enumerating edge anchors,
++without `unreachable!` or source lint allowances. Fresh full shared UI tests and
++fmt passed. A separate all-targets diagnostic Clippy run allowing only the known
++`nonminimal_bool` class passed (`-- -D warnings -A clippy::nonminimal_bool`);
++the standard strict run still fails at the unchanged source described above.
++
++Manual acceptance still refers to the contributor's earlier Windows EXE. The
++agent did not build or launch the product EXE. Physical native focus/IME,
++mixed-DPI monitors and GPU/input latency remain outside automated acceptance.
++Raw results and hashes are preserved separately in the fork's handoff branch,
++under `plan/panel-repair/review-fixes-portable-2026-11-01`.
++
++All sections below are historical results for their stated source revisions.
++
+ ## Gallery follow-up (2026-10-31)
+ 
+ Only test-only replay helpers, documentation and GIF assets changed after the
 diff --git a/docs/printing.md b/docs/printing.md
 index 09b30a500..f15773000 100644
 --- a/docs/printing.md
@@ -176665,14 +177806,14 @@ index fa9ebf1a2..c4bcd3488 100644
  style enables a 3 px stroke. Colours, borders and selection treatments come from theme tokens.
  These tool defaults are serde state, but are not restored across app restarts. See
 diff --git a/docs/ui-parity.md b/docs/ui-parity.md
-index 336bb937c..b89f65e25 100644
+index 336bb937c..d5a02259d 100644
 --- a/docs/ui-parity.md
 +++ b/docs/ui-parity.md
 @@ -1,6 +1,6 @@
  # UI parity: tools, handles, modifiers and feel
  
 -> **Last reviewed:** 2026-10-10 · **Last updated:** 2026-10-30 · **Change:** minor (compact/full panel geometry, whole Tools and saved workspace behavior, see panel-docking-contract.md; Free Transform of several selected layers, #6501; Path Operations fixes: the first component keeps combining, a hidden component selection is left alone, a dragged live shape stays live, a refused Pen draft ends once; Pen, Freeform Pen, Curvature Pen and Path Selection Path Operations menu, which changes selected components, `+` / `-` keys, #1397; the Pen carries on an open shape or vector mask path; selection-aware font controls, pending caret fonts and focused commit, plus direct font-name editing with a compact no-match message, #9338; New Group dialog and button modifiers; new layers go into an open active group and join a clipping mask, except that type, shapes, pastes and placed files go above a group whose lock would refuse them; Color panel Hue and Brightness Cube show the out-of-gamut ⚠ and nearest printable colour when the field is at least 53 pt tall, #8672; 11 of 182 preferences do nothing, from the scorecard; Art History Brush in the History group of the Y flyout, partial, TOOL-213-20, #1610; Histogram panel: Compact / Expanded / All Channels views, Luminosity and Colors channels, Source, range statistics, Uncached Refresh, live adjustment overlay, Cache Levels preference; the font menu opens on the current family, marked in the recent group when it is a recent one, #9160; Type options bar alignment and direction follow the target paragraph; a swatch click recolours selected type and shape layers with any tool, #9238; UI scale presets done: 105–120% steps, #3222; ⇧⌥ blend mode letters; painting tool Mode menus; ⌥ + an adjustment's shortcut reopens it at its last settings, ⌥⌘L / ⌥⌘M, #8900; Crop default mode: moving the image under the box snaps the frame's edges and centre, #8580; View › Extras hides the Move transform controls, #6699; adjustment clipping stays visible in compact Properties, #5231; Color panel modes from its panel menu, the same in every theme, UI-217-17, #6000; a picked colour recolours the selected type and shapes; Hand tool ⌘ / ⌥ are Zoom In / Zoom Out while held, #6434; the wheel steps value fields, #5473; a dragged guide shows its X or Y beside the pointer, #7680; Type options bar "T" icon scrubs the font size, #6437; Move tool: dragged selected pixels take their own outline as the selection, #7538; artboard backgrounds remain below child Free Transform previews; ⌫/Delete removes the selected smart filter, #4751; Object Finder foreground/background discrimination (#6548); rounded triangle, polygon and star corners; shape Fill/Stroke popovers accept hex RGB values, #6176; a guide let go over either ruler is removed, #6286; Crop rows corrected: saved crop presets and Delete Cropped Pixels off are done, #6562; marching ants in device pixels, #7489; Animated Zoom: holding the Zoom tool zooms continuously, #6210; shape Density and Feather, TOOL-214-12, #5846; Pen Auto Add/Delete on the path being drawn, #6140; Show Transform Controls frames every selected layer; guide keys and clicks; menu bar from the keyboard, #4988; Crop tool Content-Aware Fill; on-canvas corner radius widgets, TOOL-214-12; Curvature Pen edits the active path; Clip Thumbnails to Layer Bounds; Pen ⇧ 45°; last selected tool restored at launch; Layers panel filter-type dropdown with Kind, Name and Mode, #5048; Free Transform box and marching ants follow the selection, #5297; History: the trash deletes the selected snapshot, rows drag onto the trash, #5324; smart filter reordering by drag; smart object perspective row corrected to done, #426; Free Transform H/V skew fields; toolbar tool shortcuts can be reassigned; ⇧-dragged guides land on ruler ticks; layer and selection keys; tool keys; spring-loaded tool letters; type formatting keys; Pen Auto Add/Delete, #4144; smart filter rows; stale missing-tool rows corrected: Color Replacement, Red Eye and the Add/Delete Anchor Point pair are live toolbar tools, Frame landed; no percentage changed; selection-modifier and ⌥-wheel rows match their tests; Properties › Transform shows a shape's path geometry, without its stroke) · **Target:** Adobe Photoshop 2026
-+> **Last reviewed:** 2026-10-10 · **Last updated:** 2026-11-01 · **Change:** minor (compact/full panel geometry, whole Tools and saved workspace behavior, see panel-docking-contract.md; Shape Fill/Stroke popover as Photoshop's, every colour swatch opens the full Color Picker with a live preview; the text and gradient stop Color Pickers show the picked colour on the canvas before OK, #5530; selected colour sets edit drawing, tone and supported filters; geometry remains open; a paragraph box that can't hold its text enlarges its lower-right handle and shows a black + in it, as the reference application; Free Transform of several selected layers, #6501; Path Operations fixes: the first component keeps combining, a hidden component selection is left alone, a dragged live shape stays live, a refused Pen draft ends once; Pen, Freeform Pen, Curvature Pen and Path Selection Path Operations menu, which changes selected components, `+` / `-` keys, #1397; the Pen carries on an open shape or vector mask path; selection-aware font controls, pending caret fonts and focused commit, plus direct font-name editing with a compact no-match message, #9338; New Group dialog and button modifiers; new layers go into an open active group and join a clipping mask, except that type, shapes, pastes and placed files go above a group whose lock would refuse them; Color panel Hue and Brightness Cube show the out-of-gamut ⚠ and nearest printable colour when the field is at least 53 pt tall, #8672; 11 of 183 preferences do nothing, from the scorecard; Art History Brush in the History group of the Y flyout, partial, TOOL-213-20, #1610; Histogram panel: Compact / Expanded / All Channels views, Luminosity and Colors channels, Source, range statistics, Uncached Refresh, live adjustment overlay, Cache Levels preference; the font menu opens on the current family, marked in the recent group when it is a recent one, #9160; Type options bar alignment and direction follow the target paragraph; a swatch click recolours selected type and shape layers with any tool, #9238; UI scale presets done: 105–120% steps, #3222; ⇧⌥ blend mode letters; painting tool Mode menus; ⌥ + an adjustment's shortcut reopens it at its last settings, ⌥⌘L / ⌥⌘M, #8900; Crop default mode: moving the image under the box snaps the frame's edges and centre, #8580; View › Extras hides the Move transform controls, #6699; adjustment clipping stays visible in compact Properties, #5231; Color panel modes from its panel menu, the same in every theme, UI-217-17, #6000; a picked colour recolours the selected type and shapes; Hand tool ⌘ / ⌥ are Zoom In / Zoom Out while held, #6434; the wheel steps value fields, #5473; a dragged guide shows its X or Y beside the pointer, #7680; Type options bar "T" icon scrubs the font size, #6437; Move tool: dragged selected pixels take their own outline as the selection, #7538; artboard backgrounds remain below child Free Transform previews; ⌫/Delete removes the selected smart filter, #4751; Object Finder foreground/background discrimination (#6548); rounded triangle, polygon and star corners; shape Fill/Stroke popovers accept hex RGB values, #6176; a guide let go over either ruler is removed, #6286; Crop rows corrected: saved crop presets and Delete Cropped Pixels off are done, #6562; marching ants in device pixels, #7489; Animated Zoom: holding the Zoom tool zooms continuously, #6210; shape Density and Feather, TOOL-214-12, #5846; Pen Auto Add/Delete on the path being drawn, #6140; Show Transform Controls frames every selected layer; guide keys and clicks; menu bar from the keyboard, #4988; Crop tool Content-Aware Fill; on-canvas corner radius widgets, TOOL-214-12; Curvature Pen edits the active path; Clip Thumbnails to Layer Bounds; Pen ⇧ 45°; last selected tool restored at launch; Layers panel filter-type dropdown with Kind, Name and Mode, #5048; Free Transform box and marching ants follow the selection, #5297; History: the trash deletes the selected snapshot, rows drag onto the trash, #5324; smart filter reordering by drag; smart object perspective row corrected to done, #426; Free Transform H/V skew fields; toolbar tool shortcuts can be reassigned; ⇧-dragged guides land on ruler ticks; layer and selection keys; tool keys; spring-loaded tool letters; type formatting keys; Pen Auto Add/Delete, #4144; smart filter rows; stale missing-tool rows corrected: Color Replacement, Red Eye and the Add/Delete Anchor Point pair are live toolbar tools, Frame landed; no percentage changed; selection-modifier and ⌥-wheel rows match their tests; Properties › Transform shows a shape's path geometry, without its stroke) · **Target:** Adobe Photoshop 2026
++> **Last reviewed:** 2026-10-10 · **Last updated:** 2026-11-01 · **Change:** minor (panel review fixes preserve hidden-dock migration and fitted host geometry; compact/full panel geometry, whole Tools and saved workspace behavior, see panel-docking-contract.md; Shape Fill/Stroke popover as Photoshop's, every colour swatch opens the full Color Picker with a live preview; the text and gradient stop Color Pickers show the picked colour on the canvas before OK, #5530; selected colour sets edit drawing, tone and supported filters; geometry remains open; a paragraph box that can't hold its text enlarges its lower-right handle and shows a black + in it, as the reference application; Free Transform of several selected layers, #6501; Path Operations fixes: the first component keeps combining, a hidden component selection is left alone, a dragged live shape stays live, a refused Pen draft ends once; Pen, Freeform Pen, Curvature Pen and Path Selection Path Operations menu, which changes selected components, `+` / `-` keys, #1397; the Pen carries on an open shape or vector mask path; selection-aware font controls, pending caret fonts and focused commit, plus direct font-name editing with a compact no-match message, #9338; New Group dialog and button modifiers; new layers go into an open active group and join a clipping mask, except that type, shapes, pastes and placed files go above a group whose lock would refuse them; Color panel Hue and Brightness Cube show the out-of-gamut ⚠ and nearest printable colour when the field is at least 53 pt tall, #8672; 11 of 183 preferences do nothing, from the scorecard; Art History Brush in the History group of the Y flyout, partial, TOOL-213-20, #1610; Histogram panel: Compact / Expanded / All Channels views, Luminosity and Colors channels, Source, range statistics, Uncached Refresh, live adjustment overlay, Cache Levels preference; the font menu opens on the current family, marked in the recent group when it is a recent one, #9160; Type options bar alignment and direction follow the target paragraph; a swatch click recolours selected type and shape layers with any tool, #9238; UI scale presets done: 105–120% steps, #3222; ⇧⌥ blend mode letters; painting tool Mode menus; ⌥ + an adjustment's shortcut reopens it at its last settings, ⌥⌘L / ⌥⌘M, #8900; Crop default mode: moving the image under the box snaps the frame's edges and centre, #8580; View › Extras hides the Move transform controls, #6699; adjustment clipping stays visible in compact Properties, #5231; Color panel modes from its panel menu, the same in every theme, UI-217-17, #6000; a picked colour recolours the selected type and shapes; Hand tool ⌘ / ⌥ are Zoom In / Zoom Out while held, #6434; the wheel steps value fields, #5473; a dragged guide shows its X or Y beside the pointer, #7680; Type options bar "T" icon scrubs the font size, #6437; Move tool: dragged selected pixels take their own outline as the selection, #7538; artboard backgrounds remain below child Free Transform previews; ⌫/Delete removes the selected smart filter, #4751; Object Finder foreground/background discrimination (#6548); rounded triangle, polygon and star corners; shape Fill/Stroke popovers accept hex RGB values, #6176; a guide let go over either ruler is removed, #6286; Crop rows corrected: saved crop presets and Delete Cropped Pixels off are done, #6562; marching ants in device pixels, #7489; Animated Zoom: holding the Zoom tool zooms continuously, #6210; shape Density and Feather, TOOL-214-12, #5846; Pen Auto Add/Delete on the path being drawn, #6140; Show Transform Controls frames every selected layer; guide keys and clicks; menu bar from the keyboard, #4988; Crop tool Content-Aware Fill; on-canvas corner radius widgets, TOOL-214-12; Curvature Pen edits the active path; Clip Thumbnails to Layer Bounds; Pen ⇧ 45°; last selected tool restored at launch; Layers panel filter-type dropdown with Kind, Name and Mode, #5048; Free Transform box and marching ants follow the selection, #5297; History: the trash deletes the selected snapshot, rows drag onto the trash, #5324; smart filter reordering by drag; smart object perspective row corrected to done, #426; Free Transform H/V skew fields; toolbar tool shortcuts can be reassigned; ⇧-dragged guides land on ruler ticks; layer and selection keys; tool keys; spring-loaded tool letters; type formatting keys; Pen Auto Add/Delete, #4144; smart filter rows; stale missing-tool rows corrected: Color Replacement, Red Eye and the Add/Delete Anchor Point pair are live toolbar tools, Frame landed; no percentage changed; selection-modifier and ⌥-wheel rows match their tests; Properties › Transform shows a shape's path geometry, without its stroke) · **Target:** Adobe Photoshop 2026
  
  How PhotoCraft's direct manipulation compares with Photoshop 2026 (27.11.0): the toolbox, the
  handles and modifier keys of each gesture, nudging, snapping, numeric precision, navigation,
@@ -176723,7 +177864,15 @@ index 336bb937c..b89f65e25 100644
  | UI scale presets | done | UI-217-9; 75–125% in 5% steps (#2492, #3222) |
  | History snapshots: camera button, New Snapshot dialog (⌥-click: Name, From), the first snapshot (the document as opened), snapshot rows (click returns and selects, rename, delete; the trash deletes the selected snapshot, and a snapshot or state dragged onto it, #5324), `history.*Snapshot` commands | partial | `history_cmds.rs`, `snapshot_rows` in `panels.rs`, `snapshot_dialog.rs`; the snapshot History Options and History Brush sources to come (#2966) |
  | Themes: Photoshop's four greys | partial | five themes; #2661 |
-@@ -264,8 +275,12 @@ Paragraph; the rest open as in-app floating windows.
+@@ -257,6 +268,7 @@ Paragraph; the rest open as in-app floating windows.
+ 
+ | Date | Change | Summary |
+ |---|---|---|
++| 2026-11-01 | minor | Review follow-up: preserve hidden dock visibility during launcher migration, discard obsolete bare layouts without blocking migration, and report migration errors once. Shared host geometry/collapse and separate frame/internal split ownership reconciled with main 799e12962. Current prefs audit: 11 of 183 do nothing. No parity score or estimate changed; physical native acceptance remains open |
+ | 2026-10-30 | minor | Final panel review: full sources contribute height to short compact receivers and retain their normal detach size. Horizontal groups collapse in place to attached tab bars, accept canonical insertion slots while closed and preserve that mode on restore. No score or estimate changed |
+ | 2026-10-30 | minor | Fourth panel review: compact-only joins and restored chains fit their natural height; mixed chains retain expanded height. Shared-tree siblings determine arrows. Embedded outside strokes include the split gap in their clip; editor and owner share one physical border band. Fractional-DPI raster regressions added; physical native acceptance remains open, scores and estimates unchanged |
+ | 2026-10-30 | minor | Third panel review: repeated left/right moves no longer accumulate width, including detach/rejoin. Compact child editors use their own normal sizes, resize without changing the compound owner, and tear off as expanded windows. Right inner/outer flyouts open strictly left of their own strip. Regression and three-theme/four-DPI visual checks; native physical acceptance remains open, scores and estimates unchanged |
+@@ -264,8 +276,12 @@ Paragraph; the rest open as in-app floating windows.
  | 2026-10-30 | minor | Panel follow-ups: compact/header pixel geometry, top/bottom restore sizing, receiver collapse state, bidirectional grouping, floating Tools resize and rounded hover silhouette. Centralize host style mapping, guard local framework revisions, preserve unreadable saved layouts and recover view fields independently. Theme/DPI/viewport compatibility regressions added; physical acceptance remains open. No score or estimate changed |
  | 2026-10-29 | minor | Repair exclusive compact renderer/input ownership, fitted resize previews, inner/outer side targets, seam/outline metrics and keyboard focus; dock dividers keep input ahead of the canvas. Add the sanitized problem workspace and pointer/pixel regressions. Native mixed-DPI/capture acceptance remains open; no score or estimate changed |
  | 2026-10-29 | minor | Port panel presentation to 0.17.0 upstream, retain new frame-stage/font changes, regenerate native UI demonstrations; compact edge drops keep their presentation beside expanded columns; close glyph size adjusted with unchanged hit target/stroke. No percentage or estimate changed |
@@ -176751,7 +177900,7 @@ index 0eeb4c1c5..49f68d28b 100644
  [[item]]
  id = "FILE-215-9"
 diff --git a/vendor/craft-ui/PATCH.md b/vendor/craft-ui/PATCH.md
-index 1df108c28..80cb05f6a 100644
+index 1df108c28..2bb32ad74 100644
 --- a/vendor/craft-ui/PATCH.md
 +++ b/vendor/craft-ui/PATCH.md
 @@ -21,8 +21,9 @@ sources keep host sizing even when force-floating.
@@ -176766,7 +177915,7 @@ index 1df108c28..80cb05f6a 100644
  `FloatingFrame::resize_axes` defaults to both axes. PhotoCraft uses these hooks to
  resize one column of a compound floating window without changing its neighbours'
  widths. No additional persistent layout tree is stored.
-@@ -45,3 +46,12 @@ cargo test --manifest-path vendor/craft-ui/Cargo.toml --config vendor/craft-ui/t
+@@ -45,3 +46,19 @@ cargo test --manifest-path vendor/craft-ui/Cargo.toml --config vendor/craft-ui/t
  Keep the test configuration's egui/winit revisions aligned with the workspace when
  reviewing a dependency update. Normal PhotoCraft builds do not require these optional
  upstream unit-test inputs. The ignored test inputs and fonts are never part of the PR.
@@ -176779,6 +177928,13 @@ index 1df108c28..80cb05f6a 100644
 +internal-width hook is forwarded through Overrides and enabled by PhotoCraft
 +only where its own independent part input replaces those handles. The upstream
 +PR is not merged; this remains the explicit local patch at the source pin above.
++
++The subsequent shared-only docked-custom-group fix in craft-libs#470 at
++`4f263ed` is outside this consumer snapshot. PhotoCraft returns exclusive
++`custom_group` ownership only for floating groups, so the affected docked path
++is unused by this adapter. This snapshot retains the tested `235fffbd` patch;
++replace the complete vendor bridge with the accepted upstream revision rather
++than treating later shared-only results as consumer verification.
 diff --git a/vendor/craft-ui/src/docking/render/dock.rs b/vendor/craft-ui/src/docking/render/dock.rs
 index e804a1715..c38af5b8a 100644
 --- a/vendor/craft-ui/src/docking/render/dock.rs
