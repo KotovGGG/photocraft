@@ -1,0 +1,38 @@
+{
+  "commit": "f8c0c4a7204bf499e906c2fd978bba06aa512636",
+  "base": "621d9238b7f8ccc31def22a2572615cb40143056",
+  "author": "KotovGGG <162052215+KotovGGG@users.noreply.github.com>",
+  "files": {
+    "crates/ui-egui/src/canvas.rs": "ec154f44d1a4412d2661ec6e4c5272a03818f66c14f525790b5ba69858413568",
+    "crates/ui-egui/src/canvas/tabs.rs": "6edb4b2482098573d6bc2d0a0d8dd8d3a8940aa023afc443a4d540dc613dfa15",
+    "crates/ui-egui/src/panels/panel_docking.rs": "4d9c28f01090e55201383ce98be0281902e6291b55c493f31675417a8552aa4e",
+    "crates/ui-egui/src/panels/panel_docking/compat.rs": "701ced2b14ab481a909251a65b9ef5ed0a4594f48b96cf2c6f93de90b7d170cf",
+    "crates/ui-egui/src/panels/panel_docking/desktop_review_tests.rs": "7be5155507ffa13be5da2f31d599f2ea2c8945694c3b7c5803f836a736e7348e",
+    "crates/ui-egui/src/panels/panel_docking/document_header.rs": "f732a450d22e411ce983bb18a553ddf2d63ad723a592302b130800fcd3dbe873",
+    "crates/ui-egui/src/panels/panel_docking/native_height_tests.rs": "612b765936c4a9e9f42137a5c6cf145d7850b78762c910297fe13fcdb421dc71",
+    "crates/ui-egui/src/panels/panel_docking/part_resize.rs": "0ae8d93ffd7ed378d8dfa677f3363fc24ad62ac353da9762e47eadd344bd3c16",
+    "crates/ui-egui/src/panels/panel_docking/presentation.rs": "7138a218cec6e4cca5f119c46741d86d1252a4c30aae260bce9e899ec60a7063",
+    "crates/ui-egui/src/state.rs": "cab6414713bb40f4bf97bbcc8272f6831928a7760d26695690b7eeb5905d8cb8",
+    "docs/panel-docking-contract.md": "01f8b55a5062c15dee2d29866b1b96b8c3a161c088645b842f3100f49e899e72",
+    "vendor/craft-ui/PATCH.md": "e580d66cd3e9eb8a2fc0c040a883d24955d32e798fdfa2948800ab37fb68b1f4",
+    "vendor/craft-ui/src/docking/chrome.rs": "49757ec710f63ce99182d26b8d917c36546724bfb47aa784b4a41969e28c7955"
+  },
+  "backup_branch": "codex/panel-layout-v018-checkpoint",
+  "pr_remote_branch_unchanged": "1c53e40a853acdde3b367162f24c00cd8e650441",
+  "hash_kind": "SHA-256 of Windows worktree bytes",
+  "git_blobs": {
+    "crates/ui-egui/src/canvas.rs": "218649b7a8361feed1fae7eefb38d9de2d6f466b",
+    "crates/ui-egui/src/canvas/tabs.rs": "6c7d6cbea77006913be31c70663f4a32fdc501ee",
+    "crates/ui-egui/src/panels/panel_docking.rs": "bee9d8aaf7528bce6a3ff41874136cc746434135",
+    "crates/ui-egui/src/panels/panel_docking/compat.rs": "9ea7c77b82843c801350bba5b53039183c867514",
+    "crates/ui-egui/src/panels/panel_docking/desktop_review_tests.rs": "ba9bfb32f2aa06de0be757459220bd3b59640fc4",
+    "crates/ui-egui/src/panels/panel_docking/document_header.rs": "db9a05fee4961a7ebb976b85570b1a5ec3e5d89c",
+    "crates/ui-egui/src/panels/panel_docking/native_height_tests.rs": "a9474f29bf8aba8c6bd2c18bb21e27d8089d9d50",
+    "crates/ui-egui/src/panels/panel_docking/part_resize.rs": "51aff408d4da8b445f4a494320466cdd7cb605ed",
+    "crates/ui-egui/src/panels/panel_docking/presentation.rs": "1a008c7dcd581578228909f2dba87b62682d3857",
+    "crates/ui-egui/src/state.rs": "469c8f396a26c9ffd94206b42f7b2c5c4c539893",
+    "docs/panel-docking-contract.md": "f094bca7e4ebb8cbd76ec5c08bbe482983e6ca13",
+    "vendor/craft-ui/PATCH.md": "b938e52d998cfd4502cb7e4115728cba6f459394",
+    "vendor/craft-ui/src/docking/chrome.rs": "8af76655fac0916139e741c338c85d852825a90c"
+  }
+}

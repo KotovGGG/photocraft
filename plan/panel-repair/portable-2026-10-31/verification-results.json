@@ -1,0 +1,144 @@
+{
+  "active-panel-benchmark": {
+    "exit": 0,
+    "results": [
+      "test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 4611 filtered out; finished in 5.00s"
+    ]
+  },
+  "after-expanded": {
+    "exit": 0,
+    "results": [
+      "test result: ok. 11 passed; 0 failed; 0 ignored; 0 measured; 4597 filtered out; finished in 4.46s"
+    ]
+  },
+  "after-first": {
+    "exit": 101,
+    "results": []
+  },
+  "after-second": {
+    "exit": 101,
+    "results": [
+      "test result: FAILED. 3 passed; 2 failed; 0 ignored; 0 measured; 4597 filtered out; finished in 0.65s"
+    ]
+  },
+  "after-third": {
+    "exit": 0,
+    "results": [
+      "test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 4597 filtered out; finished in 0.66s"
+    ]
+  },
+  "all-panels": {
+    "exit": 0,
+    "results": [
+      "test result: ok. 164 passed; 0 failed; 2 ignored; 0 measured; 4446 filtered out; finished in 15.21s"
+    ]
+  },
+  "before-corner-tests": {
+    "exit": 101,
+    "results": [
+      "test result: FAILED. 2 passed; 3 failed; 0 ignored; 0 measured; 4597 filtered out; finished in 0.56s"
+    ]
+  },
+  "before-full-app-tests": {
+    "exit": 101,
+    "results": [
+      "test result: FAILED. 2 passed; 2 failed; 0 ignored; 0 measured; 4597 filtered out; finished in 0.56s"
+    ]
+  },
+  "before-tests": {
+    "exit": 101,
+    "results": [
+      "test result: FAILED. 1 passed; 2 failed; 0 ignored; 0 measured; 4597 filtered out; finished in 0.30s"
+    ]
+  },
+  "clippy-no-deps": {
+    "exit": 101,
+    "results": []
+  },
+  "clippy": {
+    "exit": 101,
+    "results": []
+  },
+  "desktop-check": {
+    "exit": 0,
+    "results": []
+  },
+  "desktop-matrix": {
+    "exit": 0,
+    "results": [
+      "test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 4611 filtered out; finished in 47.62s"
+    ]
+  },
+  "discard-pass": {
+    "exit": 0,
+    "results": [
+      "test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 4611 filtered out; finished in 0.00s"
+    ]
+  },
+  "expanded-core": {
+    "exit": 0,
+    "results": [
+      "test result: ok. 13 passed; 0 failed; 0 ignored; 0 measured; 4597 filtered out; finished in 4.62s"
+    ]
+  },
+  "final-transitions": {
+    "exit": 0,
+    "results": [
+      "test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 4611 filtered out; finished in 84.03s"
+    ]
+  },
+  "fmt": {
+    "exit": 0,
+    "results": []
+  },
+  "full-ui": {
+    "exit": 101,
+    "results": [
+      "test result: FAILED. 4494 passed; 95 failed; 23 ignored; 0 measured; 0 filtered out; finished in 288.95s"
+    ]
+  },
+  "layers": {
+    "exit": 0,
+    "results": []
+  },
+  "matrix": {
+    "exit": 101,
+    "results": [
+      "test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 4609 filtered out; finished in 1.35s"
+    ]
+  },
+  "native-matrix": {
+    "exit": 0,
+    "results": [
+      "test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 4609 filtered out; finished in 82.64s"
+    ]
+  },
+  "panic-hunt": {
+    "exit": 0,
+    "results": [
+      "test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 1 filtered out; finished in 19.68s"
+    ]
+  },
+  "seam-matrix": {
+    "exit": 0,
+    "results": [
+      "test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 4611 filtered out; finished in 72.50s"
+    ]
+  },
+  "shared": {
+    "exit": 0,
+    "results": [
+      "test result: ok. 346 passed; 0 failed; 0 ignored; 0 measured; 231 filtered out; finished in 0.50s"
+    ]
+  },
+  "wasm": {
+    "exit": 0,
+    "results": []
+  },
+  "workspace-integration": {
+    "exit": 0,
+    "results": [
+      "test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 138 filtered out; finished in 0.32s"
+    ]
+  }
+}
