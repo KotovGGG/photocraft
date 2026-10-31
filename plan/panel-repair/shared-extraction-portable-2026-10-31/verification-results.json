@@ -1,0 +1,9 @@
+{
+  "fmt": 0,
+  "ui-all": 0,
+  "ui-clippy": 101,
+  "ui-tests": 0,
+  "wasm": 0,
+  "workspace-clippy": 101,
+  "workspace-tests": 101
+}

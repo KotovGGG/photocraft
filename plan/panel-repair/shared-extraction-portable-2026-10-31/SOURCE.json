@@ -1,0 +1,8 @@
+{
+  "shared_base": "c39e435cc34417843793df240a0b38bac970179b",
+  "shared_commit": "dcd94c27e79e4795441339527df5bef64654b4f2",
+  "shared_pr": "https://github.com/storytold/craft-libs/pull/470",
+  "photocraft_reference": "7005992d2083e36315be404603e438976857e65c",
+  "photocraft_pr": "https://github.com/storytold/photocraft/pull/10322",
+  "next_gate": "Shared API accepted upstream before pin update and removal of the PhotoCraft vendor snapshot."
+}

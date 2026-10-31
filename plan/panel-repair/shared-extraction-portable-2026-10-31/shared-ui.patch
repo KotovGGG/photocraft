@@ -1,0 +1,589 @@
+diff --git a/crates/ui/README.md b/crates/ui/README.md
+index 3906429..c96349a 100644
+--- a/crates/ui/README.md
++++ b/crates/ui/README.md
+@@ -11,6 +11,28 @@ The current delivery covers nine creative apps (DesignCraft, VectorCraft, PhotoC
+ records their scope and acceptance limits. Assets (font files included), complete themes, localization
+ and command handling remain in each application. No icons, fonts or application engines are bundled.
+ 
++## Host-owned docking chrome
++
++`DockContent` can replace an iconic column or a complete tab group without a
++second layout tree. `column_rect` reports the fitted column before painting;
++`owns_iconic_column`/`iconic_column` and `custom_group` suppress the corresponding
++stock chrome, body and input when the host takes ownership. These hooks are also
++forwarded by `show_customized`'s label/permissions/limits adapter.
++
++`resize_handle_style` and `split_separator` let the host paint one seam while
++retaining stock resize input. `owns_floating_width` delegates horizontal floating
++handles to the host; stock vertical handles remain available. Presentation-only
++`group_collapsed` does not change the selected tab in the shared model.
++
++All ownership hooks default to false/no-op. `DockStyle::dock_gap` defaults to
++`None`, preserving the ordinary split gap; setting it affects side-dock seams
++only. `FloatingFrame::resize_axes` defaults to both axes and preserves an enabled
++axis at corners when the other is disabled. A host with its own title bar can
++disable the separate top gutter through `reserve_top_resize_band(false)`.
++
++Exhaustive `DockStyle` struct literals need `dock_gap: None`; constructors such
++as `from_ui` and `from_visuals` supply the compatible default.
++
+ ## SVG catalogs
+ 
+ ```rust
+diff --git a/crates/ui/src/docking/chrome.rs b/crates/ui/src/docking/chrome.rs
+index 9e3aa2b..4a2b6da 100644
+--- a/crates/ui/src/docking/chrome.rs
++++ b/crates/ui/src/docking/chrome.rs
+@@ -116,8 +116,10 @@ pub struct FloatingFrame<'a> {
+     bounds: Option<Rect>,
+     limits: PanelLimits,
+     resizable: bool,
++    resize_axes: [bool; 2],
+     resize_label: &'a str,
+     opacity: f32,
++    reserve_top_resize_band: bool,
+ }
+ 
+ /// What a [`FloatingFrame`] did this frame.
+@@ -137,7 +139,17 @@ pub struct FrameResponse<R> {
+ 
+ impl<'a> FloatingFrame<'a> {
+     pub fn new(id: Id, rect: Rect) -> Self {
+-        Self { id, rect, bounds: None, limits: PanelLimits::default(), resizable: true, resize_label: "Resize window", opacity: 1.0 }
++        Self {
++            id,
++            rect,
++            bounds: None,
++            limits: PanelLimits::default(),
++            resizable: true,
++            resize_axes: [true, true],
++            resize_label: "Resize window",
++            opacity: 1.0,
++            reserve_top_resize_band: true,
++        }
+     }
+ 
+     /// The frame stays inside `bounds`; the default is the viewport's content rect.
+@@ -153,11 +165,23 @@ impl<'a> FloatingFrame<'a> {
+         self
+     }
+ 
++    /// Reserve a separate top resize gutter; disable when contents already supply a header.
++    pub fn reserve_top_resize_band(mut self, reserve: bool) -> Self {
++        self.reserve_top_resize_band = reserve;
++        self
++    }
++
+     pub fn resizable(mut self, resizable: bool) -> Self {
+         self.resizable = resizable;
+         self
+     }
+ 
++    /// Restrict the stock edge handles when a host owns resizing on one axis.
++    pub fn resize_axes(mut self, axes: [bool; 2]) -> Self {
++        self.resize_axes = axes;
++        self
++    }
++
+     /// Accessibility label of the resize handles.
+     pub fn resize_label(mut self, label: &'a str) -> Self {
+         self.resize_label = label;
+@@ -192,8 +216,11 @@ impl<'a> FloatingFrame<'a> {
+             ui.set_min_size(rect.size());
+             ui.allocate_rect(rect, Sense::hover());
+             ui.painter().rect_filled(rect, 0.0, style.background);
+-            let contents =
+-                if self.resizable { Rect::from_min_max(pos2(rect.left(), (rect.top() + RESIZE_BAND).min(rect.bottom())), rect.max) } else { rect };
++            let contents = if self.resizable && self.reserve_top_resize_band {
++                Rect::from_min_max(pos2(rect.left(), (rect.top() + RESIZE_BAND).min(rect.bottom())), rect.max)
++            } else {
++                rect
++            };
+             let inner = add_contents(ui, contents);
+             ui.painter().rect_stroke(rect, 0.0, style.stroke, StrokeKind::Outside);
+             let (resized, resize_started, handles) = if self.resizable { self.handles(ui, rect, bounds, style) } else { (None, None, Vec::new()) };
+@@ -217,7 +244,14 @@ impl<'a> FloatingFrame<'a> {
+         let mut responses = Vec::new();
+         let limits = PanelLimits { min: self.limits.min.max(vec2(40.0, RESIZE_BAND + TITLE_HEIGHT + 20.0)).min(self.limits.max), ..self.limits };
+         let canceled = ui.input(|input| input.key_pressed(Key::Escape)) || crate::focus::lost(ui.ctx());
+-        for (name, handle, direction) in handles(rect) {
++        for (name, mut handle, mut direction) in handles(rect) {
++            if !self.reserve_top_resize_band && direction.y < 0.0 {
++                handle.max.y = (rect.top() + ui.ctx().pixels_per_point().recip()).min(rect.bottom());
++            }
++            direction = vec2(if self.resize_axes[0] { direction.x } else { 0.0 }, if self.resize_axes[1] { direction.y } else { 0.0 });
++            if direction == egui::Vec2::ZERO {
++                continue;
++            }
+             if !super::targets::usable(handle) {
+                 continue;
+             }
+diff --git a/crates/ui/src/docking/host_hooks_tests.rs b/crates/ui/src/docking/host_hooks_tests.rs
+new file mode 100644
+index 0000000..b2a0bb9
+--- /dev/null
++++ b/crates/ui/src/docking/host_hooks_tests.rs
+@@ -0,0 +1,147 @@
++//! Host-owned chrome uses the same fitted geometry and preserves stock defaults.
++use super::*;
++use egui::{Context, Event, Id, Modifiers, PointerButton, RawInput, Rect, pos2, vec2};
++
++fn input(events: Vec<Event>) -> RawInput {
++    RawInput { screen_rect: Some(Rect::from_min_size(pos2(0.0, 0.0), vec2(800.0, 600.0))), focused: true, events, ..Default::default() }
++}
++fn button(at: egui::Pos2, pressed: bool) -> Event {
++    Event::PointerButton { pos: at, button: PointerButton::Primary, pressed, modifiers: Modifiers::NONE }
++}
++
++#[test]
++fn corner_resize_keeps_each_enabled_axis_including_single_axis_hosts() {
++    for axes in [[true, true], [false, true], [true, false], [false, false]] {
++        let ctx = Context::default();
++        let rect = Rect::from_min_size(pos2(100.0, 100.0), vec2(300.0, 200.0));
++        let frame = |events| {
++            let mut resized = None;
++            ctx.run_ui(input(events), |ui| {
++                let style = chrome::ChromeStyle::from_ui(ui);
++                resized = chrome::FloatingFrame::new(Id::unique("axes"), rect).resize_axes(axes).show(ui.ctx(), &style, |_, _| ()).resized;
++            })
++            .drop_without_applying_deltas();
++            resized
++        };
++        frame(vec![]);
++        frame(vec![]);
++        let from = rect.right_bottom() - vec2(2.0, 2.0);
++        frame(vec![Event::PointerMoved(from), button(from, true)]);
++        frame(vec![Event::PointerMoved(from + vec2(10.0, 10.0))]);
++        let result = frame(vec![Event::PointerMoved(from + vec2(40.0, 35.0))]);
++        if axes == [false, false] {
++            assert!(result.is_none());
++        } else {
++            let expected = rect.size() + vec2(if axes[0] { 40.0 } else { 0.0 }, if axes[1] { 35.0 } else { 0.0 });
++            assert_eq!(result, Some(Rect::from_min_size(rect.min, expected)), "{axes:?}");
++        }
++    }
++}
++
++#[test]
++fn the_top_gutter_is_reserved_by_default_and_can_be_owned_by_the_contents() {
++    for reserve in [true, false] {
++        let ctx = Context::default();
++        let rect = Rect::from_min_size(pos2(100.0, 100.0), vec2(300.0, 200.0));
++        let mut inner = Rect::NOTHING;
++        ctx.run_ui(input(vec![]), |ui| {
++            let style = chrome::ChromeStyle::from_ui(ui);
++            inner = chrome::FloatingFrame::new(Id::unique("gutter"), rect).reserve_top_resize_band(reserve).show(ui.ctx(), &style, |_, r| r).inner;
++        })
++        .drop_without_applying_deltas();
++        assert_eq!(inner.left(), rect.left());
++        assert_eq!(inner.max, rect.max);
++        assert_eq!(inner.top(), rect.top() + if reserve { chrome::RESIZE_BAND } else { 0.0 });
++    }
++}
++
++#[derive(Default)]
++struct Host {
++    exclusive: bool,
++    bodies: usize,
++    columns: Vec<Rect>,
++    iconic: Vec<Rect>,
++}
++impl DockContent<u32> for Host {
++    fn body(&mut self, _: &mut egui::Ui, _: &u32) {
++        self.bodies += 1;
++    }
++    fn custom_group(&mut self, _: &mut egui::Ui, _: &[u32], _: &u32, _: Rect, _: bool) -> bool {
++        self.exclusive
++    }
++    fn owns_iconic_column(&self, _: &u32) -> bool {
++        self.exclusive
++    }
++    fn column_rect(&mut self, _: &Context, _: &Column<u32>, rect: Rect, _: Side) {
++        self.columns.push(rect);
++    }
++    fn iconic_column(&mut self, _: &mut egui::Ui, _: &Column<u32>, rect: Rect, _: Side) {
++        self.iconic.push(rect);
++    }
++}
++fn render(layout: &Layout<u32>, host: &mut Host) -> Vec<(Hit<u32>, Rect)> {
++    let ctx = Context::default();
++    for _ in 0..3 {
++        ctx.run_ui(input(vec![]), |ui| {
++            host.bodies = 0;
++            host.columns.clear();
++            host.iconic.clear();
++            let mut style = DockStyle::from_ui(ui);
++            super::floating_tests::frame_style(&mut style);
++            let shown = DockArea::new(Id::unique("host")).show_customized(
++                ui,
++                layout,
++                &style,
++                |id| format!("Pane {id}"),
++                |_| Permissions::default(),
++                |_| PanelLimits::default(),
++                host,
++            );
++            assert!(shown.error.is_none(), "{:?}", shown.error);
++        })
++        .drop_without_applying_deltas();
++    }
++    DockArea::hit_rects(&ctx, Id::unique("host"))
++}
++
++#[test]
++fn an_exclusive_group_replaces_the_stock_body_and_tab_targets_through_overrides() {
++    let layout = Layout { root: Some(Node::Tabs { panels: vec![1, 2], active: 0 }), floating: vec![] };
++    for exclusive in [false, true] {
++        let mut host = Host { exclusive, ..Default::default() };
++        let hits = render(&layout, &mut host);
++        assert_eq!(host.bodies, usize::from(!exclusive));
++        assert_eq!(hits.iter().any(|(hit, _)| matches!(hit, Hit::Tab(_))), !exclusive);
++    }
++}
++
++#[test]
++fn an_iconic_host_receives_the_fitted_column_rect_without_a_second_stock_body() {
++    let mut column = Column::new(vec![Group::new(vec![1, 2], 0)], 900.0);
++    column.iconic = true;
++    let layout = Layout { root: Some(Node::Dock { side: Side::Start, columns: vec![column] }), floating: vec![] };
++    let mut host = Host { exclusive: true, ..Default::default() };
++    render(&layout, &mut host);
++    assert_eq!(host.columns.len(), 1);
++    assert_eq!(host.columns, host.iconic);
++    assert_eq!(host.bodies, 0);
++    let rect = host.columns[0];
++    assert!(rect.width() > 0.0 && rect.right() <= 800.0 && rect.bottom() <= 600.0);
++}
++
++#[test]
++fn invalid_side_dock_gaps_are_rejected_before_host_painting() {
++    for gap in [f32::NAN, f32::INFINITY, -1.0, 4097.0] {
++        let ctx = Context::default();
++        let layout = Layout { root: Some(Node::Tabs { panels: vec![1], active: 0 }), floating: vec![] };
++        let mut host = Host::default();
++        ctx.run_ui(input(vec![]), |ui| {
++            let mut style = DockStyle::from_ui(ui);
++            style.dock_gap = Some(gap);
++            let shown = DockArea::new(Id::unique("invalid-gap")).show_content(ui, &layout, &style, &mut host);
++            assert!(shown.error.is_some(), "{gap}");
++            assert_eq!(host.bodies, 0);
++        })
++        .drop_without_applying_deltas();
++    }
++}
+diff --git a/crates/ui/src/docking/mod.rs b/crates/ui/src/docking/mod.rs
+index b7985b8..df3349c 100644
+--- a/crates/ui/src/docking/mod.rs
++++ b/crates/ui/src/docking/mod.rs
+@@ -53,6 +53,8 @@ mod floating_tests;
+ #[cfg(test)]
+ mod group_tests;
+ #[cfg(test)]
++mod host_hooks_tests;
++#[cfg(test)]
+ mod iconic_tests;
+ #[cfg(all(test, feature = "native-windows"))]
+ mod ime_tests;
+diff --git a/crates/ui/src/docking/render/dock.rs b/crates/ui/src/docking/render/dock.rs
+index 878d909..9a4cd03 100644
+--- a/crates/ui/src/docking/render/dock.rs
++++ b/crates/ui/src/docking/render/dock.rs
+@@ -77,7 +77,7 @@ pub(in crate::docking) fn dock_rects<P>(
+     style: &DockStyle,
+     content: &dyn crate::docking::DockContent<P>,
+ ) -> (Rect, Rect, f32) {
+-    let gap = style.gap;
++    let gap = style.dock_gap.unwrap_or(style.gap);
+     let room = (rect.width() - gap - super::node_limits(other, style, content).min.x).clamp(0.0, rect.width());
+     let width = columns.iter().map(|c| column_width(c, style)).sum::<f32>().clamp(0.0, room);
+     let (dock, rest) = match edge_of(side, style.right_to_left) {
+@@ -266,10 +266,12 @@ impl<P: Clone + Eq + Hash + Debug + Send + Sync + 'static> Renderer<'_, P> {
+             _ => return false,
+         };
+         let (dock, rest, room) = dock_rects(side, columns, other, rect, self.style, &*self.content);
+-        self.dock(ui, side, columns, dock, room);
+         path.push(dock_first);
+         self.node(ui, other, rest, path, root);
+         path.pop();
++        // The divider's hit margin reaches into the sibling (often the canvas). Register
++        // the dock after that sibling so a seam press belongs to the resize handle.
++        self.dock(ui, side, columns, dock, room);
+         true
+     }
+ 
+@@ -328,6 +330,9 @@ impl<P: Clone + Eq + Hash + Debug + Send + Sync + 'static> Renderer<'_, P> {
+         }
+         // Registered after the columns, so the narrow hit areas win at the edges.
+         for (index, column, first, width, inner) in drawn {
++            if column.iconic && self.content.owns_iconic_column(first) {
++                continue;
++            }
+             if width < 1.0 {
+                 continue;
+             }
+@@ -412,7 +417,7 @@ impl<P: Clone + Eq + Hash + Debug + Send + Sync + 'static> Renderer<'_, P> {
+     }
+ 
+     fn handle_style(&self) -> ResizeHandleStyle {
+-        ResizeHandleStyle { hovered: self.style.accent, dragged: self.style.accent, focused: self.style.accent }
++        self.content.resize_handle_style(ResizeHandleStyle { hovered: self.style.accent, dragged: self.style.accent, focused: self.style.accent })
+     }
+ 
+     /// Width bounds of an expanded column from its panels' limits.
+@@ -452,6 +457,14 @@ impl<P: Clone + Eq + Hash + Debug + Send + Sync + 'static> Renderer<'_, P> {
+         if !usable(rect) {
+             return;
+         }
++        let side = side_at(edge, self.style.right_to_left);
++        self.content.column_rect(ui.ctx(), column, rect, side);
++        if column.iconic && self.content.owns_iconic_column(first) {
++            let mut child = ui.new_child(UiBuilder::new().id_salt(("host-iconic", first)).max_rect(rect));
++            child.set_clip_rect(rect.intersect(ui.clip_rect()));
++            self.content.iconic_column(&mut child, column, rect, side);
++            return;
++        }
+         self.record_column_float(column.groups.iter().flat_map(|g| g.panels.iter().cloned()).collect(), rect);
+         let (bar, body, heights) = self.column_layout(column, rect);
+         self.column_bar(ui, column, first, bar, rect, edge);
+diff --git a/crates/ui/src/docking/render/floating.rs b/crates/ui/src/docking/render/floating.rs
+index 256b128..512f8a9 100644
+--- a/crates/ui/src/docking/render/floating.rs
++++ b/crates/ui/src/docking/render/floating.rs
+@@ -54,7 +54,7 @@ impl<P: Clone + Eq + Hash + Debug + Send + Sync + 'static> Renderer<'_, P> {
+ 
+     /// The title bar and, for a movable (resizable) window, the resize band above it.
+     fn window_chrome(&self, window: &Floating<P>) -> f32 {
+-        let band = if window.panels().all(|panel| self.permissions(panel).movable) { RESIZE_BAND } else { 0.0 };
++        let band = if self.style.title_height > 0.0 && window.panels().all(|panel| self.permissions(panel).movable) { RESIZE_BAND } else { 0.0 };
+         band + self.style.title_height
+     }
+ 
+@@ -81,12 +81,15 @@ impl<P: Clone + Eq + Hash + Debug + Send + Sync + 'static> Renderer<'_, P> {
+         let style = ChromeStyle::from_dock(self.style);
+         let resize_label = self.style.resize_window_label.clone();
+         let opacity = self.drag_opacity(ctx, first);
+-        let response =
+-            FloatingFrame::new(id, rect).bounds(screen).limits(limits).resizable(movable).resize_label(&resize_label).opacity(opacity).show(
+-                ctx,
+-                &style,
+-                |ui, contents| self.window_contents(ui, window, contents, rect, &style),
+-            );
++        let response = FloatingFrame::new(id, rect)
++            .bounds(screen)
++            .limits(limits)
++            .reserve_top_resize_band(self.style.title_height > 0.0)
++            .resizable(movable)
++            .resize_axes([!self.content.owns_floating_width(first), true])
++            .resize_label(&resize_label)
++            .opacity(opacity)
++            .show(ctx, &style, |ui, contents| self.window_contents(ui, window, contents, rect, &style));
+         for handle in &response.handles {
+             self.register_interaction(ctx, handle.id);
+         }
+diff --git a/crates/ui/src/docking/render/group.rs b/crates/ui/src/docking/render/group.rs
+index e4e04cd..c7c815e 100644
+--- a/crates/ui/src/docking/render/group.rs
++++ b/crates/ui/src/docking/render/group.rs
+@@ -47,7 +47,14 @@ impl<P: Clone + Eq + Hash + Debug + Send + Sync + 'static> Renderer<'_, P> {
+     /// but keeps the strip. Tabs, strip, header and drag bar are mirrored in right-to-left layout.
+     pub(super) fn group(&mut self, ui: &mut Ui, panels: &[P], active: usize, minimized: bool, rect: Rect, kind: GroupKind) {
+         let Some(selected) = panels.get(active) else { return };
+-        self.record_float(panels, rect.size(), rect.size());
++        if self.content.custom_group(ui, panels, selected, rect, matches!(kind, GroupKind::Floating { .. })) {
++            return;
++        }
++        let host_collapsed = self.content.group_collapsed(panels);
++        let minimized = minimized || host_collapsed;
++        if !host_collapsed {
++            self.record_float(panels, rect.size(), rect.size());
++        }
+         let policy = self.permissions(selected);
+         let splits = matches!(kind, GroupKind::Frame | GroupKind::Floating { .. }) && policy.accepts_splits;
+         let rtl = self.style.right_to_left;
+@@ -201,7 +208,21 @@ impl<P: Clone + Eq + Hash + Debug + Send + Sync + 'static> Renderer<'_, P> {
+         if self.minimizes(owner) && response.double_clicked() {
+             self.output.actions.push(Action::SetMinimized { panel: owner.selected.clone(), minimized: !owner.minimized });
+         }
+-        let active = response.has_focus() || response.hovered();
++        let modality = self.id.with("keyboard-chrome-focus");
++        let keyboard_input = ui.input(|i| i.events.iter().any(|e| matches!(e, egui::Event::Key { pressed: true, .. })));
++        let pointer_input = ui.input(|i| i.pointer.any_pressed());
++        let keyboard_focus = ui.ctx().data_mut(|d| {
++            let on = if pointer_input {
++                false
++            } else if keyboard_input {
++                true
++            } else {
++                d.get_temp::<bool>(modality).unwrap_or(false)
++            };
++            d.insert_temp(modality, on);
++            on
++        });
++        let active = response.has_focus() && keyboard_focus;
+         if active {
+             ui.painter().with_clip_rect(hit).rect_stroke(
+                 hit.shrink(1.0),
+@@ -392,17 +413,22 @@ impl<P: Clone + Eq + Hash + Debug + Send + Sync + 'static> Renderer<'_, P> {
+         let minimized = owner.filter(|owner| self.minimizes(owner)).map(|owner| owner.minimized);
+         let policy = self.permissions(panel);
+         let label = self.label_of(panel);
+-        let color = if active { self.style.text } else { self.style.inactive_text };
++        let visual_active = active && !owner.is_some_and(|owner| self.content.group_collapsed(owner.panels));
++        let color = if visual_active { self.style.text } else { self.style.inactive_text };
+         let galley = self.tab_label(ui, panel, &label, color, (rect.width() - TAB_PADDING).max(0.0));
+         let elided = galley.elided;
+         let tab_id = self.id.with(("tab", panel));
+         let pointer_focus = self.pointer_focus(ui, tab_id);
+-        let response = tabs::Tab::new(tab_id, &label, active)
++        let response = tabs::Tab::new(tab_id, &label, visual_active)
+             .sense(if policy.movable { Sense::click_and_drag() } else { Sense::click() })
+             .focus_stroke(if pointer_focus { Stroke::NONE } else { Stroke::new(1.0, self.style.accent) })
+             .show_at(ui, rect, |ui, response| {
+                 let painter = ui.painter().with_clip_rect(rect.intersect(ui.clip_rect()));
+-                painter.rect_filled(rect, 0.0, if active || response.hovered() { self.style.active_background } else { self.style.tab_background });
++                painter.rect_filled(
++                    rect,
++                    0.0,
++                    if visual_active || response.hovered() { self.style.active_background } else { self.style.tab_background },
++                );
+                 let at = pos2(rect.left() + TAB_PADDING * 0.5, rect.center().y - galley.size().y * 0.5);
+                 painter.galley(at, galley.clone(), color);
+             });
+diff --git a/crates/ui/src/docking/render/mod.rs b/crates/ui/src/docking/render/mod.rs
+index 751e17b..4d71c71 100644
+--- a/crates/ui/src/docking/render/mod.rs
++++ b/crates/ui/src/docking/render/mod.rs
+@@ -212,6 +212,12 @@ impl<P: Clone + Eq + Hash + Debug + Send + Sync + 'static> Renderer<'_, P> {
+                 // The divider's inner-edge hit margin must win over child scrollbars, just
+                 // as accordion dividers win over the adjacent panel's content.
+                 // Named by its layout path, which `ResizeSplit` takes and hits report.
++                self.content.split_separator(ui, split.divider);
++                let host_width =
++                    *axis == SplitAxis::Horizontal && self.tree.as_ref().is_some_and(|(panel, _)| self.content.owns_floating_width(panel));
++                if host_width {
++                    return;
++                }
+                 let layout_path = self.original_path(path);
+                 let response = ResizeHandle::new(
+                     self.split_id(&layout_path),
+@@ -490,11 +496,15 @@ pub(in crate::docking) fn node_limits<P>(node: &Node<P>, style: &DockStyle, cont
+         Node::Split { axis, first, second, .. } => {
+             let a = node_limits(first, style, content);
+             let b = node_limits(second, style, content);
++            let gap = if matches!(first.as_ref(), Node::Dock { .. }) || matches!(second.as_ref(), Node::Dock { .. }) {
++                style.dock_gap.unwrap_or(style.gap)
++            } else {
++                style.gap
++            };
+             let limits = match axis {
+-                SplitAxis::Horizontal => PanelLimits {
+-                    min: vec2(a.min.x + b.min.x + style.gap, a.min.y.max(b.min.y)),
+-                    max: vec2(a.max.x + b.max.x + style.gap, a.max.y.min(b.max.y)),
+-                },
++                SplitAxis::Horizontal => {
++                    PanelLimits { min: vec2(a.min.x + b.min.x + gap, a.min.y.max(b.min.y)), max: vec2(a.max.x + b.max.x + gap, a.max.y.min(b.max.y)) }
++                }
+                 SplitAxis::Vertical => PanelLimits {
+                     min: vec2(a.min.x.max(b.min.x), a.min.y + b.min.y + style.gap),
+                     max: vec2(a.max.x.min(b.max.x), a.max.y + b.max.y + style.gap),
+diff --git a/crates/ui/src/docking/surface.rs b/crates/ui/src/docking/surface.rs
+index 8d2a144..4a63696 100644
+--- a/crates/ui/src/docking/surface.rs
++++ b/crates/ui/src/docking/surface.rs
+@@ -13,6 +13,8 @@ pub(super) const TAB_PADDING: f32 = 24.0;
+ pub struct DockStyle {
+     pub tab_height: f32,
+     pub gap: f32,
++    /// Optional gap beside attached side docks. Other split/row dividers retain `gap`.
++    pub dock_gap: Option<f32>,
+     pub min_pane: f32,
+     pub background: Color32,
+     pub tab_background: Color32,
+@@ -175,6 +177,7 @@ impl DockStyle {
+         Self {
+             tab_height: 26.0,
+             gap: 4.0,
++            dock_gap: None,
+             min_pane: 40.0,
+             background: visuals.panel_fill,
+             tab_background: visuals.extreme_bg_color,
+@@ -304,6 +307,7 @@ impl DockStyle {
+             && self.font.size > 0.0
+             && self.drop_line_width > 0.0
+             && self.side_zone_fraction <= 0.5
++            && self.dock_gap.is_none_or(|gap| gap.is_finite() && (0.0..=4096.0).contains(&gap))
+     }
+ }
+ 
+@@ -832,6 +836,39 @@ pub fn send_keys(ctx: &Context, viewport: egui::ViewportId, events: Vec<egui::Ev
+ /// `show*` functions override `logical_label`, `permissions` and `limits`.
+ pub trait DockContent<P> {
+     fn body(&mut self, ui: &mut Ui, panel: &P);
++
++    /// Observe the fitted rectangle of each attached column, before its chrome is drawn.
++    fn column_rect(&mut self, _ctx: &Context, _column: &super::Column<P>, _rect: Rect, _side: super::Side) {}
++
++    /// An exclusive host surface replaces stock iconic painting, focus, drag and resize.
++    /// Placement and column-edge drop targets still belong to the workspace renderer.
++    fn owns_iconic_column(&self, _first: &P) -> bool {
++        false
++    }
++
++    /// Draw the complete iconic column inside its fitted rectangle when owned by the host.
++    fn iconic_column(&mut self, _ui: &mut Ui, _column: &super::Column<P>, _rect: Rect, _side: super::Side) {}
++
++    /// Return true after painting an exclusive group surface; stock tabs/body/targets are skipped.
++    /// The host supplies that group's size limits through `limits`.
++    fn custom_group(&mut self, _ui: &mut Ui, _panels: &[P], _active: &P, _rect: Rect, _floating: bool) -> bool {
++        false
++    }
++
++    /// Hosts which paint shared seams can keep the stock resize input without a second fill.
++    fn resize_handle_style(&self, default: crate::layout::ResizeHandleStyle) -> crate::layout::ResizeHandleStyle {
++        default
++    }
++    /// Presentation-only collapse of a group; its selected tab remains model state.
++    fn group_collapsed(&self, _panels: &[P]) -> bool {
++        false
++    }
++    /// Paint a fitted split gap in the owning surface, without another resize target.
++    fn split_separator(&mut self, _ui: &mut Ui, _rect: Rect) {}
++    /// The host supplies exclusive horizontal resize input for this floating tree.
++    fn owns_floating_width(&self, _panel: &P) -> bool {
++        false
++    }
+     /// Plain text name for accessibility, menus and the default visual label.
+     fn logical_label(&self, panel: &P) -> String
+     where
+@@ -968,6 +1005,30 @@ impl<P, C: DockContent<P> + ?Sized> DockContent<P> for Overrides<'_, P, C> {
+     fn body(&mut self, ui: &mut Ui, panel: &P) {
+         self.inner.body(ui, panel);
+     }
++    fn column_rect(&mut self, ctx: &Context, column: &super::Column<P>, rect: Rect, side: super::Side) {
++        self.inner.column_rect(ctx, column, rect, side);
++    }
++    fn owns_iconic_column(&self, first: &P) -> bool {
++        self.inner.owns_iconic_column(first)
++    }
++    fn iconic_column(&mut self, ui: &mut Ui, column: &super::Column<P>, rect: Rect, side: super::Side) {
++        self.inner.iconic_column(ui, column, rect, side);
++    }
++    fn custom_group(&mut self, ui: &mut Ui, panels: &[P], active: &P, rect: Rect, floating: bool) -> bool {
++        self.inner.custom_group(ui, panels, active, rect, floating)
++    }
++    fn resize_handle_style(&self, default: crate::layout::ResizeHandleStyle) -> crate::layout::ResizeHandleStyle {
++        self.inner.resize_handle_style(default)
++    }
++    fn group_collapsed(&self, panels: &[P]) -> bool {
++        self.inner.group_collapsed(panels)
++    }
++    fn split_separator(&mut self, ui: &mut Ui, rect: Rect) {
++        self.inner.split_separator(ui, rect);
++    }
++    fn owns_floating_width(&self, panel: &P) -> bool {
++        self.inner.owns_floating_width(panel)
++    }
+     fn logical_label(&self, panel: &P) -> String {
+         (self.label)(panel)
+     }
