@@ -1,12 +1,12 @@
 {
   "photocraft_head": "a175b27c1c1028509fcef6eae610603da753f115",
   "photocraft_upstream": "799e12962806dac2d8b1a319bd386042dcbd61e4",
-  "shared_head": "9a9755568f3c0334f2f332f5c499455017f53b60",
+  "shared_head": "3685bae8987d5fc05fa6d2c9681efbae7a68af18",
   "shared_base": "c39e435cc34417843793df240a0b38bac970179b",
   "manual_acceptance": "User-tested product EXE predates this upstream merge. Agent did not build or launch product EXE.",
   "split_gate": "craft-libs#470 remains open/unmerged; immutable accepted upstream SHA is required before removing vendor and creating consumer replacements.",
   "vendor_patch_head": "235fffbdbe79f42028ec414e304f1a10b0b1b07f",
   "shared_followup_scope": "Additional docked custom-group body-band fix is shared-only; PhotoCraft custom_group returns true only for floating groups. Consumer vendor remains the tested 235fffbd patch until accepted upstream revision replaces it.",
   "photocraft_tested_runtime": "a4077cb15a240549715b16e2075ce6c3ec8e2420",
-  "shared_runtime_head": "4f263edcdd41daf344d8052f88e4282e5c98d83e"
+  "shared_runtime_head": "3685bae8987d5fc05fa6d2c9681efbae7a68af18"
 }

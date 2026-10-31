@@ -31,5 +31,9 @@
   "shared-third-clippy-strict": 101,
   "shared-third-fmt": 0,
   "app-perf-quick": 0,
-  "app-panel-benchmark-isolated": 0
+  "app-panel-benchmark-isolated": 0,
+  "trailing-final-tests": 0,
+  "trailing-diagnostic": 0,
+  "trailing-workspace-clippy": 101,
+  "trailing-workspace-tests": 101
 }

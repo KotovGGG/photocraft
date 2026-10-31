@@ -8,10 +8,10 @@ Changes:
 
 Scope: six implementation files, one focused test module and its registration, and README. No application code, vendored snapshot, fonts, binary assets, dependency/CI changes or additional layout tree.
 
-Eleven focused tests cover corner axes, top gutter geometry, exclusive host surfaces and fitted float sizes, stripless collapse, separate frame/internal-divider ownership, real pointer resizing, adapter forwarding, invalid numeric gaps, and host-owned dock body bands with stock column edges retained.
+Twelve focused tests cover corner axes, top gutter geometry, exclusive host surfaces and fitted float sizes, stripless collapse, separate frame/internal-divider ownership, real pointer resizing, adapter forwarding, invalid numeric gaps, and host-owned dock body bands with stock column edges retained.
 
 Validation:
-- `cargo test -p craft-ui --features serde,native-windows,screen-testing`: 590 unit tests, 10 integration tests, and 8 doctests passed (2 doctests ignored).
+- `cargo test -p craft-ui --features serde,native-windows,screen-testing`: 591 unit tests, 10 integration tests, and 8 doctests passed (2 doctests ignored).
 - `cargo fmt --check`: passed.
 - `cargo check --target wasm32-unknown-unknown -p craft-ui`: passed.
 - Separate diagnostic Clippy allowing only the known `nonminimal_bool` lint class passed on all UI targets, including tests; this is not a strict Clippy pass. No source lint allowances were added.
