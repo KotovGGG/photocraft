@@ -1,0 +1,35 @@
+{
+  "gif_count": 13,
+  "raw_frame_count": 887,
+  "raw_frames_by_scene": {
+    "01-group-flyout-tearoff": 41,
+    "02-insert-redock": 73,
+    "03-expanded-stack-resize": 79,
+    "04-whole-tools": 49,
+    "05-compact-width": 65,
+    "06-cancel-lock": 50,
+    "07-workspace-restore": 19,
+    "08-visibility-preferences": 56,
+    "09-right-compact-inner": 17,
+    "09-right-compact-outer": 17,
+    "09-right-full-inner": 17,
+    "09-right-full-outer": 17,
+    "10-landing-timing": 4,
+    "11-document-row": 31,
+    "12-compact-height": 10,
+    "13-bottom-height": 49,
+    "14-middle-width": 25,
+    "15-independent-parts": 13,
+    "16-whole-tools": 97,
+    "17-full-join-detach": 49,
+    "18-attached-tab-insertion": 109
+  },
+  "caption_overlays": false,
+  "production_changes": false,
+  "panel_filter": "165 passed, 2 explicit benchmarks ignored",
+  "capture_tests": [
+    "current_version_showcase",
+    "pr_followup_pointer_replay"
+  ],
+  "gif_pixels_and_durations_verified": true
+}
