@@ -1,0 +1,29 @@
+{
+  "adoption": {
+    "sha": "aa5cd1dcfe39cd218083535781b5d050a8a5511a",
+    "layers": 0,
+    "wasm": 0
+  },
+  "recovery": {
+    "sha": "3dbd11e3579d0c5d85ea9ab32c7b83224e827681",
+    "layers": 0,
+    "wasm": 0
+  },
+  "migration": {
+    "sha": "3d0deea6e9a98d2aaaf412ce009023c1ea073e36",
+    "layers": 0,
+    "wasm": 0
+  },
+  "compact": {
+    "sha": "4d314851f1c9f46dd2628741ecc848124024be6b",
+    "layers": 0,
+    "wasm": 0,
+    "scorecard": 0,
+    "head": "43382c84fdcadd10a796345b0a743e27940cbfaa"
+  },
+  "tools": {
+    "sha": "19904a9dc8de0091799ee70058a8376b6648a981",
+    "layers": 0,
+    "wasm": 0
+  }
+}

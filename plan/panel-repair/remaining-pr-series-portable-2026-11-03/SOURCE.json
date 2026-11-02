@@ -1,0 +1,41 @@
+{
+  "date": "2026-11-03",
+  "base_main": "289dd0a87",
+  "shared_upstream": "ea1fbeb05b94bb692b27b687adb2ac1e5abc640f",
+  "tested_runtime": {
+    "migration": "3d0deea6e",
+    "compact": "a7df08d80",
+    "tools": "accf5181a"
+  },
+  "parts": [
+    {
+      "part": "migration",
+      "branch": "codex/panel-layout-migration",
+      "head": "3d0deea6e9a98d2aaaf412ce009023c1ea073e36",
+      "base_branch": "codex/panel-workspace-recovery",
+      "base": "3dbd11e3579d0c5d85ea9ab32c7b83224e827681",
+      "title": "Migrate legacy panel layouts into the shared Workspace",
+      "stat": "6 files changed, 513 insertions(+), 8 deletions(-)"
+    },
+    {
+      "part": "compact",
+      "branch": "codex/panel-compact-resize",
+      "head": "43382c84fdcadd10a796345b0a743e27940cbfaa",
+      "base_branch": "codex/panel-layout-migration",
+      "base": "3d0deea6e9a98d2aaaf412ce009023c1ea073e36",
+      "title": "Repair compact panel docking and independent resizing",
+      "stat": "37 files changed, 7055 insertions(+), 78 deletions(-)"
+    },
+    {
+      "part": "tools",
+      "branch": "codex/panel-tools-floating",
+      "head": "19904a9dc8de0091799ee70058a8376b6648a981",
+      "base_branch": "codex/panel-compact-resize",
+      "base": "43382c84fdcadd10a796345b0a743e27940cbfaa",
+      "title": "Float and resize the whole Tools palette",
+      "stat": "10 files changed, 794 insertions(+), 324 deletions(-)"
+    }
+  ],
+  "standalone_xtask": "F:/photocraft/target/xtask-review/debug/xtask.exe",
+  "perf_status": "running"
+}

@@ -1,0 +1,1 @@
+Performance gate: running. Only release benchmark examples are built. No product EXE or native acceptance. The quick mode does not apply full-size budgets, and cross-machine comparison eligibility must be read from the final report.
