@@ -1,0 +1,158 @@
+diff --git a/crates/ui-egui/src/dock.rs b/crates/ui-egui/src/dock.rs
+index bad7f725c..f65100daf 100644
+--- a/crates/ui-egui/src/dock.rs
++++ b/crates/ui-egui/src/dock.rs
+@@ -344,8 +344,7 @@ pub(crate) fn snapshot(app: &PhotocraftApp) -> Value {
+     layout
+ }
+ 
+-/// A saved layout's workspace from a newer version stays as saved while the default layout
+-/// shows in its place (craft-ui: keep it on disk, don't overwrite it).
++/// An unreadable saved workspace stays as saved while the default layout shows in its place.
+ pub(crate) fn keep_newer(app: &PhotocraftApp, layout: &mut Value) {
+     if let (None, Some(kept), Some(layout)) = (&app.ui.docking, &app.ui.docking_kept, layout.as_object_mut()) {
+         layout.extend(kept.clone());
+@@ -409,15 +408,16 @@ pub fn restore(app: &mut PhotocraftApp) {
+ ///
+ /// `craft_ui::docking::DockArea` keeps only transient drag/focus data in `ctx.data`; the
+ /// split/tab arrangement is the app's own `craft_ui::docking::Layout` JSON stored here. If a
+-/// layout saved by a different craft-ui revision no longer deserializes, it is dropped and the
+-/// legacy layout is rebuilt (the split/tab arrangement resets). Panel widths are a separate
+-/// `egui::PanelState` migration and still carry over.
++/// saved workspace cannot be loaded, retain its payload while showing the native default.
++/// Explicit layout changes replace that payload. Panel widths still carry over separately.
+ pub fn apply(app: &mut PhotocraftApp, v: &Value) {
+     app.ui.docking_reveal = None;
+     app.ui.docking_generation = app.ui.docking_generation.wrapping_add(1);
+     (app.ui.docking, app.ui.docking_returns) = crate::panel_docking::load(v).map_or((None, Default::default()), |(w, r)| (Some(w), r));
+-    app.ui.docking_kept = (app.ui.docking.is_none() && crate::panel_docking::newer(v))
+-        .then(|| ["docking", "dockingReturns", "dockingCollapsed"].into_iter().filter_map(|key| Some((key.to_owned(), v.get(key)?.clone()))).collect());
++    app.ui.docking_kept = app.ui.docking.is_none().then(|| crate::panel_docking::retained_payload(v)).flatten();
++    if app.ui.docking_kept.is_some() {
++        app.ui.status = tl!("The saved panel layout could not be restored. It has been preserved; reset the workspace to replace it.").to_string();
++    }
+     // Collapsed custom groups belong to the workspace; the native dock keeps its own flags.
+     app.ui.docking_collapsed = match app.ui.docking {
+         Some(_) => v.get("dockingCollapsed").and_then(|v| serde_json::from_value(v.clone()).ok()).unwrap_or_default(),
+diff --git a/crates/ui-egui/src/dock/tests.rs b/crates/ui-egui/src/dock/tests.rs
+index d3884e20f..43f7f3625 100644
+--- a/crates/ui-egui/src/dock/tests.rs
++++ b/crates/ui-egui/src/dock/tests.rs
+@@ -902,3 +902,89 @@ fn a_workspace_from_a_newer_version_shows_the_default_and_stays_saved() {
+     let docking = &app.session.prefs().panel_layout["docking"];
+     assert_eq!(docking["version"], json!(craft_ui::docking::Workspace::<String>::VERSION), "a changed layout replaces it: {docking}");
+ }
++
++#[test]
++fn unreadable_workspace_payload_survives_restore_persist_and_explicit_save() {
++    for version in [json!(2), json!(99), Value::Null] {
++        let (mut app, _, _) = app_with_layers();
++        app.session.prefs.edit(|p| p.workspace.remember_workspace_changes = true);
++        let mut saved = snapshot(&app);
++        saved["docking"] = json!({"version": version, "layout": {"kind":"unsupported-tree"}, "opaque": {"keep":[1,2,3]}});
++        saved["dockingReturns"] = json!({"future-return": {"unknown":true}});
++        saved["dockingCollapsed"] = json!(["future-panel"]);
++        saved["panelPresentation"] = json!({"future":"preserve"});
++        saved["toolbarFloating"] = json!({"future-position":42});
++        app.session.prefs.edit(|p| p.panel_layout = saved.clone());
++        restore(&mut app);
++        assert!(app.ui.docking.is_none());
++        assert!(app.ui.docking_kept.is_some(), "version={version}");
++        let ctx = egui::Context::default();
++        ctx.run_ui(Default::default(), |ui| persist(&mut app, ui.ctx())).textures_delta.clear();
++        let written = snapshot(&app);
++        for key in ["docking", "dockingReturns", "dockingCollapsed", "panelPresentation", "toolbarFloating"] {
++            assert_eq!(app.session.prefs().panel_layout.get(key), saved.get(key), "persist {key}, version={version}");
++            assert_eq!(written.get(key), saved.get(key), "snapshot {key}, version={version}");
++        }
++        let notice = app.ui.status.clone();
++        ctx.run_ui(Default::default(), |ui| persist(&mut app, ui.ctx())).textures_delta.clear();
++        assert_eq!(app.ui.status, notice, "idle frames do not repeat the restore warning");
++        app.run("window.panel.close", json!({"panel":"layers"})).unwrap();
++        ctx.run_ui(Default::default(), |ui| persist(&mut app, ui.ctx())).textures_delta.clear();
++        assert!(app.ui.docking_kept.is_none());
++        assert!(crate::panel_docking::load(&app.session.prefs().panel_layout).is_some(), "explicit edit replaces the unreadable payload");
++    }
++}
++
++#[test]
++fn obsolete_bare_layout_and_absent_workspace_do_not_become_retained_payloads() {
++    for docking in [Value::Null, json!({"root":null,"floating":[]})] {
++        let (mut app, _, _) = app_with_layers();
++        let mut saved = snapshot(&app);
++        saved["docking"] = docking;
++        apply(&mut app, &saved);
++        assert!(app.ui.docking.is_none());
++        assert!(app.ui.docking_kept.is_none());
++    }
++}
++
++#[test]
++fn readable_workspace_is_loaded_without_retaining_fallback_data() {
++    let (mut app, _, _) = app_with_layers();
++    app.run("window.panel.float", json!({"panel":"info"})).unwrap();
++    let saved = snapshot(&app);
++    let before = app.ui.docking.clone();
++    apply(&mut app, &saved);
++    assert_eq!(app.ui.docking, before);
++    assert!(app.ui.docking_kept.is_none());
++}
++
++#[test]
++fn future_workspace_envelope_without_layout_keeps_existing_forward_compatibility() {
++    let (mut app, _, _) = app_with_layers();
++    let mut saved = snapshot(&app);
++    saved["docking"] = json!({"version":99,"future-envelope":{"keep":true}});
++    apply(&mut app, &saved);
++    assert!(app.ui.docking.is_none());
++    assert_eq!(snapshot(&app)["docking"], saved["docking"]);
++}
++
++#[test]
++fn unreadable_workspace_survives_fallback_rendering_with_restore_notice() {
++    let _gpu = photocraft_testkit::gpu_lock();
++    let mut h = Harness::builder().with_size(vec2(1440.0, 900.0)).build_eframe(|cc| {
++        PhotocraftApp::setup_context(&cc.egui_ctx, ThemeKind::Pro);
++        let mut app = PhotocraftApp::new(photocraft_engine::Session::new(), crate::Services::default());
++        let mut saved = snapshot(&app);
++        saved["docking"] = json!({"version":2,"layout":{"kind":"unreadable"}});
++        apply(&mut app, &saved);
++        app
++    });
++    h.run_steps(8);
++    assert!(h.state().ui.docking.is_none());
++    assert!(h.state().ui.status.contains("has been preserved"));
++    assert_eq!(snapshot(h.state())["docking"]["layout"]["kind"], "unreadable");
++    let image = h.render().unwrap();
++    if let Some(path) = std::env::var_os("PHOTOCRAFT_WORKSPACE_RECOVERY_CAPTURE") {
++        image.save(path).unwrap();
++    }
++}
+diff --git a/crates/ui-egui/src/panels/panel_docking.rs b/crates/ui-egui/src/panels/panel_docking.rs
+index ebddecde2..9e73ed975 100644
+--- a/crates/ui-egui/src/panels/panel_docking.rs
++++ b/crates/ui-egui/src/panels/panel_docking.rs
+@@ -152,9 +152,20 @@ pub(crate) fn load(saved: &Value) -> Option<(Workspace, Returns)> {
+     valid_workspace(&workspace).then_some((workspace, returns))
+ }
+ 
+-/// The saved `docking` workspace is from a newer version than craft-ui reads.
+-pub(crate) fn newer(saved: &Value) -> bool {
+-    saved.get("docking").and_then(|docking| docking.get("version")).and_then(Value::as_u64).is_some_and(|version| version > u64::from(Workspace::VERSION))
++/// Keep unreadable Workspace payloads; obsolete bare layouts fall back to the native default.
++/// Called only when `load` failed. Companion view metadata must survive the same fallback.
++pub(crate) fn retained_payload(saved: &Value) -> Option<Map<String, Value>> {
++    let docking = saved.get("docking")?;
++    let newer = docking.get("version").and_then(Value::as_u64).is_some_and(|v| v > u64::from(Workspace::VERSION));
++    if docking.get("layout").is_none() && !newer {
++        return None;
++    }
++    Some(
++        ["docking", "dockingReturns", "dockingCollapsed", "panelPresentation", "toolbarFloating"]
++            .into_iter()
++            .filter_map(|key| Some((key.to_owned(), saved.get(key)?.clone())))
++            .collect(),
++    )
+ }
+ 
+ fn legacy(app: &PhotocraftApp) -> Layout<String> {
