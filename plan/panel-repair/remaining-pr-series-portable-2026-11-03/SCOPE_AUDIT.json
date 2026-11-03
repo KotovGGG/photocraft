@@ -1,0 +1,11 @@
+{
+  "sha": "2052a95ed4b0fbbf0eee762767a4cbdf8b8f2b50",
+  "base": "289dd0a87",
+  "forbidden_scope_diff": [],
+  "new_commit_authors": [
+    "KotovGGG <162052215+KotovGGG@users.noreply.github.com>"
+  ],
+  "clippy_unchanged_files": true,
+  "root_reference_head": "69b370d2dfb40f83216104dff93d1b82339e71da",
+  "product_exe_built_or_launched": false
+}

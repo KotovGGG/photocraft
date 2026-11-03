@@ -3,39 +3,60 @@
   "base_main": "289dd0a87",
   "shared_upstream": "ea1fbeb05b94bb692b27b687adb2ac1e5abc640f",
   "tested_runtime": {
-    "migration": "3d0deea6e",
-    "compact": "a7df08d80",
-    "tools": "accf5181a"
+    "migration": "0332e0bdb4a40401f51db1bf3313d01b9255b71a",
+    "compact": "06fb611d68e73c0ed9704c8a3ed96ab54a8684c5",
+    "tools": "2052a95ed4b0fbbf0eee762767a4cbdf8b8f2b50"
   },
   "parts": [
     {
       "part": "migration",
       "branch": "codex/panel-layout-migration",
-      "head": "3d0deea6e9a98d2aaaf412ce009023c1ea073e36",
+      "head": "0332e0bdb4a40401f51db1bf3313d01b9255b71a",
       "base_branch": "codex/panel-workspace-recovery",
-      "base": "3dbd11e3579d0c5d85ea9ab32c7b83224e827681",
+      "base": "b42f8dd0557efe40a53e8fa7d52f30733bb7767f",
       "title": "Migrate legacy panel layouts into the shared Workspace",
-      "stat": "6 files changed, 513 insertions(+), 8 deletions(-)"
+      "stat": "6 files changed, 513 insertions(+), 8 deletions(-)",
+      "own_non_merge_commits": [
+        "3d0deea6e9a98d2aaaf412ce009023c1ea073e36"
+      ]
     },
     {
       "part": "compact",
       "branch": "codex/panel-compact-resize",
-      "head": "43382c84fdcadd10a796345b0a743e27940cbfaa",
+      "head": "06fb611d68e73c0ed9704c8a3ed96ab54a8684c5",
       "base_branch": "codex/panel-layout-migration",
-      "base": "3d0deea6e9a98d2aaaf412ce009023c1ea073e36",
+      "base": "0332e0bdb4a40401f51db1bf3313d01b9255b71a",
       "title": "Repair compact panel docking and independent resizing",
-      "stat": "37 files changed, 7055 insertions(+), 78 deletions(-)"
+      "stat": "37 files changed, 7055 insertions(+), 78 deletions(-)",
+      "own_non_merge_commits": [
+        "a7df08d80fa8a005438a1df39e0699a50c519052",
+        "4d314851f1c9f46dd2628741ecc848124024be6b",
+        "43382c84fdcadd10a796345b0a743e27940cbfaa"
+      ]
     },
     {
       "part": "tools",
       "branch": "codex/panel-tools-floating",
-      "head": "19904a9dc8de0091799ee70058a8376b6648a981",
+      "head": "2052a95ed4b0fbbf0eee762767a4cbdf8b8f2b50",
       "base_branch": "codex/panel-compact-resize",
-      "base": "43382c84fdcadd10a796345b0a743e27940cbfaa",
+      "base": "06fb611d68e73c0ed9704c8a3ed96ab54a8684c5",
       "title": "Float and resize the whole Tools palette",
-      "stat": "10 files changed, 794 insertions(+), 324 deletions(-)"
+      "stat": "10 files changed, 825 insertions(+), 324 deletions(-)",
+      "own_non_merge_commits": [
+        "accf5181a9232f270055faf6c43d2444868dc0d0",
+        "1a7efc86e62eebc17bd90b0b4c62fd022608b0ca"
+      ]
     }
   ],
   "standalone_xtask": "F:/photocraft/target/xtask-review/debug/xtask.exe",
-  "perf_status": "running"
+  "perf_status": "exit 1",
+  "upstream_main_seen": "24d4f4db9fea590ed7dde65db6592938359c2c2e",
+  "publication_note": "Review branches are based on main 289dd0a87; refresh latest upstream and parent ancestry before each PR publication. Parent PRs 10908 and 10910 remain open.",
+  "capture_provenance": {
+    "migration": "3d0deea6e9a98d2aaaf412ce009023c1ea073e36",
+    "compact_444": "a7df08d80fa8a005438a1df39e0699a50c519052",
+    "tools_444_and_16": "accf5181a9232f270055faf6c43d2444868dc0d0",
+    "recovery_notice_2": "b42f8dd0557efe40a53e8fa7d52f30733bb7767f"
+  },
+  "perf_source": "2052a95ed4b0fbbf0eee762767a4cbdf8b8f2b50"
 }

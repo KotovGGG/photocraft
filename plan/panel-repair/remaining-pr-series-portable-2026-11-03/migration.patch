@@ -1,8 +1,8 @@
 diff --git a/crates/ui-egui/src/dock.rs b/crates/ui-egui/src/dock.rs
-index f65100daf..f3af2c018 100644
+index 7b4e4a54e..330e47874 100644
 --- a/crates/ui-egui/src/dock.rs
 +++ b/crates/ui-egui/src/dock.rs
-@@ -339,7 +339,7 @@ pub(crate) fn close_tab(app: &mut PhotocraftApp, g: Group, tab: usize, pro: bool
+@@ -340,7 +340,7 @@ pub(crate) fn close_tab(app: &mut PhotocraftApp, g: Group, tab: usize, pro: bool
  
  /// What `prefs.panelLayout` holds: the live layout and open panels.
  pub(crate) fn snapshot(app: &PhotocraftApp) -> Value {
@@ -11,7 +11,7 @@ index f65100daf..f3af2c018 100644
      keep_newer(app, &mut layout);
      layout
  }
-@@ -411,6 +411,11 @@ pub fn restore(app: &mut PhotocraftApp) {
+@@ -452,11 +452,17 @@ pub fn restore(app: &mut PhotocraftApp) {
  /// saved workspace cannot be loaded, retain its payload while showing the native default.
  /// Explicit layout changes replace that payload. Panel widths still carry over separately.
  pub fn apply(app: &mut PhotocraftApp, v: &Value) {
@@ -23,10 +23,8 @@ index f65100daf..f3af2c018 100644
      app.ui.docking_reveal = None;
      app.ui.docking_generation = app.ui.docking_generation.wrapping_add(1);
      (app.ui.docking, app.ui.docking_returns) = crate::panel_docking::load(v).map_or((None, Default::default()), |(w, r)| (Some(w), r));
-@@ -418,6 +423,7 @@ pub fn apply(app: &mut PhotocraftApp, v: &Value) {
-     if app.ui.docking_kept.is_some() {
-         app.ui.status = tl!("The saved panel layout could not be restored. It has been preserved; reset the workspace to replace it.").to_string();
-     }
+     app.ui.docking_kept = app.ui.docking.is_none().then(|| crate::panel_docking::retained_payload(v)).flatten();
+     sync_restore_notice(app);
 +    crate::panel_docking::migration::upgrade_metrics(app);
      // Collapsed custom groups belong to the workspace; the native dock keeps its own flags.
      app.ui.docking_collapsed = match app.ui.docking {
@@ -45,7 +43,7 @@ index b5a67b180..712d3b1ee 100644
      // The icon rail and menu bar flags belong to an embedding app's session, not to a saved
      // layout: a workspace never brings back a window without its menus.
 diff --git a/crates/ui-egui/src/panels/panel_docking.rs b/crates/ui-egui/src/panels/panel_docking.rs
-index 9e73ed975..af041c084 100644
+index 81d43afd7..ac55049df 100644
 --- a/crates/ui-egui/src/panels/panel_docking.rs
 +++ b/crates/ui-egui/src/panels/panel_docking.rs
 @@ -20,6 +20,9 @@ use crate::PhotocraftApp;
@@ -550,7 +548,7 @@ index 000000000..a5fe74156
 +    }
 +}
 diff --git a/crates/ui-egui/src/state.rs b/crates/ui-egui/src/state.rs
-index c18a418c4..0534ec661 100644
+index ed1917f94..acb0288a1 100644
 --- a/crates/ui-egui/src/state.rs
 +++ b/crates/ui-egui/src/state.rs
 @@ -202,6 +202,42 @@ pub struct DocWindow {
@@ -596,7 +594,7 @@ index c18a418c4..0534ec661 100644
  #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
  pub struct UiState {
      pub tool: Tool,
-@@ -432,6 +468,13 @@ pub struct UiState {
+@@ -435,6 +471,13 @@ pub struct UiState {
      /// One-frame focus/raise request from an explicit panel reveal.
      #[serde(skip)]
      pub docking_reveal: Option<String>,
@@ -610,7 +608,7 @@ index c18a418c4..0534ec661 100644
      /// Which chip the Color panel edits, and how it shows the colour.
      #[serde(default)]
      pub color_panel: ColorPanelState,
-@@ -597,6 +640,9 @@ impl Default for UiState {
+@@ -601,6 +644,9 @@ impl Default for UiState {
              docking_generation: 0,
              docking_collapsed: Vec::new(),
              docking_reveal: None,

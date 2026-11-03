@@ -198,10 +198,10 @@ index 677949600..f4b4ce08c 100644
          assert_eq!(a, b, "{theme:?}: the » button doesn't follow the last tab");
      }
 diff --git a/crates/ui-egui/src/dock.rs b/crates/ui-egui/src/dock.rs
-index f3af2c018..d45756754 100644
+index 330e47874..71fb4071d 100644
 --- a/crates/ui-egui/src/dock.rs
 +++ b/crates/ui-egui/src/dock.rs
-@@ -344,7 +344,8 @@ pub(crate) fn snapshot(app: &PhotocraftApp) -> Value {
+@@ -345,7 +345,8 @@ pub(crate) fn snapshot(app: &PhotocraftApp) -> Value {
      layout
  }
  
@@ -211,7 +211,7 @@ index f3af2c018..d45756754 100644
  pub(crate) fn keep_newer(app: &PhotocraftApp, layout: &mut Value) {
      if let (None, Some(kept), Some(layout)) = (&app.ui.docking, &app.ui.docking_kept, layout.as_object_mut()) {
          layout.extend(kept.clone());
-@@ -353,7 +354,7 @@ pub(crate) fn keep_newer(app: &PhotocraftApp, layout: &mut Value) {
+@@ -394,7 +395,7 @@ pub(crate) fn discard_retained_layout(app: &mut PhotocraftApp) {
  
  /// Remember the layout in the preferences once the user lets go of the mouse (Workspace ›
  /// Remember Workspace Changes), and once panel windows the OS moves or resizes keep still. Cheap:
@@ -219,8 +219,8 @@ index f3af2c018..d45756754 100644
 +/// a typed change stamp avoids serializing unchanged layouts.
  pub fn persist(app: &mut PhotocraftApp, ctx: &egui::Context) {
      // Once the layout changes, the newer workspace is replaced.
-     if app.ui.docking.is_some() {
-@@ -366,10 +367,69 @@ pub fn persist(app: &mut PhotocraftApp, ctx: &egui::Context) {
+     if app.ui.docking.is_some() && app.ui.docking_kept.is_some() {
+@@ -407,10 +408,69 @@ pub fn persist(app: &mut PhotocraftApp, ctx: &egui::Context) {
          ctx.request_repaint_after(std::time::Duration::from_millis(100));
          return;
      }
@@ -290,7 +290,7 @@ index f3af2c018..d45756754 100644
  }
  
  /// A floating panel's own window has another place than last frame. A move or resize by its OS
-@@ -408,10 +468,11 @@ pub fn restore(app: &mut PhotocraftApp) {
+@@ -449,10 +509,11 @@ pub fn restore(app: &mut PhotocraftApp) {
  ///
  /// `craft_ui::docking::DockArea` keeps only transient drag/focus data in `ctx.data`; the
  /// split/tab arrangement is the app's own `craft_ui::docking::Layout` JSON stored here. If a
@@ -305,7 +305,7 @@ index f3af2c018..d45756754 100644
          .get("toolbarFloating")
          .and_then(|v| serde_json::from_value::<[f32; 2]>(v.clone()).ok())
 diff --git a/crates/ui-egui/src/dock/tests.rs b/crates/ui-egui/src/dock/tests.rs
-index 43f7f3625..79dc34310 100644
+index 8e15fd23c..7abafa31e 100644
 --- a/crates/ui-egui/src/dock/tests.rs
 +++ b/crates/ui-egui/src/dock/tests.rs
 @@ -28,6 +28,9 @@ fn bad_stored_values_are_sanitised() {
@@ -453,7 +453,7 @@ index 5784e0042..77822d25e 100644
      }
      egui::CentralPanel::default().frame(egui::Frame::NONE.fill(backdrop)).show(ui, |ui| crate::canvas::document_area(app, ui));
 diff --git a/crates/ui-egui/src/panels/panel_docking.rs b/crates/ui-egui/src/panels/panel_docking.rs
-index af041c084..b528a96a4 100644
+index ac55049df..42f707422 100644
 --- a/crates/ui-egui/src/panels/panel_docking.rs
 +++ b/crates/ui-egui/src/panels/panel_docking.rs
 @@ -20,8 +20,11 @@ use crate::PhotocraftApp;
@@ -532,8 +532,8 @@ index af041c084..b528a96a4 100644
  pub(crate) fn retained_payload(saved: &Value) -> Option<Map<String, Value>> {
      let docking = saved.get("docking")?;
      let newer = docking.get("version").and_then(Value::as_u64).is_some_and(|v| v > u64::from(Workspace::VERSION));
-@@ -246,8 +255,10 @@ fn workspace_of(app: &PhotocraftApp) -> Result<Workspace, String> {
-     Ok(workspace)
+@@ -252,8 +261,10 @@ pub(crate) fn native_fallback(app: &PhotocraftApp) -> Option<Workspace> {
+     valid_workspace(&workspace).then_some(workspace)
  }
  
 -fn commit(app: &mut PhotocraftApp, workspace: Workspace, mut returns: Returns) {
@@ -542,9 +542,9 @@ index af041c084..b528a96a4 100644
 +    compat::transfer_widths(app.ui.docking.as_ref().map(|w| &w.layout), &mut workspace.layout, &mut app.ui.panel_presentation);
 +    compat::sync_presentation(&workspace.layout, &mut app.ui.panel_presentation);
      app.ui.docking = Some(workspace);
+     crate::dock::discard_retained_layout(app);
      app.ui.docking_returns = returns;
-     app.ui.panels.dock = true;
-@@ -262,6 +273,15 @@ fn floats(layout: &Layout<String>, panel: &str) -> bool {
+@@ -269,6 +280,15 @@ fn floats(layout: &Layout<String>, panel: &str) -> bool {
  // presentation when the workspace first becomes customizable; mixed custom groups are expanded.
  fn collapsed_members(app: &PhotocraftApp, layout: &Layout<String>) -> std::collections::HashSet<String> {
      let mut collapsed: std::collections::HashSet<String> = app.ui.docking_collapsed.iter().cloned().collect();
@@ -560,7 +560,7 @@ index af041c084..b528a96a4 100644
      for group in layout.root.iter().flat_map(tree_groups).filter(|group| group.minimized) {
          collapsed.extend(group.panels);
      }
-@@ -279,7 +299,7 @@ fn collapsed_members(app: &PhotocraftApp, layout: &Layout<String>) -> std::colle
+@@ -286,7 +306,7 @@ fn collapsed_members(app: &PhotocraftApp, layout: &Layout<String>) -> std::colle
  }
  
  fn first_root(layout: &Layout<String>, except: &str) -> Option<String> {
@@ -569,7 +569,7 @@ index af041c084..b528a96a4 100644
  }
  
  /// Show `panel` if it is not in the layout: a closed panel at its recorded place, one never laid
-@@ -376,6 +396,9 @@ fn closes(command: &DockCommand<String>) -> bool {
+@@ -383,6 +403,9 @@ fn closes(command: &DockCommand<String>) -> bool {
  }
  
  pub(crate) fn command(app: &mut PhotocraftApp, id: &str, params: &Value) -> Option<Result<Value, String>> {
@@ -579,7 +579,7 @@ index af041c084..b528a96a4 100644
      if id == "window.panel.group" {
          return Some(group_command(app, params));
      }
-@@ -579,42 +602,41 @@ pub(crate) fn show(app: &mut PhotocraftApp, ui: &mut egui::Ui) {
+@@ -586,42 +609,41 @@ pub(crate) fn show(app: &mut PhotocraftApp, ui: &mut egui::Ui) {
          None => legacy(app),
      };
      let collapsed = collapsed_members(app, &layout);
@@ -640,7 +640,7 @@ index af041c084..b528a96a4 100644
      ui.ctx().data_mut(|data| data.insert_temp(bodies_id(), Vec::<(String, egui::Rect)>::new()));
      // The panel windows' passes, inside this call, note their keyboard focus again.
      keyboard_focus(ui.ctx()).lock().unwrap_or_else(|e| e.into_inner()).clear();
-@@ -625,8 +647,14 @@ pub(crate) fn show(app: &mut PhotocraftApp, ui: &mut egui::Ui) {
+@@ -632,8 +654,14 @@ pub(crate) fn show(app: &mut PhotocraftApp, ui: &mut egui::Ui) {
          |id| PANELS.iter().find(|p| p.0 == id).map(|p| tl!(p.1).to_string()).unwrap_or_else(|| id.clone()),
          permissions,
          |id| {
@@ -656,7 +656,7 @@ index af041c084..b528a96a4 100644
              } else if collapsed.contains(id) {
                  craft_ui::docking::PanelLimits { min: egui::vec2(220.0, 0.0), max: egui::vec2(1_000_000.0, 0.0) }
              } else {
-@@ -645,9 +673,23 @@ pub(crate) fn show(app: &mut PhotocraftApp, ui: &mut egui::Ui) {
+@@ -652,9 +680,23 @@ pub(crate) fn show(app: &mut PhotocraftApp, ui: &mut egui::Ui) {
      // Keys pressed in a floating panel's own OS window run the main window's shortcuts.
      let forwarded = std::mem::take(&mut output.forwarded_events);
      crate::shortcuts::handle_forwarded(app, ui.ctx(), forwarded, output.forwarded_modifiers.unwrap_or_default());
@@ -681,7 +681,7 @@ index af041c084..b528a96a4 100644
          let result = match action {
              // A dock group minimizes as PhotoCraft's collapsed group, which the native dock's
              // collapse also sets.
-@@ -660,7 +702,10 @@ pub(crate) fn show(app: &mut PhotocraftApp, ui: &mut egui::Ui) {
+@@ -667,7 +709,10 @@ pub(crate) fn show(app: &mut PhotocraftApp, ui: &mut egui::Ui) {
              app.ui.status = error;
          }
      }
@@ -693,7 +693,7 @@ index af041c084..b528a96a4 100644
          if let Err(error) = app.run(id, params) {
              app.ui.status = error;
          }
-@@ -691,7 +736,7 @@ pub(crate) fn native_viewports(app: &PhotocraftApp, ctx: &egui::Context) -> Vec<
+@@ -698,7 +743,7 @@ pub(crate) fn native_viewports(app: &PhotocraftApp, ctx: &egui::Context) -> Vec<
              .layout
              .floating
              .iter()
@@ -702,7 +702,7 @@ index af041c084..b528a96a4 100644
              .map(|window| craft_ui::docking::DockArea::<String>::window_viewport(area_id(), window.id))
              .collect();
      }
-@@ -1026,7 +1071,13 @@ pub(crate) fn rail_click(app: &mut PhotocraftApp, group: Group) {
+@@ -1033,7 +1078,13 @@ pub(crate) fn rail_click(app: &mut PhotocraftApp, group: Group) {
  
  /// The docked tab groups, top to bottom, without the canvas.
  fn root_groups(layout: &Layout<String>) -> Vec<Vec<String>> {
@@ -717,7 +717,7 @@ index af041c084..b528a96a4 100644
  }
  
  /// `window.panel.group {panel, operation}`: PhotoCraft's commands for a panel's whole group.
-@@ -1238,9 +1289,71 @@ fn panel_menu(app: &mut PhotocraftApp, ui: &mut egui::Ui, panel: &str) {
+@@ -1245,9 +1296,71 @@ fn panel_menu(app: &mut PhotocraftApp, ui: &mut egui::Ui, panel: &str) {
  }
  
  impl craft_ui::docking::DockContent<String> for PanelContent<'_> {
@@ -791,7 +791,7 @@ index af041c084..b528a96a4 100644
          if id == CANVAS {
              crate::panels::canvas_panel(self.app, ui);
              return;
-@@ -1258,6 +1371,9 @@ impl craft_ui::docking::DockContent<String> for PanelContent<'_> {
+@@ -1265,6 +1378,9 @@ impl craft_ui::docking::DockContent<String> for PanelContent<'_> {
          }
      }
      fn dock_heights(&self, id: &String) -> Option<DockHeights> {
@@ -801,7 +801,7 @@ index af041c084..b528a96a4 100644
          let group = PANELS.iter().find(|p| p.0 == id)?.2;
          let body = |height: f32| (height - self.strip).max(0.0);
          let fill = if self.fillers.contains(id) { body(group.preferred_fill()).max(1.0) } else { 0.0 };
-@@ -1268,14 +1384,72 @@ impl craft_ui::docking::DockContent<String> for PanelContent<'_> {
+@@ -1275,14 +1391,72 @@ impl craft_ui::docking::DockContent<String> for PanelContent<'_> {
      }
      fn allow_native(&self, id: &String) -> bool {
          !self.card.contains(id)
@@ -876,7 +876,7 @@ index af041c084..b528a96a4 100644
          egui::Popup::menu(&resp).show(|ui| {
              ui.set_min_width(180.0);
              panel_menu(self.app, ui, active);
-@@ -1346,3 +1520,67 @@ fn panel_active(layout: &Layout<String>, panel: &str) -> bool {
+@@ -1353,3 +1527,67 @@ fn panel_active(layout: &Layout<String>, panel: &str) -> bool {
          .find(|group| group.panels.iter().any(|id| id == panel))
          .is_some_and(|group| group.panels.get(group.active).is_some_and(|id| id == panel))
  }

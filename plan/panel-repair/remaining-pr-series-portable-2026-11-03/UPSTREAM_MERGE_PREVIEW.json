@@ -1,0 +1,18 @@
+{
+  "main": "24d4f4db9fea590ed7dde65db6592938359c2c2e",
+  "merged_into_review_branches": false,
+  "checks": {
+    "migration": {
+      "exit": 0,
+      "output": "d4480b45ae0e826ffccd031ea7e9c483213db73c"
+    },
+    "compact": {
+      "exit": 1,
+      "output": "6d48eee9e09c47acbd598f45aea6bbbdfd5be0ca\n100644 56867ba41a1f06c274914e661870cc019ebe999d 1\tdocs/gaps.md\n100644 6595b98be64cffe7d2073457c0295955af6582d8 2\tdocs/gaps.md\n100644 29f9a461d2ffe758d96ca30a9c8d7fea9107175b 3\tdocs/gaps.md\n\nAuto-merging ATTRIBUTION.md\nAuto-merging Cargo.lock\nAuto-merging Cargo.toml\nAuto-merging crates/ui-egui/src/lib.rs\nAuto-merging crates/ui-egui/src/panels.rs\nAuto-merging docs/gaps.md\nCONFLICT (content): Merge conflict in docs/gaps.md"
+    },
+    "tools": {
+      "exit": 1,
+      "output": "c945f54474e625b40289cf9530f9b3b135f978e1\n100644 56867ba41a1f06c274914e661870cc019ebe999d 1\tdocs/gaps.md\n100644 6595b98be64cffe7d2073457c0295955af6582d8 2\tdocs/gaps.md\n100644 29f9a461d2ffe758d96ca30a9c8d7fea9107175b 3\tdocs/gaps.md\n\nAuto-merging ATTRIBUTION.md\nAuto-merging Cargo.lock\nAuto-merging Cargo.toml\nAuto-merging crates/ui-egui/src/app/commands.rs\nAuto-merging crates/ui-egui/src/lib.rs\nAuto-merging crates/ui-egui/src/panels.rs\nAuto-merging docs/gaps.md\nCONFLICT (content): Merge conflict in docs/gaps.md"
+    }
+  }
+}

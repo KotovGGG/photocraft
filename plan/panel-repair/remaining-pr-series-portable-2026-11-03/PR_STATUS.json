@@ -1,0 +1,20 @@
+{
+  "checked_at": "2026-11-03T00:43:03.399899+00:00",
+  "parents": {
+    "10908": {
+      "url": "https://github.com/storytold/photocraft/pull/10908",
+      "state": "open",
+      "merged": false,
+      "head": "aa5cd1dcfe39cd218083535781b5d050a8a5511a",
+      "mergeable_state": "unstable"
+    },
+    "10910": {
+      "url": "https://github.com/storytold/photocraft/pull/10910",
+      "state": "open",
+      "merged": false,
+      "head": "b42f8dd0557efe40a53e8fa7d52f30733bb7767f",
+      "mergeable_state": "unstable"
+    }
+  },
+  "upstream_main": "24d4f4db9fea590ed7dde65db6592938359c2c2e"
+}
